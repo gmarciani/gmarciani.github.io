@@ -1,0 +1,15 @@
+title: gmarciani
+baseURL: https://gmarciani.s3.eu-west-1.amazonaws.com/
+languageCode: en-us
+theme: jedi
+
+params:
+  author: Giacomo Marciani
+  description: Software Engineer @ Amazon Web Services
+  google_analytics: UA-59215360-6
+  social:
+    twitter: giacomomarciani
+    linkedin: giacomomarciani
+    youtube: UCOvMuigL8zTw2yMFoMUOfnQ
+    instagram: gmarciani
+    github: gmarciani
