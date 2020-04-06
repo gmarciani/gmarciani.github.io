@@ -1,0 +1,21 @@
+    <footer id="site-footer">
+        <div class="container">
+          {{ with .Site.Params.social.twitter }}
+            <a href="https://www.twitter.com/{{ . }}" title="Twitter" target="_blank"><span class="tooltip"><i class="fa fa-twitter"></i></span></a>
+          {{ end }}
+          {{ with .Site.Params.social.instagram }}
+            <a href="https://www.instagram.com/{{ . }}/" title="Instagram" target="_blank"><span class="tooltip"><i class="fa fa-instagram"></i></span></a>
+          {{ end }}
+          {{ with .Site.Params.social.github }}
+            <a href="https://www.github.com/{{ . }}" title="GitHub" target="_blank"><span class="tooltip"><i class="fa fa-github"></i></span></a>
+          {{ end }}
+          <a href="{{ .Site.BaseURL }}index.xml" title="Get the RSS feed"><span class="tooltip"><i class="fa fa-rss"></i></span></a>
+          <section>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a> 2020 | All rights reserved</section>
+          <section>Made with <span class="tooltip"><i class="fa fa-heart"></i></span> + <span class="tooltip"><i class="fa fa-coffee"></i></span> + <a href="http://gohugo.io/">Hugo</a>.</section>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="{{ absURL "scripts/main.min.js" }}"></script>
+    <script type="text/javascript">
+      $(".heading").fitText();
+    </script>

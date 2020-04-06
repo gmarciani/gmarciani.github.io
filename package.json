@@ -1,0 +1,53 @@
+{
+  "name": "gmarciani",
+  "version": "1.0.0",
+  "description": "Personal blog",
+  "keywords": "computer science",
+  "homepage": "http://gmarciani.com",
+  "bugs": {
+    "url": "https://github.com/gmarciani/website/issues",
+    "email": "giacomo.marciani@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Giacomo Marciani",
+    "email": "giacomo.marciani@gmail.com",
+    "url": "http://gmarciani.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gmarciani/website"
+  },
+  "engines": {
+    "node": ">=4.5.0"
+  },
+  "private": true,
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-batch": "^1.0.5",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-gm": "0.0.9",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-image-resize": "^0.13.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-shell": "^0.8.0",
+    "gulp-sitemap": "^7.6.0",
+    "gulp-svg2png": "^2.0.2",
+    "gulp-tap": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "is-osx": "^1.0.2",
+    "is-windows": "^1.0.2",
+    "node-sass": "^4.13.1",
+    "os": "^0.1.1",
+    "run-sequence": "^2.2.1"
+  }
+}

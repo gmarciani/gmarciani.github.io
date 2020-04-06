@@ -1,7 +1,6 @@
 title: gmarciani
 baseURL: https://gmarciani.s3.eu-west-1.amazonaws.com/
 languageCode: en-us
-theme: jedi
 
 params:
   author: Giacomo Marciani

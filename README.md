@@ -4,10 +4,10 @@ Personal blog at [gmarciani.com](https://gmarciani.com).
 
 ## Requirements
 
-Install Hugo
+Install Hugo, Node, ImageMagick
 
 ```
-brew install hugo
+brew install hugo, node, imagemagick
 ```
 
 ## Usage

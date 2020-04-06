@@ -1,2 +1,6 @@
 .ignore
 public
+static
+resources
+node_modules
+package-lock.json
