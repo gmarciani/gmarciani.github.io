@@ -1,17 +1,23 @@
     <footer id="site-footer">
         <div class="container">
-          {{ with .Site.Params.social.twitter }}
-            <a href="https://www.twitter.com/{{ . }}" title="Twitter" target="_blank"><span class="tooltip"><i class="fa fa-twitter"></i></span></a>
+          {{ with .Site.Params.social.youtube }}
+            <a href="https://www.youtube.com/channel/{{ . }}" title="Twitter" target="_blank"><span class="tooltip"><i class="fab fa-youtube"></i></span></a>
           {{ end }}
           {{ with .Site.Params.social.instagram }}
-            <a href="https://www.instagram.com/{{ . }}/" title="Instagram" target="_blank"><span class="tooltip"><i class="fa fa-instagram"></i></span></a>
+            <a href="https://www.instagram.com/{{ . }}/" title="Instagram" target="_blank"><span class="tooltip"><i class="fab fa-instagram"></i></span></a>
+          {{ end }}
+          {{ with .Site.Params.social.twitter }}
+            <a href="https://www.twitter.com/{{ . }}" title="Twitter" target="_blank"><span class="tooltip"><i class="fab fa-twitter"></i></span></a>
+          {{ end }}
+          {{ with .Site.Params.social.linkedin }}
+            <a href="https://www.linkedin.com/in/{{ . }}" title="Twitter" target="_blank"><span class="tooltip"><i class="fab fa-linkedin-in"></i></span></a>
           {{ end }}
           {{ with .Site.Params.social.github }}
-            <a href="https://www.github.com/{{ . }}" title="GitHub" target="_blank"><span class="tooltip"><i class="fa fa-github"></i></span></a>
+            <a href="https://www.github.com/{{ . }}" title="GitHub" target="_blank"><span class="tooltip"><i class="fab fa-github"></i></span></a>
           {{ end }}
-          <a href="{{ .Site.BaseURL }}index.xml" title="Get the RSS feed"><span class="tooltip"><i class="fa fa-rss"></i></span></a>
+          <a href="{{ .Site.BaseURL }}index.xml" title="Get the RSS feed"><span class="tooltip"><i class="fas fa-rss"></i></span></a>
           <section>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a> 2020 | All rights reserved</section>
-          <section>Made with <span class="tooltip"><i class="fa fa-heart"></i></span> + <span class="tooltip"><i class="fa fa-coffee"></i></span> + <a href="http://gohugo.io/">Hugo</a>.</section>
+          <section>Made with <span class="tooltip"><i class="fas fa-heart"></i></span> + <span class="tooltip"><i class="fas fa-mug-hot"></i></span> + <a href="http://gohugo.io/">Hugo</a>.</section>
         </div>
     </footer>
 
