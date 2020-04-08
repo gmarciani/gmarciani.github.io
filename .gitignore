@@ -1,6 +1,7 @@
 .ignore
 public
 static
+layouts
 resources
 node_modules
 package-lock.json
