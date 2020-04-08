@@ -159,11 +159,12 @@ var paths = {
 /*******************************************************************************
 * CLEAN
 *******************************************************************************/
-gulp.task('clean', function() {
-  return del([
+gulp.task('clean', function(done) {
+  del([
     paths.site.base,
     paths.tmp.sass
   ]);
+  done();
 });
 
 /*******************************************************************************
@@ -181,13 +182,13 @@ gulp.task('build', function(done) {
 });
 
 /*******************************************************************************
-* SERVE
+* WATCH
 *******************************************************************************/
 gulp.task('watch', function() {
-  gulp.watch(paths.src.views.every, ['views']);
-  gulp.watch(paths.src.styles.every, ['styles']);
-  gulp.watch(paths.src.scripts.every, ['scripts']);
-  gulp.watch(paths.src.fonts.every, ['fonts']);
+  gulp.watch(paths.src.views.every, gulp.series('views'));
+  gulp.watch(paths.src.styles.every, gulp.series('styles'));
+  gulp.watch(paths.src.scripts.every, gulp.series('scripts'));
+  gulp.watch(paths.src.fonts.every, gulp.series('fonts'));
 });
 
 /*******************************************************************************
