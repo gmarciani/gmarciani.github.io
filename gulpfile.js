@@ -93,7 +93,7 @@ var paths = {
         icon    : 'src/images/brand/icon.svg',
         startup : 'src/images/brand/startup.svg',
         mask    : 'src/images/brand/mask.svg',
-        fall    : 'src/images/brand/fallback.svg'
+        failover: 'src/images/brand/failover.svg'
       },
       posts   : {
         base    : 'src/images/posts',
@@ -147,6 +147,11 @@ var paths = {
     views     : {
       base    : 'layouts',
       every   : 'layouts/**/*.html',
+    },
+
+    resources     : {
+      base    : 'resources',
+      every   : 'resources/**/*',
     }
   },
 
@@ -162,6 +167,8 @@ var paths = {
 gulp.task('clean', function(done) {
   del([
     paths.site.base,
+    paths.site.views.base,
+    paths.site.resources.base,
     paths.tmp.sass
   ]);
   done();
@@ -250,7 +257,7 @@ gulp.task('images', function(done) {
     'images-brand-apple-icons',
     'images-brand-google-icons',
     'images-brand-microsoft-icons',
-    'images-brand-fallback',
+    'images-brand-failover',
     'images-posts')(done);
 });
 
@@ -425,8 +432,8 @@ gulp.task('images-brand-microsoft-icons', function(done) {
   done();
 });
 
-gulp.task('images-brand-fallback', function (done) {
-  gulp.src(paths.src.images.brand.fall)
+gulp.task('images-brand-failover', function (done) {
+  gulp.src(paths.src.images.brand.failover)
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.images.brand));
   done();
