@@ -6,14 +6,48 @@ draft: false
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-![Example Image](/images/posts/sample-image.svg)
+Relative link: [My Second Post]({{< ref "posts/my-second-post.md" >}})
+
+
+## Figures
+
+![Sample Image](/images/posts/sample-image.svg)
 
 ![Not Existing Image](/images/posts/sample-image-not-existing.svg)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## YouTube
+
+{{< youtube OTzTAp-uXgI >}}
+
+
+## Vimeo
+
+{{< vimeo 70476512 >}}
+
+
+## Instagram
+
+{{< instagram B0S_BVlIeo0 hidecaption >}}
+
+
+## Twitter
+
+{{< tweet 1247056493712756737 >}}
+
+
+## Code
 
 ```java
-public static final void main(final int argc) {
-  System.out.println("Hello Wrold!");
+public static void main(String[] args) {
+    System.out.println("Hello world!");
 }
 ```
+
+{{< highlight java >}}
+public static void main(String[] args) {
+    System.out.println("Hello world!");
+}
+{{< /highlight >}}
+
+{{< gist gmarciani 33c45122d3f5b6b86711a05ab49b5a33 >}}
