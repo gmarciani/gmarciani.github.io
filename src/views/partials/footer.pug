@@ -16,8 +16,8 @@
             <a href="https://www.github.com/{{ . }}" title="GitHub" target="_blank"><span class="tooltip"><i class="fab fa-github"></i></span></a>
           {{ end }}
           <a href="{{ .Site.BaseURL }}index.xml" title="Get the RSS feed"><span class="tooltip"><i class="fas fa-rss"></i></span></a>
-          <section>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a> 2020 | All rights reserved</section>
-          <section>Made with <span class="tooltip"><i class="fas fa-heart"></i></span> + <span class="tooltip"><i class="fas fa-mug-hot"></i></span> + <a href="http://gohugo.io/">Hugo</a>.</section>
+          <section>&copy; <a href={{ absURL "about" }}>{{ .Site.Params.author }}</a> 2020 | All rights reserved</section>
+          <section>Made with <span class="tooltip"><i class="fas fa-heart"></i></span> + <span class="tooltip"><i class="fas fa-mug-hot"></i></span> + <a href="http://gohugo.io/">Hugo</a></section>
         </div>
     </footer>
 
