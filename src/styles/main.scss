@@ -332,7 +332,7 @@ h5 {
 h6 {
   font-size: 18px;
   font-size: 1rem;
-  margin-bottom: 1.65em;
+  margin-bottom: 1.8em;
 }
 
 @media (max-width: 550px) {
@@ -474,7 +474,7 @@ html {
   padding: 0;
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 100%;
-  line-height: 1.65;
+  line-height: 1.8;
   font-weight: normal;
   overflow-y: scroll;
   min-height: 100%;
@@ -600,7 +600,7 @@ audio, canvas, img, video {
   -ms-user-select: none;
   user-select: none;
   font-family: inherit;
-  line-height: 1.65;
+  line-height: 1.8;
   text-align: center;
   text-decoration: none;
   color: #fff;
@@ -625,7 +625,7 @@ input {
     -ms-user-select: none;
     user-select: none;
     font-family: inherit;
-    line-height: 1.65;
+    line-height: 1.8;
     text-align: center;
     text-decoration: none;
     color: #fff;
@@ -859,7 +859,7 @@ pre {
   margin: 2.5em 0;
   max-width: 100%;
   font-size: 75%;
-  line-height: 1.65;
+  line-height: 1.8;
   word-break: break-all;
   word-wrap: break-word;
   color: #333;
@@ -908,7 +908,7 @@ hr {
 
 #site-header {
   text-align: center;
-  min-height: 15em;
+  min-height: 12em;
   padding-top: 7em;
   margin-bottom: 9em;
 }
@@ -929,8 +929,8 @@ hr {
 .blog-description {
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: #b3b3b3;
-  font-size: 80%;
+  color: #737373;
+  font-size: 85%;
 }
 
 #blog-logo img {
@@ -1008,6 +1008,9 @@ article {
 
 .p-post-title {
   margin-bottom: 50px;
+  a {
+    text-decoration: underline;
+  }
 }
 
 .f-1 {
