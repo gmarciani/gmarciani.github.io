@@ -44,10 +44,4 @@ public static void main(String[] args) {
 }
 ```
 
-{{< highlight java >}}
-public static void main(String[] args) {
-    System.out.println("Hello world!");
-}
-{{< /highlight >}}
-
 {{< gist gmarciani 33c45122d3f5b6b86711a05ab49b5a33 >}}
