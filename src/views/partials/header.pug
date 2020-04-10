@@ -2,5 +2,6 @@
         <div class="container">
             <a href="{{ .Site.BaseURL }}" alt="{{ .Site.Title }}"><h1 class="blog-title heading">{{ .Site.Title }}</h1></a>
             <p class="blog-description">{{ .Site.Params.description }}</p>
+            <p class="blog-description"><a href="{{ absURL "/" }}">Home</a> | <a href="{{ absURL "/about" }}">About</a></p>
         </div>
     </header>
