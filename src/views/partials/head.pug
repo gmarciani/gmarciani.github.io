@@ -1,15 +1,21 @@
-    <head>
-        {{ partial "google_analytics.html" . }}
-        {{ partial "meta.html" . }}
-        <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
-        <link rel="canonical" href="{{ .Site.BaseURL }}" />
-        <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' />
+{{ `<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->` | safeHTML }}
+{{ `<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->` | safeHTML }}
+{{ `<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->` | safeHTML }}
+{{ `<!--[if gt IE 8]><!-->` | safeHTML }}<html class="no-js" prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns#">{{ `<!--<![endif]-->` | safeHTML }}
+    
+<head>
+    {{ partial "google_analytics.html" . }}
+    {{ partial "meta.html" . }}
+    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+    <link rel="canonical" href="{{ .Site.BaseURL }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' />
 
-        <link rel="icon" type="image/svg+xml" sizes="any"    href="{{ absURL "images/brand/favicon.svg" }}" />
+    <link rel="icon" type="image/svg+xml" sizes="any"    href="{{ absURL "images/brand/favicon.svg" }}" />
 
-        <link rel="stylesheet" type="text/css" href="{{ absURL "styles/main.min.css" }}"/>
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300|Montserrat:700"/>
-        <script src="https://kit.fontawesome.com/60b7ab0066.js" crossorigin="anonymous"></script>
-        <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
-        {{ hugo.Generator }}
-    </head>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300|Montserrat:700"/>
+    <link rel="stylesheet" type="text/css" href="{{ absURL "styles/main.min.css" }}"/>
+    
+    <script src="https://kit.fontawesome.com/60b7ab0066.js" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+    {{ hugo.Generator }}
+</head>
