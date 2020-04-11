@@ -1,5 +1,6 @@
 ---
 title: "My First Post"
+description: "Insert here the description for post"
 date: 2020-04-01T00:36:01+02:00
 draft: false
 ---

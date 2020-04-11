@@ -1,6 +1,6 @@
 ---
 title: "About"
-type: "about"
+description: "Hi folks, Giacomo Marciani here from gmarciani.com"
 draft: false
 ---
 
