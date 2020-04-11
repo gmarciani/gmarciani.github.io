@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{{ partial "head.html" . }}
+<body>
+{{ `<!--[if lt IE 7]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chrome/‎">install Google Chrome</a> to experience this site.</p><![endif]-->` | safeHTML }}
+{{ partial "header.html" . }}
+<main class="content" role="main">
+    <div class="container">
+        {{ .Render "page" }}
+    </div>
+</main>
+{{ partial "footer.html" . }}
+</body>
+</html>
