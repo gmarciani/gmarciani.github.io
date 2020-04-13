@@ -1,0 +1,10 @@
+article.posts
+  header.post-header
+    h3.p-post-title {{ .Title }}
+  section.post-content
+    .container
+      .row
+        .col-lg-4
+          img(src='/images/posts/giacomo-marciani-about.jpg')
+        .col-lg-8
+          | {{ .Content }}

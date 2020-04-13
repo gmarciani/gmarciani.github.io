@@ -1,8 +1,9 @@
-{{ `<!--[if lt IE 7]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chrome/‎">install Google Chrome</a> to experience this site.</p><![endif]-->` | safeHTML }}
-<header id="site-header">
-    <div class="container">
-        <a href="{{ .Site.BaseURL }}" alt="{{ .Site.Title }}"><h1 class="blog-title heading">{{ .Site.Title }}</h1></a>
-        <p class="blog-description">{{ .Site.Params.description }}</p>
-        <p class="blog-description"><a href="{{ absURL "/" }}">Home</a> | <a href="{{ absURL "/pages/about" }}">About</a></p>
-    </div>
-</header>
+header#site-header
+  .container
+    a(href='{{ .Site.BaseURL }}', alt='{{ .Site.Title }}')
+      h1.blog-title.heading {{ .Site.Title }}
+    p.blog-description {{ .Site.Params.description }}
+    p.blog-description
+      a(href!='{{ absURL "/" }}') Home
+      |  |  
+      a(href!='{{ absURL "/about" }}') About

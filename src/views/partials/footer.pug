@@ -1,27 +1,46 @@
-    <footer id="site-footer">
-        <div class="container">
-          {{ with .Site.Params.social.youtube }}
-            <a href="https://www.youtube.com/channel/{{ . }}" title="Twitter" target="_blank"><span class="tooltip"><i class="fab fa-youtube"></i></span></a>
-          {{ end }}
-          {{ with .Site.Params.social.instagram }}
-            <a href="https://www.instagram.com/{{ . }}/" title="Instagram" target="_blank"><span class="tooltip"><i class="fab fa-instagram"></i></span></a>
-          {{ end }}
-          {{ with .Site.Params.social.twitter }}
-            <a href="https://www.twitter.com/{{ . }}" title="Twitter" target="_blank"><span class="tooltip"><i class="fab fa-twitter"></i></span></a>
-          {{ end }}
-          {{ with .Site.Params.social.linkedin }}
-            <a href="https://www.linkedin.com/in/{{ . }}" title="Twitter" target="_blank"><span class="tooltip"><i class="fab fa-linkedin-in"></i></span></a>
-          {{ end }}
-          {{ with .Site.Params.social.github }}
-            <a href="https://www.github.com/{{ . }}" title="GitHub" target="_blank"><span class="tooltip"><i class="fab fa-github"></i></span></a>
-          {{ end }}
-          <a href="{{ .Site.BaseURL }}index.xml" title="Get the RSS feed"><span class="tooltip"><i class="fas fa-rss"></i></span></a>
-          <section>&copy; <a href={{ absURL "about" }}>{{ .Site.Params.author }}</a> 2020 | All rights reserved</section>
-          <section>Made with <span class="tooltip"><i class="fas fa-heart"></i></span> + <span class="tooltip"><i class="fas fa-mug-hot"></i></span> + <a href="http://gohugo.io/">Hugo</a></section>
-        </div>
-    </footer>
-
-    <script type="text/javascript" src="{{ absURL "scripts/main.min.js" }}"></script>
-    <script type="text/javascript">
-      $(".heading").fitText();
-    </script>
+footer#site-footer
+  .container
+    | {{ with .Site.Params.social.youtube }}
+    a(href!='https://www.youtube.com/channel/{{ . }}', title='Twitter', target='_blank')
+      span.tooltip
+        i.fab.fa-youtube
+    | {{ end }}
+    | {{ with .Site.Params.social.instagram }}
+    a(href!='https://www.instagram.com/{{ . }}/', title='Instagram', target='_blank')
+      span.tooltip
+        i.fab.fa-instagram
+    | {{ end }}
+    | {{ with .Site.Params.social.twitter }}
+    a(href!='https://www.twitter.com/{{ . }}', title='Twitter', target='_blank')
+      span.tooltip
+        i.fab.fa-twitter
+    | {{ end }}
+    | {{ with .Site.Params.social.linkedin }}
+    a(href!='https://www.linkedin.com/in/{{ . }}', title='Twitter', target='_blank')
+      span.tooltip
+        i.fab.fa-linkedin-in
+    | {{ end }}
+    | {{ with .Site.Params.social.github }}
+    a(href!='https://www.github.com/{{ . }}', title='GitHub', target='_blank')
+      span.tooltip
+        i.fab.fa-github
+    | {{ end }}
+    a(href!='{{ .Site.BaseURL }}index.xml', title='Get the RSS feed')
+      span.tooltip
+        i.fas.fa-rss
+    section
+      | © 
+      a(href!='{{ absURL "about"}}') {{ .Site.Params.author }}
+      | 2020 | All rights reserved
+    section
+      | Made with 
+      span.tooltip
+        i.fas.fa-heart
+      | + 
+      span.tooltip
+        i.fas.fa-mug-hot
+      | + 
+      a(href='http://gohugo.io/') Hugo
+script(type='text/javascript', src!='{{ absURL "scripts/main.min.js" }}')
+script(type='text/javascript').
+  $(".heading").fitText();

@@ -1,13 +1,21 @@
-<!DOCTYPE html>
-{{ partial "head.html" . }}
-<body>
-{{ `<!--[if lt IE 7]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chrome/‎">install Google Chrome</a> to experience this site.</p><![endif]-->` | safeHTML }}
-{{ partial "header.html" . }}
-<main class="content" role="main">
-    <div class="container">
-        {{ .Render "post" }}
-    </div>
-</main>
-{{ partial "footer.html" . }}
-</body>
-</html>
+doctype html
+html
+  head
+  body
+    | {{ partial "head.html" . }}
+    | {{ `
+    //if lt IE 7
+      p.browsehappy
+        | You are using an 
+        strong outdated
+        |  browser. Please 
+        a(href='http://browsehappy.com/') upgrade your browser
+        |  or 
+        a(href='http://www.google.com/chrome/‎') install Google Chrome
+        |  to experience this site.
+    | ` | safeHTML }}
+    | {{ partial "header.html" . }}
+    main.content(role='main')
+      .container
+        | {{ .Render "post" }}
+    | {{ partial "footer.html" . }}

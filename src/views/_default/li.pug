@@ -1,13 +1,8 @@
-<article class="li {{ .Type }}">
-    <header class="post-header">
-        <h3 class="post-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h3>
-        <p class="post-time">
-            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "January 2, 2006" }}</time>
-        </p>
-    </header> 
-    <section class="post-excerpt">
-        <p>{{ .Summary }}</p>
-    </section>
-</article>
+article.li.posts
+  header.post-header
+    h3.post-title
+      a(href='{{ .Permalink }}') {{ .Title }}
+    p.post-time
+      time(datetime!='{{ .Date.Format "2006-01-02t15:04:05z07:00" | safeHTML }}') {{ .Date.Format "January 2, 2006" }}
+  section.post-excerpt
+    p {{ .Summary }}
