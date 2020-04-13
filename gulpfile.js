@@ -32,12 +32,10 @@ var gm          = require('gulp-gm');
 
 // Views
 var pug         = require('gulp-pug');
-var htmlmin     = require('gulp-htmlmin');
 var sitemap     = require('gulp-sitemap');
 
 // Other
 var shell       = require('gulp-shell');
-var runSequence = require('run-sequence');
 var isWindows   = require('is-windows');
 var isOSX       = require('is-osx');
 
@@ -204,10 +202,7 @@ gulp.task('watch', function() {
 gulp.task('views', function(done) {
   gulp.src(paths.src.views.every)
   .pipe(plumber())
-  /*.pipe(pug({
-      pretty: false
-  }))*/
-  /*.pipe(htmlmin({collapseWhitespace: true}))*/
+  .pipe(pug())
   .pipe(rename({
     extname: '.html'
   }))
@@ -470,15 +465,7 @@ gulp.task('meta', function(done) {
 * PRODUCTION
 *******************************************************************************/
 gulp.task('production', function() {
-  gulp.start('min-html');
   gulp.start('sitemap');
-});
-
-gulp.task('min-html', function() {
-  return gulp.src(paths.site.views)
-  .pipe(plumber())
-  .pipe(htmlmin({collapseWhitespace: true}))
-  .pipe(gulp.dest(paths.site.base));
 });
 
 gulp.task('sitemap', function() {
