@@ -6,8 +6,11 @@ paginate: 5
 params:
   author: Giacomo Marciani
   description: Software Engineer @ Amazon Web Services
+  copyrightYear: 2020
+  keywords: [software, engineering, giacomo, marciani]
   google_analytics: UA-59215360-6
   social:
+    facebook: giacomo.marciani
     twitter: giacomomarciani
     linkedin: giacomomarciani
     youtube: UCOvMuigL8zTw2yMFoMUOfnQ
