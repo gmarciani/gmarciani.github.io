@@ -1,9 +1,9 @@
 doctype html
 html
-	| {{ partial "head.html" . }}
+	include partials/head.pug
 	body
-	| {{ partial "header.html" . }}
-	main.content(role="main")
-		div.container
-			| {{ partial "error" }}
-	| {{ partial "footer.html" . }}
+		include partials/header.pug
+		main.content(role='main')
+			div.container
+				include partials/error.pug
+		include partials/footer.pug

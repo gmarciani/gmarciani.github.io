@@ -1,10 +1,77 @@
+// BASE
 title {{ .Title }} · {{ .Site.Title }}
-link(rel='canonical', href='{{ .Site.BaseURL }}')
-link(rel='alternate', type='application/rss+xml', title='{{ .Site.Title }}', href!='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}')
-link(rel='icon', type='image/svg+xml', sizes='any', href!='{{ absURL "images/brand/favicon.svg" }}')
+link(rel='canonical' href='{{ .Site.BaseURL }}')
+link(rel='alternate' type='application/rss+xml' title='{{ .Site.Title }}' href!='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}')
+link(rel='icon' type='image/svg+xml' sizes='any' href!='{{ absURL "images/brand/favicon.svg" }}')
+
+// HTTP
+meta(charset='utf-8')
+meta(http-equiv='content-script-type' content='text/javascript')
+meta(http-equiv='content-style-type' content='text/css')
+meta(http-equiv='content-language' content='{{ .Site.LanguageCode }}')
+meta(http-equiv='date' content='{{ .Date }}')
+meta(http-equiv='window_target' content='_top')
+meta(http-equiv='X-UA-Compatible' content='IE=edge')
+meta(name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
+
+// SEO
+meta(name='application-name' content='{{ .Title }}')
+meta(name='author' content='{{ .Site.Params.Author }}')
+meta(name='description' content='{{ .Site.Params.Description }}')
+meta(name='keywords' content='{{ range $index, $element := $.Site.Params.Keywords }}{{ if gt $index 0 }}, {{ end }}{{ . | safeHTML }}{{ else }}{{ . | safeHTML }}{{ end }}')
+meta(name='copyright' content='{{ .Site.Params.Author }}, {{ .Site.Params.CopyrightYear }}, All Rights Reserved')
+meta(name='google' content='notranslate')
+meta(name='robots' content='noindex, nofollow')
+meta(name='revisit-after' content='7 days')
+
+// FACEBOOK
+meta(property='og:site_name' content='{{ .Site.Title }}')
+meta(property='fb:profile_id' content='{{ .Site.Params.Social.Facebook }}')
+meta(property='og:title' content='{{ .Site.Title }}')
+meta(property='og:description' content='{{ .Site.Params.Description }}')
+meta(property='og:image' content!='{{ absURL "images/brand/logo.png" }}')
+meta(property='og:url' content='{{ .Permalink }}')
+meta(property='og:locale' content='{{ .Site.LanguageCode }}')
+meta(property='og:type' content='article')
+meta(property='article:published_time' content!='{{ .Date.Format "2006-01-02t15:04:05z07:00" | safeHTML }}')
+meta(property='article:author' content='{{ .Site.Params.Author }}')
+meta(property='article:section' content='home')
+meta(property='article:tag' content='{{ range $index, $element := $.Site.Params.Keywords }}{{ if gt $index 0 }}, {{ end }}{{ . | safeHTML }}{{ else }}{{ . | safeHTML }}{{ end }}')
+
+// TWITTER
+meta(name='twitter:site' content='@{{ .Site.Params.Social.Twitter }}')
+meta(name='twitter:creator' content='@{{ .Site.Params.Social.Twitter }}')
+meta(name='twitter:card' content='summary_large_image')
+meta(name='twitter:title' content='{{ .Site.Title }}')
+meta(name='twitter:description' content='{{ .Site.Params.Description }}')
+meta(name='twitter:image' content!='{{ absURL "images/brand/logo.png" }}')
+
+// APPLE
+meta(name='apple-mobile-web-app-capable' content='yes')
+meta(name='apple-mobile-web-app-status-bar-style' content='black')
+link(rel='mask-icon'        type='image/svg+xml'    sizes='any'     href!='{{ absURL "images/brand/mask-icon.svg" }}' color='#000')
+link(rel='apple-touch-icon' type='image/png'        sizes='180x180' href!='{{ absURL "images/brand/apple-touch-icon-180.png" }}')
+link(rel='apple-touch-icon' type='image/png'        sizes='152x152' href!='{{ absURL "images/brand/apple-touch-icon-152.png" }}')
+link(rel='apple-touch-icon' type='image/png'        sizes='120x120' href!='{{ absURL "images/brand/apple-touch-icon-120.png" }}')
+link(rel='apple-touch-icon' type='image/png'        sizes='76x76'   href!='{{ absURL "images/brand/apple-touch-icon-76.png" }}')
+link(rel='apple-touch-icon' type='image/png'        sizes='57X57'   href!='{{ absURL "images/brand/apple-touch-icon-57.png" }}')
+link(rel='apple-touch-startup-image' type='image/png' sizes='320x480' href!='{{ absURL "images/brand/apple-touch-startup-image-320x480.png" }}')
+
+// GOOGLE
+link(rel='manifest' type='text/json' href='/.manifest.json')
+meta(name='mobile-web-app-capable' content='yes')
+
+// MICROSOFT
+meta(name='msapplication-config' type='text/xml' content='/.msconfig.xml')
+
+// STYLES
 link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css', type='text/css')
 link(rel='stylesheet', type='text/css', href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300|Montserrat:700')
 link(rel='stylesheet', type='text/css', href!='{{ absURL "styles/main.min.css" }}')
+
+// SCRIPTS
 script(src='https://kit.fontawesome.com/60b7ab0066.js', crossorigin='anonymous')
 script(src='//code.jquery.com/jquery-3.4.1.min.js')
+
+// Hugo Credits
 | {{ hugo.Generator }}

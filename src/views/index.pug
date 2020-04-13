@@ -1,13 +1,13 @@
 doctype html
 html
-    | {{ partial "head.html" . }}
-    body
-        | {{ partial "header.html" . }}
-        main.content(role="main")
-            div.container
-                | {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
-                | {{ range .Paginator.Pages }}
-                |     {{ .Render "li" }}
-                | {{ end }}
-                | {{ partial "pagination.html" . }}
-        | {{ partial "footer.html" . }}
+	include partials/head.pug
+	body
+		include partials/header.pug
+		main.content(role='main')
+			div.container
+				| {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+				| {{ range .Paginator.Pages }}
+				|     {{ .Render "li" }}
+				| {{ end }}
+				include partials/pagination.pug
+		include partials/footer.pug

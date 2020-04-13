@@ -1,5 +1,5 @@
 | {{ with .Site.Params.google_analytics }}
-script(async='', src='https://www.googletagmanager.com/gtag/js?id={{ . }}')
+script(async='' src='https://www.googletagmanager.com/gtag/js?id={{ . }}')
 script.
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}

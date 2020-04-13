@@ -1,21 +1,9 @@
 doctype html
 html
-  head
+  include ../partials/head.pug
   body
-    | {{ partial "head.html" . }}
-    | {{ `
-    //if lt IE 7
-      p.browsehappy
-        | You are using an 
-        strong outdated
-        |  browser. Please 
-        a(href='http://browsehappy.com/') upgrade your browser
-        |  or 
-        a(href='http://www.google.com/chrome/‎') install Google Chrome
-        |  to experience this site.
-    | ` | safeHTML }}
-    | {{ partial "header.html" . }}
+    include ../partials/header.pug
     main.content(role='main')
       .container
         | {{ .Render "page" }}
-    | {{ partial "footer.html" . }}
+    include ../partials/footer.pug
