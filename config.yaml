@@ -1,6 +1,7 @@
 title: gmarciani
 baseURL: https://gmarciani.s3.eu-west-1.amazonaws.com/
 languageCode: en-us
+paginate: 5
 
 params:
   author: Giacomo Marciani
