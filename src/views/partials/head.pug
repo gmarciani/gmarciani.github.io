@@ -15,7 +15,7 @@ meta(http-equiv='X-UA-Compatible' content='IE=edge')
 meta(name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
 
 // SEO
-meta(name='application-name' content='{{ .Title }}')
+meta(name='application-name' content='{{ .Site.Title }}')
 meta(name='author' content='{{ .Site.Params.Author }}')
 meta(name='description' content='{{ .Site.Params.Description }}')
 meta(name='keywords' content='{{ range $index, $element := $.Site.Params.Keywords }}{{ if gt $index 0 }}, {{ end }}{{ . | safeHTML }}{{ else }}{{ . | safeHTML }}{{ end }}')
