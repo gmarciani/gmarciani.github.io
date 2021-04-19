@@ -9,6 +9,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Relative link: [My Second Post]({{< ref "posts/my-second-post.md" >}})
 
+## Formulas
+
+$$\int_{a}^{b} x^2 dx$$
 
 ## Figures
 
