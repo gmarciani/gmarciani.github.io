@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Install packages
-        run: sudo apt-get install -y node hugo imagemagick
+        run: sudo apt-get install -y nodejs hugo imagemagick
 
 #      - name: Setup Hugo
 #        uses: peaceiris/actions-hugo@v2
