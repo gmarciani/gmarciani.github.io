@@ -147,9 +147,14 @@ var paths = {
       every   : 'layouts/**/*.html',
     },
 
-    resources     : {
+    resources : {
       base    : 'resources',
       every   : 'resources/**/*',
+    },
+
+    public    : {
+      base    : 'public',
+      every   : 'public/**/*',
     }
   },
 
@@ -167,6 +172,7 @@ gulp.task('clean', function(done) {
     paths.site.base,
     paths.site.views.base,
     paths.site.resources.base,
+    paths.site.public.base,
     paths.tmp.sass
   ]);
   done();
