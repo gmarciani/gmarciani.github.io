@@ -27,14 +27,8 @@ $$\int_{a}^{b} x^2 dx$$
 
 ## Vimeo
 
-{{< vimeo 70476512 >}}
-
 
 ## Instagram
-
-```
-{{< instagram B0S_BVlIeo0 hidecaption >}}
-```
 
 
 ## Twitter
