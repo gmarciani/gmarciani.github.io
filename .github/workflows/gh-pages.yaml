@@ -1,4 +1,4 @@
-name: github pages
+name: GitHub Pages
 
 on:
   push:
@@ -10,22 +10,22 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v2
         with:
           submodules: true
           fetch-depth: 0
 
-      - name: Install system packages
+      - name: Install System Packages
         run: sudo apt-get install -y nodejs hugo imagemagick
 
-      - name: Install node modules
+      - name: Install Node Modules
         run: npm install
 
-      - name: Build assets
+      - name: Build Assets
         run: gulp build
 
-      - name: Build public website
+      - name: Build Public Website
         run: hugo --minify
 
       - name: Deploy
