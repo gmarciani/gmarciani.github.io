@@ -32,7 +32,9 @@ $$\int_{a}^{b} x^2 dx$$
 
 ## Instagram
 
+```
 {{< instagram B0S_BVlIeo0 hidecaption >}}
+```
 
 
 ## Twitter
