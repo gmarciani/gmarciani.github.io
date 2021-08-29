@@ -1,5 +1,5 @@
 title: gmarciani
-baseURL: https://gmarciani.s3.eu-west-1.amazonaws.com/
+baseURL: https://gmarciani.github.io/
 languageCode: en-us
 paginate: 5
 ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
