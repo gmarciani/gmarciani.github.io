@@ -18,7 +18,7 @@ var rename      = require('gulp-rename');
 var del         = require('del');
 
 // Styles
-var sass        = require('gulp-sass');
+var sass        = require('gulp-sass')(require('sass'));
 var cleanCss    = require('gulp-clean-css');
 sass.compiler   = require('node-sass');
 
