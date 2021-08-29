@@ -15,19 +15,16 @@ jobs:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Install packages
+      - name: Install system packages
         run: sudo apt-get install -y nodejs hugo imagemagick
 
-#      - name: Setup Hugo
-#        uses: peaceiris/actions-hugo@v2
-#        with:
-#          hugo-version: 'latest'
-#          # extended: true
+      - name: Install node modules
+        run: npm install
 
-      - name: Build - Gulp
+      - name: Build assets
         run: gulp build
 
-      - name: Build - Hugo
+      - name: Build public website
         run: hugo --minify
 
       - name: Deploy
