@@ -6,7 +6,7 @@
                     'minFontSize' : Number.NEGATIVE_INFINITY,
                     'maxFontSize' : Number.POSITIVE_INFINITY
                   }, options);
-            
+
               return this.each(function(){
                 var $this = $(this);
                 var resizer = function () {
@@ -16,4 +16,4 @@
                 $(window).on('resize orientationchange', resizer);
               });
             };
-          })( jQuery ); 
+          })( jQuery );
