@@ -864,3 +864,6 @@ article {
     padding: 0.3em; }
   #site-footer #made-with .tooltip, #site-footer #made-with a {
     padding: 0.3em; }
+
+img.rounded {
+  border-radius: 50%; }
