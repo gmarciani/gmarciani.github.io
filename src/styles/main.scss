@@ -1108,7 +1108,39 @@ article {
   color: #333 !important;
 }
 
+.post-excerpt {
+  p {
+    text-align: justify;
+  }
+}
+
+.blog-menu {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #737373;
+  font-size: 85%;
+  .menu-item {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+  }
+}
+
 #site-footer {
   text-align: center;
   height: 10em;
+  #socials {
+    a {
+      padding: 0.3em;
+    }
+  }
+  #copyright {
+    a {
+      padding: 0.3em;
+    }
+  }
+  #made-with {
+    .tooltip, a {
+      padding: 0.3em;
+    }
+  }
 }

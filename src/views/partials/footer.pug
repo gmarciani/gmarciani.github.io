@@ -1,38 +1,39 @@
 footer#site-footer
   .container
-    | {{ with .Site.Params.Social.Youtube }}
-    a(href='https://www.youtube.com/channel/{{ . }}' title='YouTube' target='_blank')
-      span.tooltip
-        i.fab.fa-youtube
-    | {{ end }}
-    | {{ with .Site.Params.Social.Instagram }}
-    a(href='https://www.instagram.com/{{ . }}/' title='Instagram' target='_blank')
-      span.tooltip
-        i.fab.fa-instagram
-    | {{ end }}
-    | {{ with .Site.Params.Social.Twitter }}
-    a(href='https://www.twitter.com/{{ . }}' title='Twitter' target='_blank')
-      span.tooltip
-        i.fab.fa-twitter
-    | {{ end }}
-    | {{ with .Site.Params.Social.Linkedin }}
-    a(href='https://www.linkedin.com/in/{{ . }}' title='LinkedIn' target='_blank')
-      span.tooltip
-        i.fab.fa-linkedin-in
-    | {{ end }}
-    | {{ with .Site.Params.Social.Github }}
-    a(href='https://www.github.com/{{ . }}' title='GitHub' target='_blank')
-      span.tooltip
-        i.fab.fa-github
-    | {{ end }}
-    a(href='{{ .Site.BaseURL }}index.xml' title='Get the RSS feed')
-      span.tooltip
-        i.fas.fa-rss
-    section
+    section#socials
+      | {{ with .Site.Params.Social.Youtube }}
+      a(href='https://www.youtube.com/channel/{{ . }}' title='YouTube' target='_blank')
+        span.tooltip
+          i.fab.fa-youtube
+      | {{ end }}
+      | {{ with .Site.Params.Social.Instagram }}
+      a(href='https://www.instagram.com/{{ . }}/' title='Instagram' target='_blank')
+        span.tooltip
+          i.fab.fa-instagram
+      | {{ end }}
+      | {{ with .Site.Params.Social.Twitter }}
+      a(href='https://www.twitter.com/{{ . }}' title='Twitter' target='_blank')
+        span.tooltip
+          i.fab.fa-twitter
+      | {{ end }}
+      | {{ with .Site.Params.Social.Linkedin }}
+      a(href='https://www.linkedin.com/in/{{ . }}' title='LinkedIn' target='_blank')
+        span.tooltip
+          i.fab.fa-linkedin-in
+      | {{ end }}
+      | {{ with .Site.Params.Social.Github }}
+      a(href='https://www.github.com/{{ . }}' title='GitHub' target='_blank')
+        span.tooltip
+          i.fab.fa-github
+      | {{ end }}
+      a(href='{{ .Site.BaseURL }}index.xml' title='Get the RSS feed')
+        span.tooltip
+          i.fas.fa-rss
+    section#copyright
       | ©
       a(href!='{{ absURL "about"}}') {{ .Site.Params.Author }}
       | {{ .Site.Params.CopyrightYear }} | All rights reserved
-    section
+    section#made-with
       | Made with
       span.tooltip
         i.fas.fa-heart

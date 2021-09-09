@@ -4,7 +4,7 @@ header#site-header
       h1.blog-title.heading {{ .Site.Title }}
     p.blog-description {{ .Site.Params.description }}
     p.blog-description COMING SOON
-    p.blog-description
-      a(href!='{{ absURL "/" }}') Home
-      |  |
-      a(href!='{{ absURL "/about" }}') About
+    p.blog-menu
+      a(class='menu-item' href!='{{ absURL "/" }}') Home
+      ||
+      a(class='menu-item' href!='{{ absURL "/about" }}') About
