@@ -834,6 +834,24 @@ article {
 .m-page a {
   color: #333 !important; }
 
+.post-excerpt p {
+  text-align: justify; }
+
+.blog-menu {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #737373;
+  font-size: 85%; }
+  .blog-menu .menu-item {
+    padding-left: 0.3em;
+    padding-right: 0.3em; }
+
 #site-footer {
   text-align: center;
   height: 10em; }
+  #site-footer #socials a {
+    padding: 0.3em; }
+  #site-footer #copyright a {
+    padding: 0.3em; }
+  #site-footer #made-with .tooltip, #site-footer #made-with a {
+    padding: 0.3em; }
