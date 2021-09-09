@@ -834,6 +834,15 @@ article {
 .m-page a {
   color: #333 !important; }
 
+.short-text {
+  display: none; }
+
+@media (max-width: 1200px) {
+  .short-text {
+    display: inline-block; }
+  .full-text {
+    display: none; } }
+
 .post-excerpt p {
   text-align: justify; }
 
