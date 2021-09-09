@@ -2,7 +2,8 @@ header#site-header
   .container
     a(href='{{ .Site.BaseURL }}' alt='{{ .Site.Title }}')
       h1.blog-title.heading {{ .Site.Title }}
-    p.blog-description {{ .Site.Params.description }}
+    p.blog-description.full-text {{ .Site.Params.description }}
+    p.blog-description.short-text {{ .Site.Params.descriptionShort }}
     p.blog-description COMING SOON
     p.blog-menu
       a(class='menu-item' href!='{{ absURL "/" }}') Home

@@ -7,6 +7,7 @@ ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 params:
   author: Giacomo Marciani
   description: Software Engineer @ Amazon Web Services
+  descriptionShort: Software Engineer @ AWS
   copyrightYear: 2020
   keywords: [software, engineering, giacomo, marciani]
   google_analytics: UA-59215360-6
