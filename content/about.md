@@ -7,4 +7,11 @@ draft: false
 ---
 
 Hi, my name is Giacomo Marciani.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+I am a passionate software engineer with experience in Cloud Computing and High Performance Computing.
+More than anything else, what makes me a good engineer and a good leader is that I love building innovative software products with high standard architectures, code and devops in a challenging context.
+I put my proactivity and enthusiasm in every aspect of my daily job and I love to team up with people who want to solve complex technical challenges like me.
+
+I've always been looking for an international company that aims to lead technological innovation on a large scale, pursuing excellence with its products; while making me able to test, enhance and extend my personal qualities and technical knowledge.
+
+I found it in Amazon Web Services.
