@@ -1,7 +1,7 @@
 ---
-title: "My Second Post"
-description: "Insert here the description for post"
-date: 2020-04-02T00:36:01+02:00
+title: "How to make VSCode use a pyenv local environment"
+description: "In this post I'll sahre a dev pill on how to make VSCode use a pyenv local environment"
+date: 2022-03-11T08:00:000+01:00
 draft: true
 ---
 
