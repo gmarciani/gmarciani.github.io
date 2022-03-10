@@ -1,6 +1,6 @@
 # Gmarciani
 
-Personal blog at [gmarciani.com](https://gmarciani.com).
+Personal blog at [gmarciani.github.io](https://gmarciani.github.io).
 
 ## Requirements
 
