@@ -47,7 +47,7 @@
     "gulp-util": "^3.0.8",
     "is-osx": "^1.0.2",
     "is-windows": "^1.0.2",
-    "node-sass": "^7.0.0",
+    "node-sass": "^9.0.0",
     "npx": "^10.2.2",
     "os": "^0.1.2",
     "run-sequence": "^2.2.1",
