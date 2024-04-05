@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "description": "Personal blog",
   "keywords": "computer science",
-  "homepage": "http://gmarciani.com",
+  "homepage": "https://gmarciani.github.io",
   "bugs": {
-    "url": "https://github.com/gmarciani/website/issues",
+    "url": "https://github.com/gmarciani/gmarciani.github.io/issues",
     "email": "giacomo.marciani@gmail.com"
   },
   "license": "MIT",
   "author": {
     "name": "Giacomo Marciani",
     "email": "giacomo.marciani@gmail.com",
-    "url": "http://gmarciani.com"
+    "url": "https://gmarciani.github.io"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gmarciani/website"
+    "url": "https://github.com/gmarciani/gmarciani.github.io"
   },
   "engines": {
     "node": ">=4.5.0"
