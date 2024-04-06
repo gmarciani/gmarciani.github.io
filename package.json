@@ -23,7 +23,7 @@
   },
   "private": true,
   "devDependencies": {
-    "del": "^6.0.0",
+    "del": "^6.1.1",
     "gulp": "^5.0.0",
     "gulp-batch": "^1.0.5",
     "gulp-clean-css": "^4.3.0",
