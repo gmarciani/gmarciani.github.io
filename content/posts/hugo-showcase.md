@@ -49,3 +49,5 @@ public static void main(String[] args) {
 ```
 
 {{< gist gmarciani 33c45122d3f5b6b86711a05ab49b5a33 >}}
+
+{{< ghcode "https://raw.githubusercontent.com/gmarciani/yawa/mainline/docker-compose.yaml" >}}
