@@ -11,6 +11,7 @@
 var gulp        = require('gulp');
 var gutil       = require('gulp-util');
 var plumber     = require('gulp-plumber');
+var gulpIf       = require('gulp-if');
 
 // File Management
 var concat      = require('gulp-concat');
@@ -101,7 +102,7 @@ var paths = {
 
     views     : {
       base    : 'src/views',
-      every   : 'src/views/**/*.pug'
+      every   : 'src/views/**/*.{pug,html}'
     },
 
     meta     : {
@@ -206,9 +207,10 @@ gulp.task('watch', function() {
 * VIEWS
 *******************************************************************************/
 gulp.task('views', function(done) {
+  var isPugFile = function(file) { return file.extname === '.pug' };
   gulp.src(paths.src.views.every)
   .pipe(plumber())
-  .pipe(pug())
+  .pipe(gulpIf(isPugFile, pug()))
   .pipe(rename({
     extname: '.html'
   }))
