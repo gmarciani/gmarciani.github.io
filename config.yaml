@@ -3,6 +3,10 @@ baseURL: https://gmarciani.github.io/
 languageCode: en-us
 paginate: 5
 ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
+markup:
+  highlight:
+    style: manni # nord,manni
+    tabWidth: 4
 
 params:
   author: Giacomo Marciani
