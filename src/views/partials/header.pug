@@ -4,8 +4,15 @@ header#site-header
       h1.blog-title.heading {{ .Site.Title }}
     p.blog-description.full-text {{ .Site.Params.description }}
     p.blog-description.short-text {{ .Site.Params.descriptionShort }}
-    p.blog-description COMING SOON
     p.blog-menu
       a(class='menu-item' href!='{{ absURL "/" }}') Home
       ||
       a(class='menu-item' href!='{{ absURL "/about" }}') About
+      ||
+      | {{ with .Site.Params.Resume }}
+      a(class='menu-item' href="{{ . }}" target='_blank') Resume
+      | {{ end }}
+      ||
+      | {{ with .Site.Params.Social.Github }}
+      a(class='menu-item' href="https://github.com/{{ . }}" target='_blank') Projects
+      | {{ end }}
