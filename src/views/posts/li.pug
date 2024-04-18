@@ -2,7 +2,7 @@ article.li.posts
   header.post-header
     h3.post-title
       a(href='{{ .Permalink }}') {{ .Title }}
-    p.post-time
-      time(datetime!='{{ .Date.Format "2006-01-02t15:04:05z07:00" | safeHTML }}') {{ .Date.Format "January 2, 2006" }}
-  section.post-excerpt
-    p {{ .Summary }}
+//-     p.post-time
+//-       time(datetime!='{{ .Date.Format "2006-01-02t15:04:05z07:00" | safeHTML }}') {{ .Date.Format "January 2, 2006" }}
+//-   section.post-excerpt
+//-     p {{ .Summary }}
