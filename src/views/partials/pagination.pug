@@ -3,12 +3,12 @@ nav.pagination(role='pagination')
   | {{ if .Paginator.HasPrev }}
   a.newer-posts(href='{{.Paginator.Prev.URL}}')
     i.fa.fa-angle-double-left
-    |  Newer
+    |   
   | {{ end }}
   span.post-list-pagination-item.post-list-pagination-item-current Page {{.Paginator.PageNumber}} of {{.Paginator.TotalPages}}
   | {{ if .Paginator.HasNext }}
   a.older-posts(href='{{.Paginator.Next.URL}}')
-    | Older 
+    |   
     i.fa.fa-angle-double-right
   | {{ end }}
 | {{ end }}
