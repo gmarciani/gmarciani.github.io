@@ -28,7 +28,6 @@
     "gulp-batch": "^1.0.5",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
-    "gulp-gm": "0.0.9",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
     "gulp-image-resize": "^0.13.1",

@@ -29,7 +29,6 @@ var uglify      = require('gulp-uglify');
 // Images
 var svg2png     = require('gulp-svg2png');
 var imageResize = require('gulp-image-resize');
-var gm          = require('gulp-gm');
 
 // Views
 var pug         = require('gulp-pug');
@@ -44,7 +43,7 @@ var isOSX       = require('is-osx');
 * CONFIGURATIONS
 *******************************************************************************/
 var config = {
-  url: 'http://gmarciani.com',
+  url: 'https://gmarciani.github.io',
   images: {
     format: 'jpg',
     people: {
