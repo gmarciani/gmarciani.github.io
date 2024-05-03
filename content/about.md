@@ -6,12 +6,12 @@ type: "about"
 draft: false
 ---
 
-Hi, my name is Giacomo Marciani.
+Hi folks, I'm Giacomo Marciani, and I'm currently a Software Engineer at [Amazon Web Services](https://aws.amazon.com/).
+I come from [Rome](https://maps.app.goo.gl/wJRmKz7ZHA5sCB6w9), and I currently live in [Cagliari, Italy](https://maps.app.goo.gl/X6rbEdPpEeEEVaFJ6) with my wife and three wonderful kids.
 
-I am a passionate software engineer with experience in Cloud Computing and High Performance Computing.
-More than anything else, what makes me a good engineer and a good leader is that I love building innovative software products with high standard architectures, code and devops in a challenging context.
-I put my proactivity and enthusiasm in every aspect of my daily job and I love to team up with people who want to solve complex technical challenges like me.
+I am a full-cycle software engineer with 6+ years of experience in Cloud Computing and High Performance Computing. 
+I have an educational background in Software Engineering with a focus on Distributed Systems and Big Data.
 
-I've always been looking for an international company that aims to lead technological innovation on a large scale, pursuing excellence with its products; while making me able to test, enhance and extend my personal qualities and technical knowledge.
-
-I found it in Amazon Web Services.
+More than anything else, what makes me a good engineer and a good leader is that I deeply love my job. 
+It excites me to build innovative software products with high standards of efficiency, scalability, clean coding/architecturing and effective ops processes. 
+In my current role, I cover the product lifecycle end to end꞉ from the design, reviews and implementation, to security, devops and oncall.
