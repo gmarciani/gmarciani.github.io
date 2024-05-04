@@ -7,6 +7,10 @@ markup:
   highlight:
     style: manni # nord,manni
     tabWidth: 4
+  tableOfContents:
+    startLevel: 2
+    ordered: true
+    endLevel: 3
 
 params:
   author: Giacomo Marciani
