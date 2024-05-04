@@ -11,6 +11,9 @@ markup:
     startLevel: 2
     ordered: true
     endLevel: 3
+sitemap:
+  changeFreq: daily
+  filename: sitemap.xml
 
 params:
   author: Giacomo Marciani
