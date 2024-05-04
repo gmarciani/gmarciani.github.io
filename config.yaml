@@ -23,3 +23,10 @@ params:
     instagram: gmarciani
     github: gmarciani
   resume: https://drive.google.com/file/d/1OaY-SgRdnpoFySxSs_KIZ33kRZnSIfbR/view?usp=sharing
+  licenses:
+    siteDesign:
+      licenseName: MIT
+      licenseUrl: https://spdx.org/licenses/MIT.html
+    siteContent:
+      licenseName: CC-BY-NC-SA
+      licenseUrl: https://spdx.org/licenses/CC-BY-NC-SA-4.0.html

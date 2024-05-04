@@ -22,7 +22,11 @@ footer#site-footer
     section#copyright
       | ©
       a(href!='{{ absURL "about"}}') {{ .Site.Params.Author }}
-      | {{ .Site.Params.CopyrightYear }} | All rights reserved
+      | {{ .Site.Params.CopyrightYear }} | All rights reserved:
+      | theme license
+      a(href='{{ .Site.Params.Licenses.SiteDesign.LicenseUrl }}') {{ .Site.Params.Licenses.SiteDesign.LicenseName }}
+      |, content license
+      a(href='{{ .Site.Params.Licenses.SiteContent.LicenseUrl }}') {{ .Site.Params.Licenses.SiteContent.LicenseName }}
     section#made-with
       | Made with
       span.tooltip
