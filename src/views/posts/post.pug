@@ -8,13 +8,20 @@ article.posts
     section.f-1
       | {{ if isset .Params "author" }}
       section.author
-        p by {{ index .Params "author" }}
+        p by [{{ index .Params "author" }}]
       | {{ else if isset .Site.Params "author" }}
       section.author
-        p by {{ index .Site.Params "author" }}
+        p
+          |By  
+          a(href!='{{ absURL "about"}}') [{{ index .Site.Params "author" }}]
       | {{ end }}
       p.f-post-time
-        time(datetime!='{{ .Date.Format "2006-01-02t15:04:05z07:00" | safeHTML }}') {{ .Date.Format "January 2, 2006" }}
+        |Created  
+        time(datetime!='{{ .Date.Format "2006-01-02t15:04:05z07:00" | safeHTML }}') [{{ .Date.Format "Jan 2, 2006" }}]
+        | {{ if ne .Lastmod .Date }}
+        |, Updated  
+        time(datetime!='{{ .Lastmod.Format "2006-01-02t15:04:05z07:00" | safeHTML }}') [{{ .Lastmod.Format "Jan 2, 2006" }}]
+        | {{ end }}
     section.f-2
       section.share
         span
