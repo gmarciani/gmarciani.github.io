@@ -1,31 +1,21 @@
 footer#site-footer
   .container
     section#socials
-      | {{ with .Site.Params.Social.Github }}
-      a(href='https://www.github.com/{{ . }}' title='GitHub' target='_blank')
+      a(href='https://www.github.com/{{ .Site.Params.Social.Github }}' title='GitHub' target='_blank')
         span.tooltip
           i.fab.fa-github
-      | {{ end }}
-      | {{ with .Site.Params.Social.Twitter }}
-      a(href='https://www.twitter.com/{{ . }}' title='Twitter' target='_blank')
+      a(href='https://www.twitter.com/{{ .Site.Params.Social.Twitter }}' title='Twitter' target='_blank')
         span.tooltip
           i.fab.fa-twitter
-      | {{ end }}
-      | {{ with .Site.Params.Social.Linkedin }}
-      a(href='https://www.linkedin.com/in/{{ . }}' title='LinkedIn' target='_blank')
+      a(href='https://www.linkedin.com/in/{{ .Site.Params.Social.Linkedin }}' title='LinkedIn' target='_blank')
         span.tooltip
           i.fab.fa-linkedin-in
-      | {{ end }}
-      | {{ with .Site.Params.Social.Instagram }}
-      a(href='https://www.instagram.com/{{ . }}/' title='Instagram' target='_blank')
+      a(href='https://www.instagram.com/{{ .Site.Params.Social.Instagram }}/' title='Instagram' target='_blank')
         span.tooltip
           i.fab.fa-instagram
-      | {{ end }}
-      | {{ with .Site.Params.Social.Youtube }}
-      a(href='https://www.youtube.com/channel/{{ . }}' title='YouTube' target='_blank')
+      a(href='https://www.youtube.com/channel/{{ .Site.Params.Social.Youtube }}' title='YouTube' target='_blank')
         span.tooltip
           i.fab.fa-youtube
-      | {{ end }}
       a(href='{{ .Site.BaseURL }}index.xml' title='Get the RSS feed')
         span.tooltip
           i.fas.fa-rss
