@@ -15,6 +15,9 @@ sitemap:
   changeFreq: daily
   filename: sitemap.xml
 enableRobotsTXT: true
+services:
+  rss:
+    limit: -1
 
 params:
   author: Giacomo Marciani
