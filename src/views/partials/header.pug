@@ -9,6 +9,8 @@ header#site-header
       ||
       a(class='menu-item' href!='{{ absURL "/about" }}') About
       ||
+      a(class='menu-item' href!='{{ absURL "/tags" }}') Tags
+      ||
       a(class='menu-item' href="{{ .Site.Params.Resume }}" target='_blank') Resume
       ||
       a(class='menu-item' href="https://github.com/{{ .Site.Params.Social.Github }}" target='_blank') Projects
