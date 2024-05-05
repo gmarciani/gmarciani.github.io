@@ -18,6 +18,8 @@ enableRobotsTXT: true
 services:
   rss:
     limit: -1
+taxonomies:
+  tag: tags
 
 params:
   author: Giacomo Marciani
