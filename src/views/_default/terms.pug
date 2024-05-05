@@ -1,0 +1,14 @@
+doctype html
+html
+	include ../partials/head.pug
+	body
+		include ../partials/header.pug
+		main.content(role='main')
+			div.container
+				h3 {{ .Title }}
+				| {{ $data := .Data }}
+				| {{ range $key,$value := .Data.Terms.Alphabetical }}
+				a(href!='{{ absURL "tags" }}/{{ $value.Name }}') {{ $value.Name }} {{ $value.Count }}
+				br
+				| {{ end }}
+		include ../partials/footer.pug
