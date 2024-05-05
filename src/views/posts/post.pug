@@ -32,8 +32,11 @@ article.posts
             i.fab.fa-twitter
           a.icon-linkedin(href='https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}&title={{ .Title | htmlEscape }}&summary={{ .Summary | htmlEscape }}&source=LinkedIn' onclick='window.open(this.href, "linkedin-share", "width=490,height=530");return false;')
             i.fab.fa-linkedin-in
-      | {{ with .Params.tags }}
+      | {{ if gt .Params.tags 0 }}
       span.f-post-tags
         i.fa.fa-tag
-        | {{ delimit  . ", " }}
+        | {{ range sort .Params.tags }}
+        a(href!='{{ absURL "tags" }}/{{ . }}') {{ . }}
+        |  
+        | {{ end }}
       | {{ end }}
