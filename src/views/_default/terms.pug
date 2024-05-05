@@ -8,7 +8,7 @@ html
 				h3 {{ .Title }}
 				| {{ $data := .Data }}
 				| {{ range $key,$value := .Data.Terms.Alphabetical }}
-				a(href!='{{ absURL "tags" }}/{{ $value.Name }}') {{ $value.Name }} {{ $value.Count }}
+				a(href!='{{ absURL "tags" }}/{{ $value.Name }}') {{ $value.Name }} ({{ $value.Count }})
 				br
 				| {{ end }}
 		include ../partials/footer.pug
