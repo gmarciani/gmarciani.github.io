@@ -1,0 +1,20 @@
+doctype html
+html
+	include ../partials/head.pug
+	body
+		include ../partials/header.pug
+		main.content(role='main')
+			div.container
+				| {{ $posts := "" }}
+				| {{ if (eq .Kind "term") }}
+				h3 Tag: {{ .LinkTitle }}
+				| {{ $posts = .Data.Pages }}
+				| {{ else }}
+				| {{ $posts = .Site.RegularPages }}
+				| {{ end }}
+				| {{ $paginator := .Paginate ($posts) }}
+				| {{ range .Paginator.Pages }}
+				|     {{ .Render "li" }}
+				| {{ end }}
+				include ../partials/pagination.pug
+		include ../partials/footer.pug
