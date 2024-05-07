@@ -8,41 +8,41 @@
 *******************************************************************************/
 
 // Gulp
-var gulp        = require('gulp');
-var gutil       = require('gulp-util');
-var plumber     = require('gulp-plumber');
-var gulpIf       = require('gulp-if');
+const gulp        = require('gulp');
+const gutil       = require('gulp-util');
+const plumber     = require('gulp-plumber');
+const gulpIf       = require('gulp-if');
 
 // File Management
-var concat      = require('gulp-concat');
-var rename      = require('gulp-rename');
-var del         = require('del');
+const concat      = require('gulp-concat');
+const rename      = require('gulp-rename');
+const del         = require('del');
 
 // Styles
-var sass        = require('gulp-sass')(require('sass'));
-var cleanCss    = require('gulp-clean-css');
+const sass        = require('gulp-sass')(require('sass'));
+const cleanCss    = require('gulp-clean-css');
 sass.compiler   = require('node-sass');
 
 // Scripts
-var uglify      = require('gulp-uglify');
+const uglify      = require('gulp-uglify');
 
 // Images
-var svg2png     = require('gulp-svg2png');
-var imageResize = require('gulp-image-resize');
+const svg2png     = require('gulp-svg2png');
+const imageResize = require('gulp-image-resize');
 
 // Views
-var pug         = require('gulp-pug');
-var sitemap     = require('gulp-sitemap');
+const pug         = require('gulp-pug');
+const sitemap     = require('gulp-sitemap');
 
 // Other
-var shell       = require('gulp-shell');
-var isWindows   = require('is-windows');
-var isOSX       = require('is-osx');
+const shell       = require('gulp-shell');
+const isWindows   = require('is-windows');
+const isOSX       = require('is-osx');
 
 /*******************************************************************************
 * CONFIGURATIONS
 *******************************************************************************/
-var config = {
+const config = {
   url: 'https://gmarciani.github.io',
   images: {
     format: 'jpg',
@@ -56,7 +56,7 @@ var config = {
 * PATHS
 *******************************************************************************/
 
-var paths = {
+const paths = {
 
   base        : '.',
 
@@ -206,7 +206,7 @@ gulp.task('watch', function() {
 * VIEWS
 *******************************************************************************/
 gulp.task('views', function(done) {
-  var isPugFile = function(file) { return file.extname === '.pug' };
+  const isPugFile = function(file) { return file.extname === '.pug' };
   gulp.src(paths.src.views.every)
   .pipe(plumber())
   .pipe(gulpIf(isPugFile, pug()))
@@ -264,7 +264,7 @@ gulp.task('images', function(done) {
 });
 
 gulp.task('images-brand-logo', function(done) {
-  var logo = {name: 'logo', width: 500, height: 500};
+  const logo = {name: 'logo', width: 500, height: 500};
 
   gulp.src(paths.src.images.brand.logo)
   .pipe(gulp.dest(paths.site.images.brand))
@@ -285,7 +285,7 @@ gulp.task('images-brand-logo', function(done) {
 });
 
 gulp.task('images-brand-favicons', function(done) {
-  var icons = [
+  const icons = [
     {name: 'favicon-64', width: 64, height: 64},
     {name: 'favicon-48', width: 48, height: 48},
     {name: 'favicon-32', width: 32, height: 32},
@@ -293,7 +293,7 @@ gulp.task('images-brand-favicons', function(done) {
     {name: 'favicon-16', width: 16, height: 16}
   ];
 
-  var icosizes = [16, 24, 32, 48, 64];
+  const icosizes = [16, 24, 32, 48, 64];
 
   gulp.src(paths.src.images.brand.favicon)
   .pipe(plumber())
@@ -327,7 +327,7 @@ gulp.task('images-brand-favicons', function(done) {
 });
 
 gulp.task('images-brand-apple-icons', function(done) {
-  var icons = [
+  const icons = [
     {name: 'apple-touch-icon-180', width: 180, height: 180},
     {name: 'apple-touch-icon-152', width: 152, height: 152},
     {name: 'apple-touch-icon-120', width: 120, height: 120},
@@ -335,7 +335,7 @@ gulp.task('images-brand-apple-icons', function(done) {
     {name: 'apple-touch-icon-57', width: 57, height: 57}
   ];
 
-  var startups = [
+  const startups = [
     {name: 'apple-touch-startup-image-320x480', width: 320, height: 480}
   ];
 
@@ -380,7 +380,7 @@ gulp.task('images-brand-apple-icons', function(done) {
 });
 
 gulp.task('images-brand-google-icons', function(done) {
-  var icons = [
+  const icons = [
     {name: 'google-icon-192', width: 192, height: 192},
     {name: 'google-icon-144', width: 144, height: 144},
     {name: 'google-icon-96', width: 96, height: 96},
@@ -409,7 +409,7 @@ gulp.task('images-brand-google-icons', function(done) {
 });
 
 gulp.task('images-brand-microsoft-icons', function(done) {
-  var icons = [
+  const icons = [
     {name: 'microsoft-tile-image-large', width: 310, height: 310},
     {name: 'microsoft-tile-image-medium', width: 150, height: 150},
     {name: 'microsoft-tile-image-small', width: 70, height: 70}
