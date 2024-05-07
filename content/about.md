@@ -15,7 +15,7 @@ and [High Performance Computing](https://en.wikipedia.org/wiki/High-performance_
 I come from [Rome](https://maps.app.goo.gl/wJRmKz7ZHA5sCB6w9), 
 and I currently live in [Cagliari](https://maps.app.goo.gl/X6rbEdPpEeEEVaFJ6) with my wife and three wonderful kids.
 
-In my role, I cover the product lifecycle end to end꞉ from the design, reviews and implementation, to security, devops and oncall.
+In my role, I cover the product lifecycle end to end; from the design, reviews and implementation, to security, devops and oncall.
 I have an educational background in Software Engineering with a focus on Distributed Systems and Big Data.
 
 More than anything else, what makes me a good engineer and a good leader is that I deeply love my job. 
