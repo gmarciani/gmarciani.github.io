@@ -5,6 +5,6 @@ article.posts
     .container
       .row
         .col-sm-4
-          img.rounded(src='/images/posts/giacomo-marciani-about.png')
+          img.rounded(src='{{ .Params.Image }}')
         .col-sm-8
           | {{ .Content }}
