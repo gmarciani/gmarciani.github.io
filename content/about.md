@@ -16,7 +16,9 @@ I come from [Rome](https://maps.app.goo.gl/wJRmKz7ZHA5sCB6w9),
 and I currently live in [Cagliari](https://maps.app.goo.gl/X6rbEdPpEeEEVaFJ6) with my wife and three wonderful kids.
 
 In my role, I cover the product lifecycle end to end; from the design, reviews and implementation, to security, devops and oncall.
-I have an educational background in Software Engineering with a focus on Distributed Systems and Big Data.
+I have an educational background in [Software Engineering](https://en.wikipedia.org/wiki/Software_engineering) 
+with a focus on [Distributed Computing](https://en.wikipedia.org/wiki/Distributed_computing) 
+and [Big Data](https://en.wikipedia.org/wiki/Big_data).
 
 More than anything else, what makes me a good engineer and a good leader is that I deeply love my job. 
 It excites me to build innovative software products with high standards of efficiency, scalability, 
