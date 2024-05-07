@@ -266,7 +266,7 @@ gulp.task('images', function(done) {
 gulp.task('images-brand-logo', function(done) {
   const logo = {name: 'logo', width: 500, height: 500};
 
-  gulp.src(paths.src.images.brand.logo)
+  gulp.src(paths.src.images.brand.logo, {encoding: false})
   .pipe(gulp.dest(paths.site.images.brand))
   .pipe(plumber())
   .pipe(svg2png())
@@ -295,7 +295,7 @@ gulp.task('images-brand-favicons', function(done) {
 
   const icosizes = [16, 24, 32, 48, 64];
 
-  gulp.src(paths.src.images.brand.favicon)
+  gulp.src(paths.src.images.brand.favicon, {encoding: false})
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.images.brand));
 
@@ -308,7 +308,7 @@ gulp.task('images-brand-favicons', function(done) {
   ));
 
   icons.forEach(function(image) {
-    gulp.src(paths.src.images.brand.favicon)
+    gulp.src(paths.src.images.brand.favicon, {encoding: false})
     .pipe(plumber())
     .pipe(svg2png())
     .pipe(imageResize({
@@ -340,7 +340,7 @@ gulp.task('images-brand-apple-icons', function(done) {
   ];
 
   icons.forEach(function(image) {
-    gulp.src(paths.src.images.brand.icon)
+    gulp.src(paths.src.images.brand.icon, {encoding: false})
     .pipe(plumber())
     .pipe(svg2png())
     .pipe(imageResize({
@@ -357,7 +357,7 @@ gulp.task('images-brand-apple-icons', function(done) {
   });
 
   startups.forEach(function(image) {
-    gulp.src(paths.src.images.brand.startup)
+    gulp.src(paths.src.images.brand.startup, {encoding: false})
     .pipe(plumber())
     .pipe(svg2png())
     .pipe(imageResize({
@@ -390,7 +390,7 @@ gulp.task('images-brand-google-icons', function(done) {
   ];
 
   icons.forEach(function(image) {
-    gulp.src(paths.src.images.brand.icon)
+    gulp.src(paths.src.images.brand.icon, {encoding: false})
     .pipe(plumber())
     .pipe(svg2png())
     .pipe(imageResize({
@@ -416,7 +416,7 @@ gulp.task('images-brand-microsoft-icons', function(done) {
   ];
 
   icons.forEach(function(image) {
-    gulp.src(paths.src.images.brand.icon)
+    gulp.src(paths.src.images.brand.icon, {encoding: false})
     .pipe(plumber())
     .pipe(svg2png())
     .pipe(imageResize({
@@ -435,14 +435,14 @@ gulp.task('images-brand-microsoft-icons', function(done) {
 });
 
 gulp.task('images-brand-failover', function (done) {
-  gulp.src(paths.src.images.brand.failover)
+  gulp.src(paths.src.images.brand.failover, {encoding: false})
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.images.brand));
   done();
 });
 
 gulp.task('images-posts', function (done) {
-  gulp.src(paths.src.images.posts.every)
+  gulp.src(paths.src.images.posts.every, {encoding: false})
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.images.posts));
   done();
