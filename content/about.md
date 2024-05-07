@@ -1,13 +1,13 @@
 ---
 title: "About"
 description: "Hi folks, Giacomo Marciani here from gmarciani.com"
-image: /images/posts/giacomo-marciani-about.png
+image: /images/posts/giacomo-marciani-about.svg
 type: "about"
 draft: false
 ---
 
 Hi folks, I'm Giacomo Marciani, and I'm currently a Software Engineer at [Amazon Web Services](https://aws.amazon.com/).
-I come from [Rome](https://maps.app.goo.gl/wJRmKz7ZHA5sCB6w9), and I currently live in [Cagliari, Italy](https://maps.app.goo.gl/X6rbEdPpEeEEVaFJ6) with my wife and three wonderful kids.
+I come from [Rome](https://maps.app.goo.gl/wJRmKz7ZHA5sCB6w9), and I currently live in [Cagliari](https://maps.app.goo.gl/X6rbEdPpEeEEVaFJ6) with my wife and three wonderful kids.
 
 I am a full-cycle software engineer with 6+ years of experience in Cloud Computing and High Performance Computing. 
 I have an educational background in Software Engineering with a focus on Distributed Systems and Big Data.
