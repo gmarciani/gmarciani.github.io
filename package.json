@@ -18,9 +18,7 @@
     "type": "git",
     "url": "https://github.com/gmarciani/gmarciani.github.io"
   },
-  "engines": {
-    "node": ">=4.5.0"
-  },
+  "main": "gulpfile.js",
   "private": true,
   "devDependencies": {
     "del": "^6.1.1",
