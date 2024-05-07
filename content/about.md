@@ -1,7 +1,7 @@
 ---
 title: "About"
 description: "Hi folks, Giacomo Marciani here from gmarciani.com"
-image: /images/posts/giacomo-marciani-about.png
+image: /images/posts/giacomo-marciani-about.svg
 type: "about"
 draft: false
 ---
