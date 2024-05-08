@@ -1,13 +1,7 @@
-doctype html
-html
-	include partials/head.pug
-	body
-		include partials/header.pug
-		main.content(role='main')
-			div.container
-				| {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
-				| {{ range .Paginator.Pages }}
-				|     {{ .Render "li" }}
-				| {{ end }}
-				include partials/pagination.pug
-		include partials/footer.pug
+| {{ define "main" }}
+| {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+| {{ range .Paginator.Pages }}
+|     {{ .Render "li" }}
+| {{ end }}
+include partials/pagination.pug
+| {{ end }}

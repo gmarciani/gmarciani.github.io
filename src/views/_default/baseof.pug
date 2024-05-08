@@ -1,0 +1,11 @@
+doctype html
+html
+	include ../partials/head.pug
+	body
+		include ../partials/header.pug
+		main.content(role='main')
+			div.container
+				| {{ block "main" . }}
+				// HERE WILL BE RENDERED THE MAIN CONTENT
+				| {{ end }}
+		include ../partials/footer.pug

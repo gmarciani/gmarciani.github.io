@@ -1,9 +1,45 @@
-doctype html
-html
-	include ../partials/head.pug
-	body
-		include ../partials/header.pug
-		main.content(role='main')
-			.container
-				| {{ .Render "post" }}
-		include ../partials/footer.pug
+| {{ define "main" }}
+article.posts
+    header.post-header
+        h3.p-post-title {{ .Title }}
+    section.post-content
+        | {{ .Content }}
+    hr
+    footer.post-footer
+        section.f-1
+            | {{ if isset .Params "author" }}
+            section.author
+                p by [{{ index .Params "author" }}]
+            | {{ else if isset .Site.Params "author" }}
+            section.author
+                p
+                    |By  
+                    a(href!='{{ absURL "about"}}') [{{ index .Site.Params "author" }}]
+            | {{ end }}
+            p.f-post-time
+                |Created  
+                time(datetime!='{{ .Date.Format "2006-01-02t15:04:05z07:00" | safeHTML }}') [{{ .Date.Format "Jan 2, 2006" }}]
+                | {{ if ne .Lastmod .Date }}
+                |, Updated  
+                time(datetime!='{{ .Lastmod.Format "2006-01-02t15:04:05z07:00" | safeHTML }}') [{{ .Lastmod.Format "Jan 2, 2006" }}]
+                | {{ end }}
+        section.f-2
+            section.share
+                span
+                    | Share:
+                    a.icon-facebook(href='https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}' onclick='window.open(this.href, "facebook-share","width=580,height=296");return false;')
+                        i.fab.fa-facebook-f
+                    a.icon-twitter(href='https://twitter.com/share?text={{ .Title }}&url={{ .Permalink }}' onclick='window.open(this.href, "twitter-share", "width=550,height=235");return false;')
+                        i.fab.fa-twitter
+                    a.icon-linkedin(href='https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}&title={{ .Title | htmlEscape }}&summary={{ .Summary | htmlEscape }}&source=LinkedIn' onclick='window.open(this.href, "linkedin-share", "width=490,height=530");return false;')
+                        i.fab.fa-linkedin-in
+            | {{ if gt .Params.tags 0 }}
+            span.f-post-tags
+                i.fa.fa-tag
+                | {{ range sort .Params.tags }}
+                a(href!='{{ absURL "tags" }}/{{ . }}') {{ . }}
+                |  
+                | {{ end }}
+            | {{ end }}
+| {{ end }}
+
