@@ -29,6 +29,7 @@ const uglify      = require('gulp-uglify');
 // Images
 const svg2png     = require('gulp-svg2png');
 const imageResize = require('gulp-image-resize');
+const imagemin    = require('gulp-imagemin');
 
 // Views
 const pug         = require('gulp-pug');
@@ -442,8 +443,11 @@ gulp.task('images-brand-failover', function (done) {
 });
 
 gulp.task('images-posts', function (done) {
+  const isSvgFile = function(file) { return file.extname === '.svg' };
   gulp.src(paths.src.images.posts.every, {encoding: false})
   .pipe(plumber())
+  .pipe(gulpIf(isSvgFile, svg2png()))
+  .pipe(imagemin())
   .pipe(gulp.dest(paths.site.images.posts));
   done();
 });
