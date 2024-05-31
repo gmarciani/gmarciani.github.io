@@ -8,37 +8,38 @@
 *******************************************************************************/
 
 // Gulp
-const gulp        = require('gulp');
-const gutil       = require('gulp-util');
-const plumber     = require('gulp-plumber');
-const gulpIf       = require('gulp-if');
+import gulp        from 'gulp';
+import gutil       from 'gulp-util';
+import plumber     from 'gulp-plumber';
+import gulpIf       from 'gulp-if';
 
 // File Management
-const concat      = require('gulp-concat');
-const rename      = require('gulp-rename');
-const del         = require('del');
+import concat      from 'gulp-concat';
+import rename      from 'gulp-rename';
+import del         from 'del';
 
 // Styles
-const sass        = require('gulp-sass')(require('sass'));
-const cleanCss    = require('gulp-clean-css');
-sass.compiler   = require('node-sass');
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
+import cleanCss    from 'gulp-clean-css';
 
 // Scripts
-const uglify      = require('gulp-uglify');
+import uglify      from 'gulp-uglify';
 
 // Images
-const svg2png     = require('gulp-svg2png');
-const imageResize = require('gulp-image-resize');
-const imagemin    = require('gulp-imagemin');
+import svg2png     from 'gulp-svg2png';
+import imageResize from 'gulp-image-resize';
+import imagemin from 'gulp-imagemin';
 
 // Views
-const pug         = require('gulp-pug');
-const sitemap     = require('gulp-sitemap');
+import pug         from 'gulp-pug';
+import sitemap     from 'gulp-sitemap';
 
 // Other
-const shell       = require('gulp-shell');
-const isWindows   = require('is-windows');
-const isOSX       = require('is-osx');
+import shell       from 'gulp-shell';
+import isWindows   from 'is-windows';
+import isOSX       from 'is-osx';
 
 /*******************************************************************************
 * CONFIGURATIONS
@@ -303,7 +304,7 @@ gulp.task('images-brand-favicons', function(done) {
   gulp.src(paths.src.images.brand.favicon)
   .pipe(plumber())
   .pipe(shell(
-    'convert <%= file.path %> -define icon:auto-resize='
+    'mkdir -p ' + paths.site.images.brand + ' ; convert <%= file.path %> -define icon:auto-resize='
     + icosizes.join(',') + ' '
     + paths.site.images.brand + '/favicon.ico'
   ));
