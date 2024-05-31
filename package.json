@@ -22,7 +22,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "del": "^6.1.1",
+    "del": "^7.1.0",
     "gulp": "^5.0.0",
     "gulp-batch": "^1.0.5",
     "gulp-clean-css": "^4.3.0",
@@ -50,10 +50,10 @@
     "npx": "^10.2.2",
     "os": "^0.1.2",
     "run-sequence": "^2.2.1",
-    "sass": "^1.74.1"
+    "sass": "^1.77.4"
   },
   "dependencies": {
     "gulp-cli": "^3.0.0",
-    "npm-check-updates": "^16.14.18"
+    "npm-check-updates": "^16.14.20"
   }
 }

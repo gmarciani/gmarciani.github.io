@@ -16,7 +16,7 @@ import gulpIf       from 'gulp-if';
 // File Management
 import concat      from 'gulp-concat';
 import rename      from 'gulp-rename';
-import del         from 'del';
+import {deleteAsync} from 'del';
 
 // Styles
 import * as dartSass from 'sass';
@@ -170,7 +170,7 @@ const paths = {
 * CLEAN
 *******************************************************************************/
 gulp.task('clean', function(done) {
-  del([
+  deleteAsync([
     paths.site.base,
     paths.site.views.base,
     paths.site.resources.base,
