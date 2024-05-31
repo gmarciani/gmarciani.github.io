@@ -1,5 +1,7 @@
 # Gmarciani
 
+![GMARCIANI Logo](src/images/logo/gm-logo.svg)
+
 Personal blog at [gmarciani.github.io](https://gmarciani.github.io).
 
 ## Requirements
