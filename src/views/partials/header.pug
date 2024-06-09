@@ -5,9 +5,9 @@ header#site-header
     p.blog-description.full-text {{ .Site.Params.description }}
     p.blog-description.short-text {{ .Site.Params.descriptionShort }}
     p.blog-menu
-      a(class='menu-item' href!='{{ absURL "/" }}') Home
-      ||
       a(class='menu-item' href!='{{ absURL "/about" }}') About
+      ||
+      a(class='menu-item' href!='{{ absURL "/" }}') Posts
       ||
       a(class='menu-item' href!='{{ absURL "/tags" }}') Tags
       ||
