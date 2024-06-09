@@ -17,3 +17,6 @@ In my role, I cover the product lifecycle end to end; from the design, reviews a
 More than anything else, what makes me a good engineer and a good leader is that I love software and the people behind it.
 
 I'm using this website to blog about my learnings in software and leadership.
+
+You can check my [resume here](https://drive.google.com/file/d/1OaY-SgRdnpoFySxSs_KIZ33kRZnSIfbR/view?usp=sharing) 
+and [projects here](https://github.com/gmarciani).
