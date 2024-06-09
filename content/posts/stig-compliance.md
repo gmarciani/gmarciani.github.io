@@ -1,7 +1,7 @@
 ---
-title: "How to make VSCode use a pyenv local environment"
-description: "In this post I'll share a dev pill on how to make VSCode use a pyenv local environment"
-date: 2024-01-04
+title: "STIG compliance"
+description: "In this post I'll share how to avoid cfn-init pitfalls"
+date: 2024-01-14
 draft: true
 ---
 

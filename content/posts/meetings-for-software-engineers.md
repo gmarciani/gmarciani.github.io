@@ -1,7 +1,7 @@
 ---
-title: "How to make VSCode use a pyenv local environment"
-description: "In this post I'll share a dev pill on how to make VSCode use a pyenv local environment"
-date: 2024-01-04
+title: "Meetings for software engineer"
+description: "In this post I'll share how to manage meetings for software engineers"
+date: 2024-01-08
 draft: true
 ---
 
