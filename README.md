@@ -6,40 +6,49 @@ Personal blog at [gmarciani.github.io](https://gmarciani.github.io).
 
 ## Requirements
 
-```
-brew install hugo node imagemagick
+Install Node.js 24:
+
+```shell
+nvm install 24
 ```
 
+Install Hugo and ImageMagick:
+
+```shell
+brew install hugo imagemagick
 ```
+
+Install project dependencies:
+
+```shell
 npm install
 ```
 
-Check package updates
+Check updates for project dependencies:
 
-```
+```shell
 npx npm-check-updates -u
 ```
 
 ## Usage
 
-Build
+Build:
 
+```shell
+npm run build
 ```
-gulp build
+
+Serve the website:
+
+```shell
+npm run serve
 ```
 
-Watch
+Enable Gulp watching to live preview changes:
 
+````shell
+npm run watch
 ````
-gulp watch
-````
-
-
-Start a live preview
-
-```
-hugo server -D
-```
 
 ## License
 

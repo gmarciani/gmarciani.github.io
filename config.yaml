@@ -1,7 +1,8 @@
 title: gm
 baseURL: https://gmarciani.github.io/
 languageCode: en-us
-paginate: 20
+pagination:
+  pagerSize: 20
 ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 markup:
   highlight:

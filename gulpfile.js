@@ -9,9 +9,10 @@
 
 // Gulp
 import gulp        from 'gulp';
-import gutil       from 'gulp-util';
 import plumber     from 'gulp-plumber';
 import gulpIf       from 'gulp-if';
+import log         from 'fancy-log';
+import colors      from 'ansi-colors';
 
 // File Management
 import concat      from 'gulp-concat';
@@ -19,8 +20,8 @@ import rename      from 'gulp-rename';
 import {deleteAsync} from 'del';
 
 // Styles
-import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
+import * as dartSass from 'sass';
 const sass = gulpSass(dartSass);
 import cleanCss    from 'gulp-clean-css';
 
@@ -28,7 +29,6 @@ import cleanCss    from 'gulp-clean-css';
 import uglify      from 'gulp-uglify';
 
 // Images
-import svg2png     from 'gulp-svg2png';
 import imageResize from 'gulp-image-resize';
 import imagemin from 'gulp-imagemin';
 
@@ -241,7 +241,9 @@ gulp.task('scripts', function(done) {
 gulp.task('styles', function(done) {
   gulp.src(paths.src.styles.every)
   .pipe(plumber())
-  .pipe(sass().on('error', sass.logError))
+  .pipe(sass({
+    silenceDeprecations: ['legacy-js-api']
+  }).on('error', sass.logError))
   .pipe(gulp.dest(paths.site.styles.base))
   .pipe(cleanCss())
   .pipe(rename({
@@ -269,111 +271,34 @@ gulp.task('images-brand-logo', function(done) {
   const logo = {name: 'logo', width: 500, height: 500};
 
   gulp.src(paths.src.images.brand.logo, {encoding: false})
-  .pipe(gulp.dest(paths.site.images.brand))
-  .pipe(plumber())
-  .pipe(svg2png())
-  .pipe(imageResize({
-    width: logo.width,
-    height: logo.height,
-    crop: false,
-    upscale: false,
-    imageMagick: true
-  }))
-  .pipe(rename({
-    basename: logo.name
-  }))
   .pipe(gulp.dest(paths.site.images.brand));
   done();
 });
 
 gulp.task('images-brand-favicons', function(done) {
-  const icons = [
-    {name: 'favicon-64', width: 64, height: 64},
-    {name: 'favicon-48', width: 48, height: 48},
-    {name: 'favicon-32', width: 32, height: 32},
-    {name: 'favicon-24', width: 24, height: 24},
-    {name: 'favicon-16', width: 16, height: 16}
-  ];
-
-  const icosizes = [16, 24, 32, 48, 64];
-
   gulp.src(paths.src.images.brand.favicon, {encoding: false})
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.images.brand));
 
+  const icosizes = [16, 24, 32, 48, 64];
   gulp.src(paths.src.images.brand.favicon)
   .pipe(plumber())
   .pipe(shell(
-    'mkdir -p ' + paths.site.images.brand + ' ; convert <%= file.path %> -define icon:auto-resize='
+    'mkdir -p ' + paths.site.images.brand + ' ; magick <%= file.path %> -define icon:auto-resize='
     + icosizes.join(',') + ' '
     + paths.site.images.brand + '/favicon.ico'
   ));
-
-  icons.forEach(function(image) {
-    gulp.src(paths.src.images.brand.favicon, {encoding: false})
-    .pipe(plumber())
-    .pipe(svg2png())
-    .pipe(imageResize({
-      width: image.width,
-      height: image.height,
-      crop: false,
-      upscale: false,
-      imageMagick: true
-    }))
-    .pipe(rename({
-      basename: image.name
-    }))
-    .pipe(gulp.dest(paths.site.images.brand));
-  });
   done();
 });
 
 gulp.task('images-brand-apple-icons', function(done) {
-  const icons = [
-    {name: 'apple-touch-icon-180', width: 180, height: 180},
-    {name: 'apple-touch-icon-152', width: 152, height: 152},
-    {name: 'apple-touch-icon-120', width: 120, height: 120},
-    {name: 'apple-touch-icon-76', width: 76, height: 76},
-    {name: 'apple-touch-icon-57', width: 57, height: 57}
-  ];
+  gulp.src(paths.src.images.brand.icon, {encoding: false})
+  .pipe(plumber())
+  .pipe(gulp.dest(paths.site.images.brand));
 
-  const startups = [
-    {name: 'apple-touch-startup-image-320x480', width: 320, height: 480}
-  ];
-
-  icons.forEach(function(image) {
-    gulp.src(paths.src.images.brand.icon, {encoding: false})
-    .pipe(plumber())
-    .pipe(svg2png())
-    .pipe(imageResize({
-      width: image.width,
-      height: image.height,
-      crop: false,
-      upscale: false,
-      imageMagick: true
-    }))
-    .pipe(rename({
-      basename: image.name
-    }))
-    .pipe(gulp.dest(paths.site.images.brand));
-  });
-
-  startups.forEach(function(image) {
-    gulp.src(paths.src.images.brand.startup, {encoding: false})
-    .pipe(plumber())
-    .pipe(svg2png())
-    .pipe(imageResize({
-      width: image.width,
-      height: image.height,
-      crop: false,
-      upscale: false,
-      imageMagick: true
-    }))
-    .pipe(rename({
-      basename: image.name
-    }))
-    .pipe(gulp.dest(paths.site.images.brand));
-  });
+  gulp.src(paths.src.images.brand.startup, {encoding: false})
+  .pipe(plumber())
+  .pipe(gulp.dest(paths.site.images.brand));
 
   gulp.src(paths.src.images.brand.mask)
   .pipe(plumber())
@@ -382,57 +307,16 @@ gulp.task('images-brand-apple-icons', function(done) {
 });
 
 gulp.task('images-brand-google-icons', function(done) {
-  const icons = [
-    {name: 'google-icon-192', width: 192, height: 192},
-    {name: 'google-icon-144', width: 144, height: 144},
-    {name: 'google-icon-96', width: 96, height: 96},
-    {name: 'google-icon-72', width: 72, height: 72},
-    {name: 'google-icon-48', width: 48, height: 48},
-    {name: 'google-icon-36', width: 36, height: 36}
-  ];
-
-  icons.forEach(function(image) {
-    gulp.src(paths.src.images.brand.icon, {encoding: false})
-    .pipe(plumber())
-    .pipe(svg2png())
-    .pipe(imageResize({
-      width: image.width,
-      height: image.height,
-      crop: false,
-      upscale: false,
-      imageMagick: true
-    }))
-    .pipe(rename({
-      basename: image.name
-    }))
-    .pipe(gulp.dest(paths.site.images.brand));
-  });
+  gulp.src(paths.src.images.brand.icon, {encoding: false})
+  .pipe(plumber())
+  .pipe(gulp.dest(paths.site.images.brand));
   done();
 });
 
 gulp.task('images-brand-microsoft-icons', function(done) {
-  const icons = [
-    {name: 'microsoft-tile-image-large', width: 310, height: 310},
-    {name: 'microsoft-tile-image-medium', width: 150, height: 150},
-    {name: 'microsoft-tile-image-small', width: 70, height: 70}
-  ];
-
-  icons.forEach(function(image) {
-    gulp.src(paths.src.images.brand.icon, {encoding: false})
-    .pipe(plumber())
-    .pipe(svg2png())
-    .pipe(imageResize({
-      width: image.width,
-      height: image.height,
-      crop: false,
-      upscale: false,
-      imageMagick: true
-    }))
-    .pipe(rename({
-      basename: image.name
-    }))
-    .pipe(gulp.dest(paths.site.images.brand));
-  });
+  gulp.src(paths.src.images.brand.icon, {encoding: false})
+  .pipe(plumber())
+  .pipe(gulp.dest(paths.site.images.brand));
   done();
 });
 
@@ -444,10 +328,8 @@ gulp.task('images-brand-failover', function (done) {
 });
 
 gulp.task('images-posts', function (done) {
-  const isSvgFile = function(file) { return file.extname === '.svg' };
   gulp.src(paths.src.images.posts.every, {encoding: false})
   .pipe(plumber())
-  .pipe(gulpIf(isSvgFile, svg2png()))
   .pipe(imagemin())
   .pipe(gulp.dest(paths.site.images.posts));
   done();
@@ -493,10 +375,10 @@ gulp.task('sitemap', function() {
 * UTILS
 *******************************************************************************/
 function message(scope, command, argument) {
-  gutil.log(
-    gutil.colors.cyan(scope), ':',
-    gutil.colors.blue(command), ':',
-    gutil.colors.yellow(argument)
+  log(
+    colors.cyan(scope), ':',
+    colors.blue(command), ':',
+    colors.yellow(argument)
   );
 }
 
