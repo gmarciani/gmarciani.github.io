@@ -9,7 +9,7 @@ draft: false
 Hey there, I'm [Giacomo Marciani]({{< ref "about.md" >}})!
 
 I'm a full-cycle Software Engineer at [Amazon Web Services](https://aws.amazon.com/) 
-with 6+ years of experience in [Cloud Computing](https://it.wikipedia.org/wiki/Cloud_computing) 
+with 8 years of experience in [Cloud Computing](https://it.wikipedia.org/wiki/Cloud_computing) 
 and [High Performance Computing](https://en.wikipedia.org/wiki/High-performance_computing).
 
 In my role, I cover the product lifecycle end to end; from the design, reviews and implementation, to security, devops and oncall.
