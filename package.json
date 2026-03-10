@@ -52,10 +52,10 @@
     "gulp-uglify": "^3.0.2",
     "is-osx": "^1.0.2",
     "is-windows": "^1.0.2",
-    "sass": "^1.97.1"
+    "sass": "^1.97.3"
   },
   "dependencies": {
     "gulp-cli": "^3.1.0",
-    "npm-check-updates": "^19.2.0"
+    "npm-check-updates": "^19.6.3"
   }
 }
