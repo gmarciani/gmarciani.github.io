@@ -13,9 +13,9 @@ footer#site-footer
       a(href='https://www.instagram.com/{{ .Site.Params.Social.Instagram }}/' title='Instagram' target='_blank')
         span.tooltip
           i.fab.fa-instagram
-      a(href='https://www.youtube.com/channel/{{ .Site.Params.Social.Youtube }}' title='YouTube' target='_blank')
-        span.tooltip
-          i.fab.fa-youtube
+      //- a(href='https://www.youtube.com/channel/{{ .Site.Params.Social.Youtube }}' title='YouTube' target='_blank')
+      //-   span.tooltip
+      //-     i.fab.fa-youtube
       a(href='{{ .Site.BaseURL }}index.xml' title='Get the RSS feed')
         span.tooltip
           i.fas.fa-rss
@@ -25,7 +25,7 @@ footer#site-footer
       | {{ .Site.Params.CopyrightYear }} | All rights reserved:
       | theme license
       a(href='{{ .Site.Params.Licenses.SiteDesign.LicenseUrl }}') {{ .Site.Params.Licenses.SiteDesign.LicenseName }}
-      |, content license
+      | content license
       a(href='{{ .Site.Params.Licenses.SiteContent.LicenseUrl }}') {{ .Site.Params.Licenses.SiteContent.LicenseName }}
     section#made-with
       | Made with

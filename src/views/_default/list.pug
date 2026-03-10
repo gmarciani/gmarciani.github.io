@@ -1,7 +1,7 @@
 | {{ define "main" }}
 | {{ $posts := "" }}
 | {{ if (eq .Kind "term") }}
-h3 Tag: {{ .LinkTitle }}
+h3 {{ .Title }}
 | {{ $posts = .Data.Pages }}
 | {{ else }}
 | {{ $posts = .Site.RegularPages }}
