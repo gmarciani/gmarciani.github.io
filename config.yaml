@@ -3,7 +3,6 @@ baseURL: https://gmarciani.github.io/
 languageCode: en-us
 pagination:
   pagerSize: 20
-ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 markup:
   highlight:
     style: manni # nord,manni
@@ -20,20 +19,20 @@ services:
   rss:
     limit: -1
 taxonomies:
-  tag: tags
+  category: categories
 
 params:
   author: Giacomo Marciani
   description: Software Engineer @ Amazon Web Services
   descriptionShort: Software Engineer @ AWS
-  copyrightYear: 2021
+  copyrightYear: 2026
   keywords: [software, engineering, giacomo, marciani]
   google_analytics: G-FHL6LX6X9S
   social:
     facebook: giacomo.marciani
     twitter: giacomomarciani
     linkedin: giacomomarciani
-    youtube: UCOvMuigL8zTw2yMFoMUOfnQ
+    # youtube: UCOvMuigL8zTw2yMFoMUOfnQ
     instagram: gmarciani
     github: gmarciani
   resume: https://drive.google.com/file/d/1OaY-SgRdnpoFySxSs_KIZ33kRZnSIfbR/view?usp=sharing
