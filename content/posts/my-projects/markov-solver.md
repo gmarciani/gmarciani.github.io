@@ -1,7 +1,7 @@
 ---
-title: "Versioning schemas"
+title: "ParallelCluster Configurations"
 description: "In this post I'll share how to avoid cfn-init pitfalls"
-date: 2024-01-17
+date: 2024-01-11
 draft: true
 ---
 

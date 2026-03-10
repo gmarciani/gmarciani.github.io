@@ -1,7 +1,7 @@
 ---
-title: "Initializing MySQL database in Docker"
+title: "ParallelCluster Configurations"
 description: "In this post I'll share how to avoid cfn-init pitfalls"
-date: 2024-01-06
+date: 2024-01-11
 draft: true
 ---
 
