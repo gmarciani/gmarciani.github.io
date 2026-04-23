@@ -55,11 +55,8 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: Install Node Modules
-        run: npm install
-
       - name: Build Assets
-        run: npm run build
+        run: make build
 
       - name: Setup Pages
         id: pages
@@ -71,7 +68,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
           BASE_URL: ${{ steps.pages.outputs.base_url }}/
-        run: npm run prod
+        run: make prod
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
