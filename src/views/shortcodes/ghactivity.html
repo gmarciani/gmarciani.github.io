@@ -1,0 +1,7 @@
+{{ $username := .Get "username" }}
+<div class="github-activity">
+  <h3>Coding Activity</h3>
+  <a href="https://github.com/{{ $username }}" target="_blank" rel="noopener">
+    <img src="https://ghchart.rshah.org/2C556B/{{ $username }}" alt="{{ $username }}'s GitHub contribution chart" style="width:100%;max-width:720px;" />
+  </a>
+</div>
