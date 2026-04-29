@@ -223,7 +223,8 @@ gulp.task('views', function(done) {
 * SCRIPTS
 *******************************************************************************/
 gulp.task('scripts', function(done) {
-  gulp.src(paths.src.scripts.every)
+  // Theme script is loaded separately in <head> to prevent flash
+  gulp.src(paths.src.scripts.every, { ignore: ['**/theme.js'] })
   .pipe(plumber())
   .pipe(concat('main.js'))
   .pipe(gulp.dest(paths.site.scripts.base))
@@ -232,6 +233,13 @@ gulp.task('scripts', function(done) {
       suffix: '.min'
   }))
   .pipe(gulp.dest(paths.site.scripts.base));
+
+  // Copy theme script separately
+  gulp.src('src/scripts/theme.js')
+  .pipe(plumber())
+  .pipe(uglify())
+  .pipe(gulp.dest(paths.site.scripts.base));
+
   done();
 });
 
