@@ -38,3 +38,35 @@
 - Post front matter fields: `title`, `description`, `date` (YYYY-MM-DD), `draft` (boolean), and optionally `image`.
 - Hugo cross-references use `{{< ref "path.md" >}}` shortcode syntax.
 - New posts default to `draft: true` (see `archetypes/default.md`).
+
+## Post Types
+
+### Standard posts
+Long-form technical articles. The default type for all categories.
+
+### Quoting posts
+Short posts that highlight a quote from an external source. Live in `content/posts/quoting/`.
+
+A quoting post belongs to the category of its topic, not to a "quoting" category. For example, a quote about AI goes in `content/posts/ai/`, a quote about HPC goes in `content/posts/hpc/`, etc.
+
+When the user provides a source URL and asks to quote it, create a quoting post with this structure:
+
+- **Title**: `"Quoting {author} on {topic}"`
+- **Slug**: `quoting-{author}-on-{topic}.md` (lowercase, hyphenated)
+- **Location**: `content/posts/{category}/` matching the topic
+- **Front matter**: `title`, `date`, `draft: false`
+- **Body**: the quote as a Markdown blockquote (`>`), followed by an attribution line: `— {author}, [{source title}]({source URL})`
+
+Example:
+
+```markdown
+---
+title: "Quoting antirez on AI"
+date: 2026-04-27
+draft: false
+---
+
+> Quoted text here.
+
+— antirez, [Don't fall into the anti-AI hype](http://antirez.com/news/153)
+```
