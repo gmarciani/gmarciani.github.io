@@ -43,3 +43,6 @@ nvm use
 ## Hosting
 - GitHub Pages, deployed from `public/` directory
 - Base URL: `https://gmarciani.github.io/`
+
+## After Making Changes
+After any change to source files (`src/`, `content/`, `gulpfile.js`, `config.yaml`), always run `make build` to compile the assets.
