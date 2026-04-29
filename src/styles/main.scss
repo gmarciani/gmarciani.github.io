@@ -959,8 +959,25 @@ article {
   text-align: center;
 }
 
-.post-title {
-  margin-bottom: 30px;
+.li.posts .post-header {
+  text-align: left;
+}
+
+.li.posts .post-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 300;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+}
+
+.post-date {
+  font-size: 60%;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  white-space: nowrap;
+  margin-left: 1em;
 }
 
 .post-time {

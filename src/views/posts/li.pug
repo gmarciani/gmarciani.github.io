@@ -2,3 +2,4 @@ article.li.posts
   header.post-header
     h3.post-title
       a(href='{{ .Permalink }}') {{ .Title }}
+      span.post-date {{ .Date.Format "01.02.2006" }}
