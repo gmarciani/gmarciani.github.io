@@ -1009,6 +1009,18 @@ article {
 
 .post-content {
   text-align: justify;
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1.05rem;
+  }
 }
 
 .post-content a, #site-footer a {
@@ -1029,6 +1041,7 @@ article {
 
 .p-post-title {
   margin-bottom: 50px;
+  font-size: 2.2rem;
   a {
     text-decoration: underline;
   }
