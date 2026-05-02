@@ -1,13 +1,13 @@
 ---
 title: "About"
-description: "Giacomo Marciani — Software Engineer, HPC nerd, and occasional writer."
+description: "Giacomo Marciani — Sr Software Engineer, HPC nerd."
 image: /images/posts/giacomo-marciani-profile-picture.png
 type: "about"
 draft: false
 ---
 
 Hi folks, my name is [Giacomo Marciani]({{< ref "about.md" >}}).
-I am a Software Engineer at [Amazon Web Services](https://aws.amazon.com/) with 8+ years of experience in [High Performance Computing](https://en.wikipedia.org/wiki/High-performance_computing). Currently, I work on [AWS ParallelCluster](https://github.com/aws/aws-parallelcluster), a very cool open source project to deploy HPC clusters on AWS.
+I am a Sr Software Engineer at [Amazon Web Services](https://aws.amazon.com/) with 8+ years of experience in [High Performance Computing](https://en.wikipedia.org/wiki/High-performance_computing). Currently, I work on [AWS ParallelCluster](https://github.com/aws/aws-parallelcluster), a very cool open source project to deploy HPC clusters on AWS.
 
 I have been passionate about computers since I was a little kid. I remember precisely when it started. I was 6 years old, spending a lot of time observing my grandpa doing magic things with a black terminal. One day, he explained to me how the internet works with a simple sketch on a napkin. Everything started that afternoon.
 
