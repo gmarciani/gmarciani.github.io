@@ -19,4 +19,4 @@ This blog is where I write about the things I care about — HPC architecture, d
 
 {{< ghactivity username="gmarciani" >}}
 
-[Resume](https://drive.google.com/file/d/1OaY-SgRdnpoFySxSs_KIZ33kRZnSIfbR/view?usp=sharing) · [GitHub](https://github.com/gmarciani) · [LinkedIn](https://www.linkedin.com/in/giacomomarciani)
+[Resume](https://gmarciani.github.io/resume/resume.pdf) · [GitHub](https://github.com/gmarciani) · [LinkedIn](https://www.linkedin.com/in/giacomomarciani)
