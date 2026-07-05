@@ -50,7 +50,3 @@ Production build:
 ```shell
 make prod
 ```
-
-## License
-
-[MIT License](https://opensource.org/licenses/MIT)
