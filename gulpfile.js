@@ -103,7 +103,7 @@ const paths = {
 
     views     : {
       base    : 'src/views',
-      every   : 'src/views/**/*.{pug,html}'
+      every   : 'src/views/**/*.{pug,html,txt}'
     },
 
     meta     : {
@@ -185,6 +185,7 @@ gulp.task('clean', function(done) {
 *******************************************************************************/
 gulp.task('build', function(done) {
   gulp.series(
+    'og-base',
     'views',
     'fonts',
     'images',
@@ -193,6 +194,13 @@ gulp.task('build', function(done) {
     'meta'
   )(done);
 });
+
+/*******************************************************************************
+* OG BASE IMAGE (branded 1200x630 canvas for social share images)
+*******************************************************************************/
+// Regenerates assets/og/og-base.png. Hugo overlays each page's title on top of
+// this canvas at build time via images.Text (see partials/seo/meta.html).
+gulp.task('og-base', shell.task('node scripts/gen-og-base.mjs'));
 
 /*******************************************************************************
 * WATCH
@@ -208,13 +216,18 @@ gulp.task('watch', function() {
 * VIEWS
 *******************************************************************************/
 gulp.task('views', function(done) {
-  const isPugFile = function(file) { return file.extname === '.pug' };
-  gulp.src(paths.src.views.every)
+  // Pug templates → compiled HTML layouts.
+  gulp.src('src/views/**/*.pug')
   .pipe(plumber())
-  .pipe(gulpIf(isPugFile, pug()))
+  .pipe(pug())
   .pipe(rename({
     extname: '.html'
   }))
+  .pipe(gulp.dest(paths.site.views.base));
+
+  // Raw Hugo templates passed through verbatim (.html partials, .txt outputs).
+  gulp.src('src/views/**/*.{html,txt}')
+  .pipe(plumber())
   .pipe(gulp.dest(paths.site.views.base));
   done();
 });
@@ -357,7 +370,8 @@ gulp.task('fonts', function(done) {
 * META
 *******************************************************************************/
 gulp.task('meta', function(done) {
-  gulp.src(paths.src.meta.every)
+  // dot: true so dotfiles (.manifest.json, .msconfig.xml) are also published.
+  gulp.src(paths.src.meta.every, { dot: true })
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.base));
   done();
