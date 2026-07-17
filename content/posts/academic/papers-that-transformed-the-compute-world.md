@@ -1,10 +1,8 @@
 ---
 title: "Papers that transformed the computer world"
-description: "In this post I'll share how to avoid cfn-init pitfalls"
+description: "A tour of the papers that reshaped how we build software — MapReduce, Dynamo, Raft, GFS, the transformer — and what each one actually changed in practice."
 date: 2024-01-10
 draft: true
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Relative link: [Hugo Showcase]({{< ref "posts/hugo-showcase.md" >}})
+Every system we take for granted started as a paper someone had to argue for. MapReduce, Dynamo, Raft, the Google File System, the transformer — a handful of publications reshaped how the entire industry builds software, and reading them is still the fastest way to understand why our systems look the way they do. This is a tour of the papers that transformed computing, and what each one actually changed.
