@@ -2,6 +2,8 @@
 
 ![GMARCIANI Logo](src/images/logo/gm-logo.svg)
 
+[![CI/CD](https://github.com/gmarciani/gmarciani.github.io/actions/workflows/cicd.yaml/badge.svg)](https://github.com/gmarciani/gmarciani.github.io/actions/workflows/cicd.yaml)
+
 Personal blog at [gmarciani.github.io](https://gmarciani.github.io).
 
 ## Requirements
