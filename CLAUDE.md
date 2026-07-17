@@ -60,7 +60,7 @@ Detailed content-authoring guidance — post structure, quoting posts, and the b
 
 ## Deployment
 
-GitHub Actions (`.github/workflows/deploy.yaml`) deploys to GitHub Pages on push to `main`: installs Hugo extended + Node + ImageMagick + Dart Sass, runs `make build` then `make prod`, and publishes `public/`. Base URL comes from the `BASE_URL` env var (defaults to `https://gmarciani.github.io/`).
+GitHub Actions (`.github/workflows/deploy.yaml`) deploys to GitHub Pages on push to the default branch: installs Hugo extended + Node + ImageMagick + Dart Sass, runs `make build` then `make prod`, and publishes `public/`. Base URL comes from the `BASE_URL` env var (defaults to `https://gmarciani.github.io/`).
 
 ## Pull requests
 
