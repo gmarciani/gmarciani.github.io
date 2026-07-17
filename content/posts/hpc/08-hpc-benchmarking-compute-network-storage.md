@@ -5,4 +5,4 @@ date: 2024-04-15
 draft: true
 ---
 
-Before you run a production workload on a cluster, you should know what that cluster is actually capable of. Benchmarking is not optional — it is how you detect misconfigured hardware, validate network fabric, and establish the baseline you will need when something goes wrong in production.
+Before you run a production workload on a cluster, know what that cluster is actually capable of. Benchmarking is not optional — it is how you detect misconfigured hardware, validate network fabric, and establish the baseline you will need when something goes wrong in production.

@@ -5,4 +5,4 @@ date: 2024-07-15
 draft: true
 ---
 
-A default SLURM installation will schedule jobs. A well-tuned SLURM installation will maximize cluster utilization, enforce resource fairness, and protect node integrity under adversarial workloads. The gap between the two is significant, and this article closes it.
+A default SLURM installation will schedule jobs. A well-tuned SLURM installation will maximize cluster utilization, enforce resource fairness, and protect node integrity under adversarial workloads. The gap between the two is significant.

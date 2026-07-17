@@ -5,4 +5,4 @@ date: 2024-09-15
 draft: true
 ---
 
-Fine-tuning a large language model does not require a thousand GPUs or a six-figure cloud bill. With the right combination of parameter-efficient techniques and storage architecture, meaningful fine-tuning is within reach for teams of any size. This article shows exactly how.
+Fine-tuning a large language model does not require a thousand GPUs or a six-figure cloud bill. With the right combination of parameter-efficient techniques and storage architecture, meaningful fine-tuning is within reach for teams of any size.
