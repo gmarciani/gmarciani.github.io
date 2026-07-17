@@ -1,0 +1,65 @@
+labels:
+  - name: Build
+    description: Changes to the build system or tooling.
+    color: 1D76DB
+  - name: Bug
+    description: Something isn't working.
+    color: D73A4A
+  - name: Content
+    description: Improvements or additions to website content.
+    color: 0E8A16
+  - name: Dependencies
+    description: Changes to dependencies.
+    color: 4DD3AD
+  - name: Developer Experience
+    description: Improvements or additions related to developer experience.
+    color: A4418D
+  - name: Documentation
+    description: Improvements or additions to documentation.
+    color: F7AC22
+  - name: Duplicate
+    description: This issue or pull request already exists.
+    color: CFD3D7
+  - name: Enhancement
+    description: New feature or improvement.
+    color: A2EEEF
+  - name: Help Wanted
+    description: Extra attention is needed.
+    color: 008672
+  - name: Invalid
+    description: This doesn't seem right.
+    color: E4E669
+  - name: Question
+    description: Further information is requested.
+    color: D876E3
+  - name: Security
+    description: Improvements or additions related to security.
+    color: 15631C
+  - name: Styling
+    description: Changes to styles, scripts or static assets.
+    color: 95C8EA
+  - name: Triage
+    description: The issue must be triaged.
+    color: 985721
+  - name: Wont Fix
+    description: This will not be worked on.
+    color: FFFFFF
+
+repos:
+  - name: gmarciani/gmarciani.github.io
+    labels:
+      - Build
+      - Bug
+      - Content
+      - Dependencies
+      - Developer Experience
+      - Documentation
+      - Duplicate
+      - Enhancement
+      - Help Wanted
+      - Invalid
+      - Question
+      - Security
+      - Styling
+      - Triage
+      - Wont Fix
