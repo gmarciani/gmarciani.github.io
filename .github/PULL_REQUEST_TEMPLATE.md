@@ -18,7 +18,7 @@
 - Check if documentation is impacted by this change.
 
 By submitting this pull request, I confirm that my contribution is compliant with
-the [LICENSE](https://github.com/gmarciani/gmarciani.github.io/blob/master/LICENSE).
+the [LICENSE](https://github.com/gmarciani/gmarciani.github.io/blob/main/LICENSE).
 
 ---
 _This pull request was created with the assistance of [Claude Code](https://claude.com/claude-code)._
