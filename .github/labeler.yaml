@@ -25,6 +25,8 @@ Documentation:
       - any-glob-to-any-file:
         - README.md
         - LICENSE
+        - CLAUDE.md
+        - '**/CLAUDE.md'
 Developer Experience:
   - changed-files:
       - any-glob-to-any-file:
