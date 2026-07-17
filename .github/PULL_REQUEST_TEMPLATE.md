@@ -19,3 +19,6 @@
 
 By submitting this pull request, I confirm that my contribution is compliant with
 the [LICENSE](https://github.com/gmarciani/gmarciani.github.io/blob/master/LICENSE).
+
+---
+_This pull request was created with the assistance of [Claude Code](https://claude.com/claude-code)._

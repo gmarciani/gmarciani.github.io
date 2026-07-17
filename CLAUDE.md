@@ -61,3 +61,7 @@ Detailed content-authoring guidance — post structure, quoting posts, and the b
 ## Deployment
 
 GitHub Actions (`.github/workflows/deploy.yaml`) deploys to GitHub Pages on push to `master`: installs Hugo extended + Node + ImageMagick + Dart Sass, runs `make build` then `make prod`, and publishes `public/`. Base URL comes from the `BASE_URL` env var (defaults to `https://gmarciani.github.io/`).
+
+## Pull requests
+
+Every PR **must follow `.github/PULL_REQUEST_TEMPLATE.md`** — mirror its sections (Description of changes, Tests, References, Checklist) and fill each from the actual changes. The template already ends with the "created with the assistance of Claude Code" attribution, so **do not add a second attribution** (no extra "Generated with Claude Code" footer) — keep exactly one, the template's.
