@@ -1,0 +1,21 @@
+{{- /* llms.txt — structured content index for AI agents / LLMs.
+     https://llmstxt.org/  Rendered by Hugo as /llms.txt (home "llms" output). */ -}}
+# {{ .Site.Title }} — {{ .Site.Params.author }}
+
+> {{ .Site.Params.description }}. Personal engineering blog covering high-performance computing, AI infrastructure, AWS, and software architecture.
+
+- Author: {{ .Site.Params.author }} ({{ .Site.Params.descriptionShort }})
+- Website: {{ .Site.BaseURL }}
+- GitHub: https://github.com/{{ .Site.Params.social.github }}
+- LinkedIn: https://www.linkedin.com/in/{{ .Site.Params.social.linkedin }}
+- Content license: {{ .Site.Params.licenses.siteContent.licenseName }} ({{ .Site.Params.licenses.siteContent.licenseUrl }})
+
+## Posts
+{{ range (where .Site.RegularPages "Type" "posts").ByDate.Reverse }}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . | plainify | chomp }}{{ end }}
+{{- end }}
+
+## Feeds
+
+- RSS: {{ .Site.BaseURL }}index.xml
+- Sitemap: {{ .Site.BaseURL }}sitemap.xml

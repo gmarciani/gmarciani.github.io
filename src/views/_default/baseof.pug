@@ -1,6 +1,7 @@
 doctype html
-html
-	include ../partials/head.pug
+html(lang!='{{ .Site.LanguageCode }}')
+	head
+		include ../partials/head.pug
 	body
 		include ../partials/header.pug
 		main.content(role='main')
