@@ -49,7 +49,7 @@ All page-level metadata is centralized in `src/views/partials/seo/meta.html` (in
 
 ## Content conventions
 
-Detailed conventions live in `.kiro/steering/structure.md` (content layout, quoting posts) and `.kiro/steering/writing-style.md` (voice/tone) — **read these before creating or editing posts.** Key points:
+Detailed content-authoring guidance — post structure, quoting posts, and the blog's voice/tone — lives in `content/CLAUDE.md`, which auto-loads when working under `content/`. **Read it before creating or editing posts.** Key points:
 
 - Posts live in `content/posts/{category}/`. Each category's `_index.md` sets the category taxonomy via Hugo `cascade`.
 - HPC series posts use a two-digit numeric prefix: `01-topic-slug.md`.
