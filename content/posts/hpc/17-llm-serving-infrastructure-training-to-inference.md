@@ -5,4 +5,4 @@ date: 2024-09-01
 draft: true
 ---
 
-Training a large language model and serving it are fundamentally different infrastructure problems. The cluster that minimizes training time is rarely the fleet that minimizes inference cost. This article maps the transition and the decisions that shape it.
+Training a large language model and serving it are fundamentally different infrastructure problems. The cluster that minimizes training time is rarely the fleet that minimizes inference cost.

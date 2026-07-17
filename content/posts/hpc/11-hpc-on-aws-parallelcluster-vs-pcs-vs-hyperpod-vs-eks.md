@@ -5,4 +5,4 @@ date: 2024-06-01
 draft: true
 ---
 
-AWS offers four distinct ways to run HPC workloads in the cloud, and the right choice depends on factors that vendor documentation rarely addresses directly: operational maturity, team size, workload variability, and how much scheduler control you actually need. This article gives you a clear map.
+AWS offers four distinct ways to run HPC workloads in the cloud, and the right choice depends on factors that vendor documentation rarely addresses directly: operational maturity, team size, workload variability, and how much scheduler control you actually need.

@@ -5,4 +5,4 @@ date: 2024-01-15
 draft: true
 ---
 
-The best way to understand why high-performance computing exists is not to read about it — it is to watch a program transform. In this article we take a single compute-bound workload and push it through ten incremental steps, measuring the wall-clock time after each one.
+The best way to understand why high-performance computing exists is not to read about it — it is to watch a program transform. Take a single compute-bound workload, push it through ten incremental steps, and measure the wall-clock time after each one.

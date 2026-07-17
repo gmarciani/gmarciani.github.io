@@ -5,4 +5,4 @@ date: 2024-02-01
 draft: true
 ---
 
-Every large language model you have ever used was trained on a high-performance computing cluster. That is not a coincidence or a legacy constraint — it is a physical necessity. This article explains why, from first principles.
+Every large language model you have ever used was trained on a high-performance computing cluster. That is not a coincidence or a legacy constraint — it is a physical necessity. Here is why, from first principles.

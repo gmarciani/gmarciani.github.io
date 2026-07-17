@@ -5,4 +5,4 @@ date: 2024-05-15
 draft: true
 ---
 
-The HPC cloud market has matured rapidly. All three major providers now offer purpose-built HPC instances, high-bandwidth networking fabrics, and managed cluster orchestration. But the differences between them are real, consequential, and poorly documented outside of vendor marketing. This article fixes that.
+The HPC cloud market has matured rapidly. All three major providers now offer purpose-built HPC instances, high-bandwidth networking fabrics, and managed cluster orchestration. But the differences between them are real, consequential, and poorly documented outside of vendor marketing.

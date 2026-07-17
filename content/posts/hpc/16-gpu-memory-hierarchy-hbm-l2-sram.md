@@ -5,4 +5,4 @@ date: 2024-08-15
 draft: true
 ---
 
-GPU performance is a memory problem as much as a compute problem. The roofline model tells you whether your kernel is compute-bound or memory-bound, but only if you understand the hierarchy it is rooflined against. This article gives you that understanding.
+GPU performance is a memory problem as much as a compute problem. The roofline model tells you whether your kernel is compute-bound or memory-bound — but only if you understand the hierarchy it is rooflined against.

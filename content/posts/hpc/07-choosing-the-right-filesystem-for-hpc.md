@@ -5,4 +5,4 @@ date: 2024-04-01
 draft: true
 ---
 
-Picking the wrong filesystem for an HPC workload is one of the most common and most expensive mistakes in cluster design. The choice directly determines whether your jobs are compute-bound or I/O-bound. This guide gives you the framework to get it right the first time.
+Picking the wrong filesystem for an HPC workload is one of the most common and most expensive mistakes in cluster design. The choice directly determines whether your jobs are compute-bound or I/O-bound. Here is the framework to get it right the first time.
