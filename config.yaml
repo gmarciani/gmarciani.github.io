@@ -1,6 +1,11 @@
 title: GM
 baseURL: https://gmarciani.github.io/
 languageCode: en-us
+# Exclude non-content Markdown from the build. content/CLAUDE.md is authoring
+# guidance for agents, not a page: without this Hugo executes its example
+# shortcodes (breaking `hugo --gc`) and would publish it at /claude/.
+ignoreFiles:
+  - content/CLAUDE\.md$
 pagination:
   pagerSize: 20
 markup:
