@@ -1,10 +1,8 @@
 ---
-title: "ParallelCluster Configurations"
-description: "In this post I'll share how to avoid cfn-init pitfalls"
+title: "Markov Solver"
+description: "Markov Solver computes steady-state probabilities for discrete-time Markov chains from a YAML definition — symbolic or constant rates, with Graphviz visualization."
 date: 2024-01-11
 draft: true
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Relative link: [Hugo Showcase]({{< ref "posts/hugo-showcase.md" >}})
+Markov chains are simple to describe and tedious to solve by hand — and genuinely painful once the transition rates are symbolic rather than fixed. I built Markov Solver to close that gap: define a chain in YAML, with constant or symbolic rates, and get back steady-state probabilities to twelve decimal places, a Graphviz diagram, and CSV output. Here is what it does and how I use it.

@@ -1,10 +1,8 @@
 ---
-title: "ParallelCluster Configurations"
-description: "In this post I'll share how to avoid cfn-init pitfalls"
+title: "Nameping"
+description: "Nameping checks a name's availability in one command — batch WHOIS across TLDs plus business-registry lookups, output as JSON, YAML, CSV, or markdown."
 date: 2024-01-11
 draft: true
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Relative link: [Hugo Showcase]({{< ref "posts/hugo-showcase.md" >}})
+Naming a project is the fun part. Finding out whether the name is actually free — across every relevant domain extension and business registry — is the tedious part that usually kills the momentum. I built Nameping to do that check in a single command: batch WHOIS lookups across TLDs and company-registry searches, with results in whatever format you need. Here is how it works.

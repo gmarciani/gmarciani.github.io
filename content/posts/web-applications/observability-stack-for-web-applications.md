@@ -1,10 +1,8 @@
 ---
 title: "MySQL Metrics on Grafana"
-description: "In this post I'll share how to avoid cfn-init pitfalls"
+description: "Wiring MySQL internal metrics into a Grafana dashboard — connections, buffer pool, throughput, and replication lag — and reading the signals that predict trouble."
 date: 2024-01-09
 draft: true
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Relative link: [Hugo Showcase]({{< ref "posts/hugo-showcase.md" >}})
+A database that looks healthy from the application side can be one slow query away from trouble. MySQL exposes a wealth of internal metrics — connections, buffer pool usage, query throughput, replication lag — and Grafana turns them into a dashboard you can actually reason about. Here is how to wire MySQL metrics into Grafana and read the signals that matter before they become incidents.
