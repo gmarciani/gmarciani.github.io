@@ -1,6 +1,6 @@
 ---
 cascade:
-  - _target:
+  - target:
       kind: page
     categories: ["My Projects"]
 ---

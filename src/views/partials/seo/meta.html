@@ -121,7 +121,7 @@
 <meta property="og:title" content="{{ if .IsHome }}{{ $siteTitle }}{{ else }}{{ .Title }}{{ end }}">
 <meta property="og:description" content="{{ $desc }}">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:locale" content="{{ .Site.Params.ogLocale | default (replace .Site.LanguageCode "-" "_") }}">
+<meta property="og:locale" content="{{ .Site.Params.ogLocale | default (replace .Site.Language.Locale "-" "_") }}">
 <meta property="og:image" content="{{ $ogImage }}">
 <meta property="og:image:secure_url" content="{{ $ogImage }}">
 <meta property="og:image:type" content="image/png">
@@ -171,7 +171,7 @@
     "url" $siteURL
     "name" .Site.Title
     "description" .Site.Params.description
-    "inLanguage" .Site.LanguageCode
+    "inLanguage" .Site.Language.Locale
     "publisher" (dict "@id" (printf "%s#person" $siteURL))
     "author" (dict "@id" (printf "%s#person" $siteURL)) -}}
 {{- $graph := slice $person $website -}}
@@ -191,7 +191,7 @@
       "publisher" (dict "@id" (printf "%s#person" $siteURL))
       "image" $ogImage
       "articleSection" $section
-      "inLanguage" .Site.LanguageCode -}}
+      "inLanguage" .Site.Language.Locale -}}
   {{- if $keywords -}}{{- $posting = merge $posting (dict "keywords" (delimit $keywords ", ")) -}}{{- end -}}
   {{- if gt .WordCount 0 -}}{{- $posting = merge $posting (dict "wordCount" .WordCount) -}}{{- end -}}
   {{- $graph = $graph | append $posting -}}
