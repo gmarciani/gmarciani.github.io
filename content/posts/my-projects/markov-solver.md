@@ -2,7 +2,7 @@
 title: "Personal Project: Markov Solver"
 description: "Solve discrete-time Markov chains with symbolic transition rates, graph visualization, and multiple input formats. Why I built Markov Solver and how to use it."
 date: 2025-02-08
-draft: false
+draft: true
 ---
 
 During my studies in performance modeling, I spent a lot of time solving Markov chains by hand — setting up balance equations, solving linear systems, checking that probabilities summed to one. The math is straightforward but the bookkeeping is brutal, especially when chains grow beyond a handful of states or when transition rates are symbolic expressions depending on parameters like arrival rates and service rates. I kept making sign errors. I kept losing track of which equations I had already substituted. The frustration was productive — it made me build a tool.
