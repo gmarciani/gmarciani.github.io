@@ -2,7 +2,7 @@
 title: "Personal Project: CI/CD for Landbourse"
 description: "How I implemented CI/CD for Landbourse using GitHub Workflows to validate the full-stack build and deploy to Railway."
 date: 2026-04-30
-draft: false
+draft: true
 ---
 
 Landbourse is a dockerized monorepo with 14 services: a React frontend, a FastAPI backend, a PostgreSQL database, a Redis cache, an ARQ worker, MinIO object storage, and a full observability stack with Grafana, InfluxDB, Telegraf, and Loki. Every service has its own Dockerfile, its own environment files, and its own health checks. Deploying this by hand is not an option.
