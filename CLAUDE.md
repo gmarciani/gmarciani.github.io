@@ -56,7 +56,7 @@ Detailed content-authoring guidance — post structure, quoting posts, and the b
 - New posts default to `draft: true` (`archetypes/default.md`). **Drafts are excluded from `make prod`**, so a draft post also stays out of the sitemap and `llms.txt` until published.
 - Cross-references use the `{{< ref "posts/....md" >}}` shortcode.
 - Front matter: `title`, `description` (drives meta/OG/JSON-LD/llms.txt — keep under ~160 chars), `date` (YYYY-MM-DD), `draft`, optional `categories`/`tags`/`image`.
-- "Quoting" posts are short blockquote posts filed under the **topic's** category (not a "quoting" category) — see `structure.md` for the exact title/slug/body format.
+- "Quoting" posts are short blockquote posts filed under the **topic's** category (not a "quoting" category) — see `content/CLAUDE.md` for the exact title/slug/body format.
 
 ## Deployment
 
