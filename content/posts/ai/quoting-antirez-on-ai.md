@@ -1,7 +1,7 @@
 ---
 title: "Quoting antirez on AI"
 date: 2026-04-27
-draft: false
+draft: true
 ---
 
 > Anyway, back to programming. I have a single suggestion for you, my friend. Whatever you believe about what the Right Thing should be, you can't control it by refusing what is happening right now. Skipping AI is not going to help you or your career. Think about it. Test these new tools, with care, with weeks of work, not in a five minutes test where you can just reinforce your own beliefs. Find a way to multiply yourself, and if it does not work for you, try again every few months.
