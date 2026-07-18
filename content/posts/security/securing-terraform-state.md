@@ -1,8 +1,10 @@
 ---
 title: "Securing Terraform state"
-description: "Terraform state holds secrets in plaintext. How to store, encrypt, lock, and access-control remote state so it stops being the weakest link in your IaC."
+description: "Securing Terraform state files and backend configuration."
 date: 2024-01-13
 draft: true
 ---
 
-Terraform state is the most sensitive file in your infrastructure repository, and the one most likely to be mishandled. It holds resource identifiers, connection strings, and — despite every warning — plaintext secrets. Leave it on a laptop or in an unencrypted bucket and you have handed an attacker a map of everything you run. Here is how to store, encrypt, and lock Terraform state so it stops being your weakest link.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Relative link: [Hugo Showcase]({{< ref "posts/hugo-showcase.md" >}})

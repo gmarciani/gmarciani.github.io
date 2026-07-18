@@ -1,8 +1,10 @@
 ---
 title: "Securing Secrets in Spring"
-description: "Keeping credentials out of source and out of logs in Spring — externalized configuration, a real secrets backend, and the leaks that happen by default."
+description: "Managing secrets securely in Spring Boot applications."
 date: 2024-01-12
 draft: true
 ---
 
-Secrets in a Spring application have a way of ending up exactly where they should not: in `application.properties`, in environment variables dumped at startup, in a Git history nobody wants to rewrite. Keeping credentials out of source and out of reach takes deliberate design, not good intentions. Here is how to manage secrets in Spring with a real secrets backend instead of hope.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Relative link: [Hugo Showcase]({{< ref "posts/hugo-showcase.md" >}})
