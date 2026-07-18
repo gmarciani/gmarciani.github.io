@@ -2,7 +2,7 @@
 title: "Personal Project: CLI Wizard"
 description: "Generate modern Python CLIs from OpenAPI specifications. Why I built CLI Wizard, how it works, and how to use it."
 date: 2025-02-08
-draft: false
+draft: true
 ---
 
 Every team that builds an API eventually needs a CLI for it. Not a curl wrapper, not a Postman collection — a real CLI that operators and developers can use in scripts, pipelines, and terminals without thinking twice. The problem is that writing a good CLI is tedious. You end up hand-coding argument parsers, help strings, HTTP calls, error handling, and output formatting for every single endpoint. When the API changes, the CLI drifts. The spec says one thing, the CLI does another, and nobody notices until something breaks.
