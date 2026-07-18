@@ -8,20 +8,13 @@ Personal blog at [gmarciani.github.io](https://gmarciani.github.io).
 
 ## Requirements
 
-Install Node.js 24 and Hugo:
+Install all requirements (Homebrew packages: Hugo, ImageMagick; Node.js from `.nvmrc` via nvm; npm dependencies, including Dart Sass):
 
 ```shell
-nvm install 24
-brew install hugo imagemagick
+make install
 ```
 
 ## Usage
-
-Activate the Node.js environment:
-
-```shell
-nvm use
-```
 
 Build:
 
