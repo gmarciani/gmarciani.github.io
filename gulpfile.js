@@ -305,7 +305,8 @@ gulp.task('images-brand-favicons', function(done) {
   gulp.src(paths.src.images.brand.favicon)
   .pipe(plumber())
   .pipe(shell(
-    'mkdir -p ' + paths.site.images.brand + ' ; magick <%= file.path %> -define icon:auto-resize='
+    // ImageMagick 7 ships `magick`, ImageMagick 6 (Ubuntu apt) only `convert`.
+    'mkdir -p ' + paths.site.images.brand + ' ; im="$(command -v magick || command -v convert)" ; "$im" <%= file.path %> -define icon:auto-resize='
     + icosizes.join(',') + ' '
     + paths.site.images.brand + '/favicon.ico'
   ));
