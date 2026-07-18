@@ -1,8 +1,10 @@
 ---
-title: "ParallelCluster Configurations"
-description: "A collection of annotated AWS ParallelCluster configurations for common HPC scenarios — scheduler, networking, storage, and scaling, with the reasoning behind each."
+title: "Personal Project: ParallelCluster Configurations"
+description: "Collections of representative ParallelCluster configuration for your HPC clusters."
 date: 2024-01-11
 draft: true
 ---
 
-AWS ParallelCluster gives you an HPC cluster from a single YAML file — which is exactly why that file is where every real decision lives. Scheduler, networking, storage, instance selection, scaling policy: get them right and the cluster disappears into the background; get them wrong and you pay for it in every job. This is a collection of ParallelCluster configurations for common HPC scenarios, with the reasoning behind each choice.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Relative link: [Hugo Showcase]({{< ref "posts/hugo-showcase.md" >}})

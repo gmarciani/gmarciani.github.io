@@ -1,8 +1,10 @@
 ---
 title: "Exposing Outputs in SSM Automations"
-description: "How outputs flow through AWS SSM Automation documents — passing values between steps and surfacing them to callers cleanly, without the usual guesswork."
+description: "How to expose outputs from SSM Automation runbook steps."
 date: 2024-01-03
 draft: true
 ---
 
-SSM Automation documents are excellent at orchestrating multi-step operational tasks — right up until you need to get a value back out of one. Passing outputs between steps, and surfacing them to whatever called the automation, is less obvious than it should be and trips up almost everyone the first time. Here is how outputs actually flow through an SSM Automation, and how to expose the ones you care about cleanly.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Relative link: [Hugo Showcase]({{< ref "posts/hugo-showcase.md" >}})

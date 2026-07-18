@@ -1,8 +1,10 @@
 ---
 title: "Throttling in Spring"
-description: "Adding rate limiting to Spring applications — per-client limits, token-bucket strategies, and distributed throttling that survives more than one instance."
+description: "Rate limiting and throttling patterns in Spring Boot."
 date: 2024-01-16
 draft: true
 ---
 
-Every endpoint you expose is a resource someone can exhaust — deliberately or by accident. Rate limiting is how you protect a service from its own callers without degrading the experience for the well-behaved majority. Here is how to add throttling to a Spring application, from simple per-client limits to distributed rate limiting that survives more than one instance.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Relative link: [Hugo Showcase]({{< ref "posts/hugo-showcase.md" >}})

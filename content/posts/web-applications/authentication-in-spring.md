@@ -1,8 +1,10 @@
 ---
 title: "JWT Authentication in Spring"
-description: "How to build JWT-based authentication in Spring — signing, validation, expiry, and the token-handling mistakes that quietly weaken stateless APIs."
+description: "JWT authentication patterns in Spring Boot."
 date: 2024-01-07
 draft: true
 ---
 
-Authentication is where most Spring applications first meet real security requirements — and where the most avoidable mistakes get made. JWTs are the default answer for stateless APIs, but a token is only as strong as the way you sign, validate, and expire it. Here is how to build JWT authentication in Spring that holds up outside a tutorial.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Relative link: [Hugo Showcase]({{< ref "posts/hugo-showcase.md" >}})
