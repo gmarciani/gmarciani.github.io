@@ -1,6 +1,7 @@
-# Activate the .nvmrc Node version when nvm is present; no-op where Node is
-# already on PATH (e.g. CI).
-NVM_USE = if [ -f "$${HOME}/.nvm/nvm.sh" ]; then . "$${HOME}/.nvm/nvm.sh" && nvm use; fi
+# Activate the .nvmrc Node version when nvm is present, installing it if
+# needed (CI runners ship nvm without our version); no-op where nvm is absent
+# and Node is already on PATH.
+NVM_USE = if [ -f "$${HOME}/.nvm/nvm.sh" ]; then . "$${HOME}/.nvm/nvm.sh" && nvm install; fi
 
 .PHONY: clean build serve watch prod install
 
