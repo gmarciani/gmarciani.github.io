@@ -103,7 +103,7 @@ const paths = {
 
     views     : {
       base    : 'src/views',
-      every   : 'src/views/**/*.{pug,html,txt}'
+      every   : 'src/views/**/*.{pug,html,txt,xml}'
     },
 
     meta     : {
@@ -225,8 +225,8 @@ gulp.task('views', function(done) {
   }))
   .pipe(gulp.dest(paths.site.views.base));
 
-  // Raw Hugo templates passed through verbatim (.html partials, .txt outputs).
-  gulp.src('src/views/**/*.{html,txt}')
+  // Raw Hugo templates passed through verbatim (.html partials, .txt/.xml outputs).
+  gulp.src('src/views/**/*.{html,txt,xml}')
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.views.base));
   done();

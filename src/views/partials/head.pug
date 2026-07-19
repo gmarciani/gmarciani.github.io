@@ -11,7 +11,7 @@ meta(name='google' content='notranslate')
 include seo/meta.html
 
 //- FEED & ICONS
-link(rel='alternate' type='application/rss+xml' title='{{ .Site.Title }}' href!='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}')
+link(rel='alternate' type='application/rss+xml' title='{{ .Site.Title }}' href!='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ else }}{{ absURL "index.xml" }}{{ end }}')
 link(rel='icon' type='image/svg+xml' sizes='any' href!='{{ absURL "images/brand/favicon.svg" }}')
 link(rel='icon' type='image/x-icon' href!='{{ absURL "images/brand/favicon.ico" }}')
 link(rel='mask-icon' type='image/svg+xml' href!='{{ absURL "images/brand/mask.svg" }}' color='#10171e')
