@@ -204,4 +204,4 @@
   {{- $graph = $graph | append (dict "@type" "BreadcrumbList" "itemListElement" $items) -}}
 {{- end -}}
 {{- $ld := dict "@context" "https://schema.org" "@graph" $graph -}}
-<script type="application/ld+json">{{ $ld | jsonify (dict "noHTMLEscape" false) | safeHTML }}</script>
+<script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
