@@ -1,7 +1,7 @@
 ---
 title: "Exposing Outputs in SSM Automations"
 description: "How to expose outputs from SSM Automation runbook steps."
-date: 2024-01-03
+date: 2027-03-21
 draft: true
 ---
 

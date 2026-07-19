@@ -1,7 +1,7 @@
 ---
 title: "GPU memory hierarchy for AI workloads: HBM, L2, and SRAM"
 description: "The GPU memory hierarchy from the programmer's perspective: HBM bandwidth and capacity, L2 cache behavior, shared memory (SRAM) in CUDA, and roofline model implications for AI kernels — showing how memory awareness directly affects attention, matmul, and all-reduce performance."
-date: 2024-08-15
+date: 2027-08-22
 draft: true
 ---
 

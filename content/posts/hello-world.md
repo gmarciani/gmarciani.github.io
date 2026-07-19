@@ -1,7 +1,7 @@
 ---
 title: "Hello, World"
 description: "Welcome to my blog, a space for software engineering, HPC and personal projects."
-date: 2026-04-30
+date: 2026-08-02
 draft: true
 categories: ["Blog"]
 ---

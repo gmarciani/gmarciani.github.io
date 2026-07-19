@@ -1,7 +1,7 @@
 ---
 title: "Why HPC matters: a hands-on proof"
 description: "Parallelism is not an optimization — it is what makes entire categories of problems solvable. This article proves it by taking a real program through 10 incremental steps, from serial baseline to multi-node GPU cluster, with measured performance at every stage."
-date: 2024-01-15
+date: 2026-09-06
 draft: true
 ---
 

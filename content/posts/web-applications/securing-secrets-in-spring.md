@@ -1,7 +1,7 @@
 ---
 title: "Securing Secrets in Spring"
 description: "Managing secrets securely in Spring Boot applications."
-date: 2024-01-12
+date: 2027-08-08
 draft: true
 ---
 

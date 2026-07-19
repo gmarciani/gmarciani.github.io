@@ -1,7 +1,7 @@
 ---
 title: "Running HPC workloads on AWS: ParallelCluster vs. Parallel Computing Service vs. SageMaker HyperPod vs. EKS"
 description: "A side-by-side comparison of provisioning complexity, scheduling model, autoscaling, networking integration, and operational overhead, with a concrete recommendation matrix for choosing the right service."
-date: 2024-06-01
+date: 2027-04-04
 draft: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Quoting antirez on AI"
-date: 2026-04-27
+date: 2028-01-23
 draft: true
 ---
 

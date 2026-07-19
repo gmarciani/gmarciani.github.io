@@ -1,7 +1,7 @@
 ---
 title: "JWT Authentication in Spring"
 description: "JWT authentication patterns in Spring Boot."
-date: 2024-01-07
+date: 2027-06-13
 draft: true
 ---
 

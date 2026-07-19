@@ -1,7 +1,7 @@
 ---
 title: "Securing Terraform state"
 description: "Securing Terraform state files and backend configuration."
-date: 2024-01-13
+date: 2026-12-13
 draft: true
 ---
 

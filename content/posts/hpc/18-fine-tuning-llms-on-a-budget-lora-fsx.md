@@ -1,7 +1,7 @@
 ---
 title: "Fine-tuning LLMs on a budget: LoRA + FSx"
 description: "End-to-end walkthrough of fine-tuning a large language model on a constrained budget using LoRA to reduce trainable parameters, FSx for Lustre for fast dataset access, and carefully selected instance types — with a reproducible cost breakdown and guidance on when fine-tuning beats prompting."
-date: 2024-09-15
+date: 2027-10-17
 draft: true
 ---
 

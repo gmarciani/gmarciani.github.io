@@ -1,7 +1,7 @@
 ---
 title: "HPC benchmarking: measuring compute, network, and storage performance"
 description: "A provider-agnostic guide to the most important HPC benchmarking suites: HPL, HPCG, STREAM, and NAS for compute; OSU micro-benchmarks, iperf3, and NCCL-tests for networking; IOR, mdtest, and fio for storage. Includes a decision flowchart and red-flag diagnostic guide."
-date: 2024-04-15
+date: 2027-01-10
 draft: true
 ---
 
