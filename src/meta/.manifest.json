@@ -4,7 +4,7 @@
     "description": "Senior Software Engineer @ Amazon Web Services",
     "start_url": "/",
     "scope": "/",
-    "display": "standalone",
+    "display": "browser",
     "background_color": "#10171e",
     "theme_color": "#10171e",
     "icons": [
