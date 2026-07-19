@@ -24,7 +24,7 @@
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
-    "serve": "hugo server -D",
+    "serve": "hugo server -D -F",
     "watch": "gulp watch",
     "prod": "hugo --gc --minify --baseURL ${BASE_URL:-https://gmarciani.github.io/}"
   },
