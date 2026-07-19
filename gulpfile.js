@@ -306,7 +306,8 @@ gulp.task('images-brand-favicons', function(done) {
   .pipe(plumber())
   .pipe(shell(
     // ImageMagick 7 ships `magick`, ImageMagick 6 (Ubuntu apt) only `convert`.
-    'mkdir -p ' + paths.site.images.brand + ' ; im="$(command -v magick || command -v convert)" ; "$im" <%= file.path %> -define icon:auto-resize='
+    // -background none keeps the SVG's transparency instead of flattening onto white.
+    'mkdir -p ' + paths.site.images.brand + ' ; im="$(command -v magick || command -v convert)" ; "$im" -background none <%= file.path %> -define icon:auto-resize='
     + icosizes.join(',') + ' '
     + paths.site.images.brand + '/favicon.ico'
   ));
