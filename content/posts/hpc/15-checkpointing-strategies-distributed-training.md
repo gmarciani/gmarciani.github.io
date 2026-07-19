@@ -1,7 +1,7 @@
 ---
 title: "Checkpointing strategies for long-running distributed training"
 description: "The full checkpointing design space: frequency trade-offs, synchronous vs. asynchronous strategies, full vs. incremental snapshots, and storage target selection — with working PyTorch DDP and FSDP examples against FSx for Lustre and measured overhead at different intervals."
-date: 2024-08-01
+date: 2027-07-25
 draft: true
 ---
 

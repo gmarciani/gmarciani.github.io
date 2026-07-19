@@ -1,7 +1,7 @@
 ---
 title: "Cost anatomy of a 1,000-GPU training run on AWS"
 description: "A bottom-up breakdown of every cost component in a large-scale training job: instance hours, storage I/O, data transfer, and idle time from failures and restarts. Includes an adaptable cost model and identifies the three levers with the highest impact on total spend."
-date: 2024-06-15
+date: 2027-05-02
 draft: true
 ---
 

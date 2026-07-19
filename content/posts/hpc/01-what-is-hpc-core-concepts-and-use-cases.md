@@ -1,7 +1,7 @@
 ---
 title: "What is HPC? Core concepts and use cases"
 description: "A practical introduction to high-performance computing: what makes a system high-performance, how the HPC stack is organized from hardware to application, and the wide landscape of use cases from climate modeling to LLM training."
-date: 2024-01-01
+date: 2026-08-23
 draft: true
 ---
 

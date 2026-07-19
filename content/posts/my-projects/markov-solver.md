@@ -1,7 +1,7 @@
 ---
 title: "Personal Project: Markov Solver"
 description: "Solve discrete-time Markov chains with symbolic transition rates, graph visualization, and multiple input formats. Why I built Markov Solver and how to use it."
-date: 2025-02-08
+date: 2027-12-26
 draft: true
 ---
 

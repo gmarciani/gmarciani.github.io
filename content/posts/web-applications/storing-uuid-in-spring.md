@@ -1,7 +1,7 @@
 ---
 title: "Storing UUID in Spring"
 description: "Efficient UUID storage strategies in Spring Boot."
-date: 2024-01-15
+date: 2027-10-03
 draft: true
 ---
 

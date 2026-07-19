@@ -1,7 +1,7 @@
 ---
 title: "How to manage your time"
 description: "Practical strategies for managing your time as an engineer and leader."
-date: 2024-01-05
+date: 2026-11-01
 draft: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Personal Project: CLI Wizard"
 description: "Generate modern Python CLIs from OpenAPI specifications. Why I built CLI Wizard, how it works, and how to use it."
-date: 2025-02-08
+date: 2027-12-12
 draft: true
 ---
 

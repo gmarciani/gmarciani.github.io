@@ -1,7 +1,7 @@
 ---
 title: "Papers that transformed the computer world"
 description: "Seminal papers that shaped the computing landscape."
-date: 2024-01-10
+date: 2026-09-20
 draft: true
 ---
 

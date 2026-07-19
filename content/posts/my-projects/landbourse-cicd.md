@@ -1,7 +1,7 @@
 ---
 title: "Personal Project: CI/CD for Landbourse"
 description: "How I implemented CI/CD for Landbourse using GitHub Workflows to validate the full-stack build and deploy to Railway."
-date: 2026-04-30
+date: 2028-01-09
 draft: true
 ---
 

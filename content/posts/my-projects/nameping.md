@@ -1,7 +1,7 @@
 ---
 title: "Personal Project: NAmeping"
 description: "A tool to help you select an available name for your company"
-date: 2024-01-11
+date: 2027-11-28
 draft: true
 ---
 
