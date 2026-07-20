@@ -2,5 +2,5 @@
 cascade:
   - target:
       kind: page
-    categories: ["HPC"]
+    categories: ["High Performance Computing"]
 ---

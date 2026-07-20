@@ -2,5 +2,5 @@
 cascade:
   - target:
       kind: page
-    categories: ["My Projects"]
+    categories: ["Personal Projects"]
 ---
