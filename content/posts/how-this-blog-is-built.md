@@ -3,7 +3,7 @@ title: "How this blog is built"
 description: "The software stack behind this blog: Hugo, Pug, SCSS, and a Gulp pipeline, plus the process I use to maintain and publish it."
 date: 2026-08-09
 draft: true
-categories: ["Blog"]
+categories: ["Personal Projects"]
 ---
 
 This blog is a static site with a custom theme, and every part of it is code I can read, build, and break. No CMS, no database, no theme marketplace. Markdown goes in, HTML comes out, and everything in between is versioned in a single repository. This post walks through the stack, the build pipeline, and the process I use to keep it alive.

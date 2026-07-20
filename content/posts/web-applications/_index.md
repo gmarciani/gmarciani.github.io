@@ -2,5 +2,5 @@
 cascade:
   - target:
       kind: page
-    categories: ["Web Applications"]
+    categories: ["Software Design"]
 ---
