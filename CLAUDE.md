@@ -64,4 +64,4 @@ GitHub Actions (`.github/workflows/deploy.yaml`) deploys to GitHub Pages on push
 
 ## Pull requests
 
-Every PR **must follow `.github/PULL_REQUEST_TEMPLATE.md`** — mirror its sections (Description of changes, Tests, References, Checklist) and fill each from the actual changes. The template already ends with the "created with the assistance of Claude Code" attribution, so **do not add a second attribution** (no extra "Generated with Claude Code" footer) — keep exactly one, the template's.
+Every PR **must follow `.github/PULL_REQUEST_TEMPLATE.md`** — mirror its sections (Description of changes, Tests, References, Checklist) and fill each from the actual changes. **Never add Claude attribution**: no "Generated with Claude Code" footer, no session id, no session link.
