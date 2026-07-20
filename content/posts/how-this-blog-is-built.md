@@ -39,7 +39,7 @@ The rest of this post is a live showcase of what the pipeline can render, useful
 
 ### Links
 
-Cross-references between posts use Hugo's `ref` shortcode, which resolves and validates the target at build time: [Hello, World]({{< ref "posts/hello-world.md" >}}).
+Cross-references between posts use Hugo's `ref` shortcode, which resolves and validates the target at build time: [Hello World]({{< ref "posts/hello-world.md" >}}).
 
 ### Formulas
 
