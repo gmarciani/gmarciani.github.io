@@ -1,8 +1,9 @@
 ---
 title: "Hugo Showcase"
 description: "Insert here the description for post"
-date: 2021-09-09T08:00:00+02:00
-draft: false
+date: 2021-09-09
+lastmod: 2024-05-05
+draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -32,10 +33,12 @@ $$\int_{a}^{b} x^2 dx$$
 
 ## Instagram
 
+{{< instagram ChcyFLRtVFv >}}
+
 
 ## Twitter
 
-{{< tweet 1247056493712756737 >}}
+{{< x user=giacomomarciani id=1247056493712756737 >}}
 
 
 ## Code
@@ -46,4 +49,6 @@ public static void main(String[] args) {
 }
 ```
 
-{{< gist gmarciani 33c45122d3f5b6b86711a05ab49b5a33 >}}
+<!-- {{< gist gmarciani 33c45122d3f5b6b86711a05ab49b5a33 >}} -->
+
+{{< ghcode "https://raw.githubusercontent.com/gmarciani/yawa/mainline/docker-compose.yaml" >}}
