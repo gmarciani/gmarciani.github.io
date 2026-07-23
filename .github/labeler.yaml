@@ -1,0 +1,36 @@
+Content:
+  - changed-files:
+      - any-glob-to-any-file:
+        - content/**
+        - archetypes/**
+Styling:
+  - changed-files:
+      - any-glob-to-any-file:
+        - src/**
+        - assets/**
+Build:
+  - changed-files:
+      - any-glob-to-any-file:
+        - gulpfile.js
+        - config.yaml
+        - Makefile
+        - scripts/**
+Dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+        - package.json
+        - package-lock.json
+Documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+        - README.md
+        - LICENSE
+        - CLAUDE.md
+        - '**/CLAUDE.md'
+Developer Experience:
+  - changed-files:
+      - any-glob-to-any-file:
+        - .github/**
+        - .gitignore
+        - .nvmrc
+        - .pre-commit-config.yaml
