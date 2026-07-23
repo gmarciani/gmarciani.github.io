@@ -9,4 +9,3 @@ package-lock.json
 .DS_Store
 .hugo_build.lock
 .vscode
-ROADMAP.md
