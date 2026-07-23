@@ -1,0 +1,14 @@
+| {{ define "main" }}
+| {{ $posts := "" }}
+| {{ if (eq .Kind "term") }}
+h3 {{ .Title }}
+| {{ $posts = .Data.Pages }}
+| {{ else }}
+| {{ $posts = .Site.RegularPages }}
+| {{ end }}
+| {{ $paginator := .Paginate ($posts) }}
+| {{ range .Paginator.Pages }}
+|     {{ .Render "li" }}
+| {{ end }}
+include ../partials/pagination.pug
+| {{ end }}

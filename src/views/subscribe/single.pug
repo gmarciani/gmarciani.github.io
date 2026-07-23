@@ -1,0 +1,9 @@
+doctype html
+html
+  include ../partials/head.pug
+  body
+    include ../partials/header.pug
+    main.content(role='main')
+      .container
+        | {{ .Render "page" }}
+    include ../partials/footer.pug
