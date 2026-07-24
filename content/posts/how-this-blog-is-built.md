@@ -49,6 +49,10 @@ $$\int_{a}^{b} x^2 dx$$
 
 ![Sample Image](/images/posts/sample-image.svg)
 
+Markdown image links are not validated at build time, unlike the `ref` shortcode above. A broken reference degrades to the browser's missing-image state instead of failing the build; the figure below points at a file that does not exist:
+
+![Not Existing Image](/images/posts/sample-image-not-existing.svg)
+
 ### YouTube
 
 {{< youtube OTzTAp-uXgI >}}
