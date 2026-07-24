@@ -1,6 +1,6 @@
 # Gmarciani
 
-![GMARCIANI Logo](src/images/logo/gm-logo.svg)
+![GMARCIANI Logo](src/images/brand/logo.svg)
 
 [![CI/CD](https://github.com/gmarciani/gmarciani.github.io/actions/workflows/cicd.yaml/badge.svg)](https://github.com/gmarciani/gmarciani.github.io/actions/workflows/cicd.yaml)
 

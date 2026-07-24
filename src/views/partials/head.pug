@@ -12,10 +12,10 @@ include seo/meta.html
 
 //- FEED & ICONS
 link(rel='alternate' type='application/rss+xml' title='{{ .Site.Title }}' href!='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ else }}{{ absURL "index.xml" }}{{ end }}')
-link(rel='icon' type='image/svg+xml' sizes='any' href!='{{ absURL "images/brand/favicon.svg" }}')
+link(rel='icon' type='image/svg+xml' sizes='any' href!='{{ absURL "images/brand/logo.svg" }}')
 link(rel='icon' type='image/x-icon' href!='{{ absURL "images/brand/favicon.ico" }}')
-link(rel='mask-icon' type='image/svg+xml' href!='{{ absURL "images/brand/mask.svg" }}' color='#10171e')
-link(rel='apple-touch-icon' type='image/svg+xml' href!='{{ absURL "images/brand/icon.svg" }}')
+link(rel='mask-icon' type='image/svg+xml' href!='{{ absURL "images/brand/logo.svg" }}' color='#10171e')
+link(rel='apple-touch-icon' type='image/svg+xml' href!='{{ absURL "images/brand/logo.svg" }}')
 link(rel='manifest' href!='{{ absURL ".manifest.json" }}')
 
 //- APPLE / MICROSOFT
