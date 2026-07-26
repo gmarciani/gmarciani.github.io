@@ -1,44 +1,47 @@
 # Gmarciani
 
-Personal blog at [gmarciani.com](https://gmarciani.com).
+![GMARCIANI Logo](src/images/brand/logo.svg)
+
+[![CI/CD](https://github.com/gmarciani/gmarciani.github.io/actions/workflows/cicd.yaml/badge.svg)](https://github.com/gmarciani/gmarciani.github.io/actions/workflows/cicd.yaml)
+
+Personal blog at [gmarciani.github.io](https://gmarciani.github.io).
 
 ## Requirements
 
-```
-brew install hugo node imagemagick
-```
+Install all requirements (Homebrew packages: Hugo, ImageMagick; Node.js from `.nvmrc` via nvm; npm dependencies, including Dart Sass):
 
-```
-npm install
-```
-
-Check package updates
-
-```
-npx npm-check-updates -u
+```shell
+make install
 ```
 
 ## Usage
 
-Build
+Build:
 
-```
-gulp build
-```
-
-Watch
-
-````
-gulp watch
-````
-
-
-Start a live preview
-
-```
-hugo server -D
+```shell
+make build
 ```
 
-## License
+Serve the website:
 
-[MIT License](https://opensource.org/licenses/MIT)
+```shell
+make serve
+```
+
+Enable Gulp watching to live preview changes:
+
+```shell
+make watch
+```
+
+Clean generated directories:
+
+```shell
+make clean
+```
+
+Production build:
+
+```shell
+make prod
+```
