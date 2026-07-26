@@ -1,0 +1,118 @@
+---
+title: "Introduction to MPI"
+description: "A ground-up introduction to the Message Passing Interface: the programming model, point-to-point and collective operations, communicators, and process topologies — with working code examples and a guide to running your first MPI jobs on AWS."
+date: 2026-12-27
+draft: true
+---
+
+MPI is the lingua franca of distributed computing. If you work in HPC, you will encounter it. If you build AI infrastructure at scale, you already depend on it — indirectly through frameworks like NCCL, but depending on it nonetheless. This article gets you fluent.
+
+## The programming model
+
+MPI stands for Message Passing Interface. It is a specification — not an implementation — that defines how processes running on different machines communicate by sending and receiving messages. The two most widely used implementations are Open MPI and MPICH (and its derivatives like Intel MPI and MVAPICH).
+
+The fundamental idea is simple. You write a single program. That program is launched as multiple processes, each with a unique identifier called a rank. The processes execute the same code but operate on different data, and they coordinate by explicitly sending messages to each other. This model is called SPMD: Single Program, Multiple Data.
+
+There is no shared memory between ranks. If rank 0 needs data that rank 1 has computed, rank 1 must send it and rank 0 must receive it. This explicitness is both MPI's greatest strength and its steepest learning curve. Nothing happens implicitly. Every data movement is visible in the code. That transparency makes MPI programs debuggable — and makes writing them feel like manual transmission after years of automatic.
+
+## Initialization and basics
+
+Every MPI program begins with `MPI_Init` and ends with `MPI_Finalize`. Between those two calls, you have access to the MPI runtime.
+
+```c
+#include <mpi.h>
+#include <stdio.h>
+
+int main(int argc, char** argv) {
+    MPI_Init(&argc, &argv);
+
+    int rank, size;
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    printf("Hello from rank %d of %d\n", rank, size);
+
+    MPI_Finalize();
+    return 0;
+}
+```
+
+`MPI_COMM_WORLD` is the default communicator that includes all processes. `MPI_Comm_rank` tells each process its identity. `MPI_Comm_size` tells it how many peers exist. These two values are the foundation of every MPI program — they determine which slice of work each process handles.
+
+## Point-to-point communication
+
+The most basic MPI operations are `MPI_Send` and `MPI_Recv`. One process sends a buffer of data to a specific destination rank, and the destination calls receive to collect it.
+
+```c
+if (rank == 0) {
+    int data = 42;
+    MPI_Send(&data, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
+} else if (rank == 1) {
+    int data;
+    MPI_Recv(&data, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    printf("Rank 1 received: %d\n", data);
+}
+```
+
+`MPI_Send` is blocking — it does not return until the buffer is safe to reuse. `MPI_Recv` is blocking — it does not return until the data has arrived. For performance-critical code, non-blocking variants `MPI_Isend` and `MPI_Irecv` allow computation to overlap with communication. You initiate the operation, do other work, and then call `MPI_Wait` to ensure completion.
+
+Non-blocking communication is essential for performance. Any time a process is blocked waiting for a message, it is not computing. Overlapping communication with computation is one of the most important optimization techniques in MPI programming.
+
+## Collective operations
+
+Point-to-point communication is flexible but tedious for common patterns. MPI provides collective operations that express these patterns directly.
+
+`MPI_Bcast` sends data from one rank to all others. `MPI_Reduce` combines data from all ranks into one using an operation like sum or max. `MPI_Allreduce` does the same but distributes the result to every rank — this is the operation that dominates distributed training, where every GPU needs the averaged gradients.
+
+`MPI_Scatter` distributes chunks of an array from one rank to all ranks. `MPI_Gather` collects chunks from all ranks into one. `MPI_Allgather` collects chunks and distributes the complete result to everyone. `MPI_Alltoall` performs a full exchange where every rank sends a different chunk to every other rank.
+
+These collectives are not convenience functions — they are performance-critical abstractions. MPI implementations optimize them with algorithms tailored to the message size, process count, and network topology. A hand-written send/receive loop implementing all-reduce will almost always be slower than `MPI_Allreduce`. I have never seen an exception in production.
+
+## Communicators and topology
+
+`MPI_COMM_WORLD` is the default communicator, but you can create sub-communicators that group subsets of processes. This is useful when different parts of your application need independent communication domains.
+
+`MPI_Comm_split` is the workhorse for creating sub-communicators. You provide a color (which group to join) and a key (ordering within the group), and MPI creates new communicators accordingly.
+
+```c
+int color = rank / 4;  // Group every 4 ranks together
+int key = rank % 4;
+MPI_Comm node_comm;
+MPI_Comm_split(MPI_COMM_WORLD, color, key, &node_comm);
+```
+
+This pattern is common in hybrid parallelism, where you want intra-node communication to use shared memory and inter-node communication to use the network fabric. Splitting communicators along node boundaries lets you optimize each independently.
+
+MPI also supports virtual topologies — Cartesian grids and graphs — that map logical process relationships onto the communicator. These are useful for stencil computations and structured grid problems where each process communicates with a fixed set of neighbors.
+
+## Running MPI jobs
+
+MPI programs are launched with `mpirun` or `mpiexec`. The launcher starts the specified number of processes across the available hosts.
+
+```bash
+mpirun -np 4 --hostfile hosts.txt ./my_program
+```
+
+The hostfile lists the machines and the number of slots (processes) each can run. On a cluster with a job scheduler like SLURM, you typically use `srun` instead of `mpirun`, which integrates with the scheduler's resource allocation.
+
+```bash
+srun --nodes=2 --ntasks-per-node=4 ./my_program
+```
+
+Process placement matters. Binding processes to specific CPU cores prevents migration and improves cache locality. Mapping processes to hardware topology — placing communicating ranks on the same node or same NUMA domain — reduces communication latency. Both `mpirun` and `srun` provide flags for controlling binding and mapping. Getting this right is not optional at scale — it is the difference between linear scaling and a flat line.
+
+## MPI and GPUs
+
+Modern MPI implementations support GPU-aware communication. Instead of copying data from GPU memory to host memory, sending it, and copying it back, GPU-aware MPI can send directly from GPU buffers. This eliminates two memory copies per message and significantly reduces latency.
+
+To use GPU-aware MPI, the implementation must be built with CUDA support (or ROCm for AMD GPUs), and the underlying fabric must support GPU direct RDMA. On AWS, this means using EFA with the appropriate libfabric provider.
+
+In practice, most GPU-based distributed training uses NCCL rather than MPI directly, because NCCL's collective algorithms are specifically optimized for GPU topologies. But MPI remains essential for launching and coordinating the processes, for CPU-side communication, and for workloads that mix CPU and GPU computation. The two are complementary, not competing.
+
+## Common pitfalls
+
+The most common MPI bug is a deadlock caused by mismatched sends and receives. If rank 0 sends to rank 1 and rank 1 sends to rank 0, and both use blocking sends, neither can proceed — both are waiting for the other to receive. The fix is to use non-blocking operations or to order the sends and receives so that at least one side receives first. This sounds obvious in a two-process example. It is far less obvious in a program with hundreds of ranks and conditional communication paths.
+
+The second most common issue is performance degradation from unnecessary synchronization. Every collective operation is an implicit barrier — all ranks must participate. If one rank is slower than the others, every rank waits. Profiling tools like NVIDIA Nsight and Intel Trace Analyzer can identify these load imbalances.
+
+MPI is forty years old and still indispensable. The interface is stable, the implementations are mature, and the programming model maps cleanly onto the physics of distributed systems — data lives in different places, and you must move it explicitly. Learning MPI is an investment that pays off across every HPC and AI infrastructure role. I consider it foundational to the discipline.
