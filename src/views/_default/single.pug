@@ -1,9 +1,3 @@
-doctype html
-html
-  include ../partials/head.pug
-  body
-    include ../partials/header.pug
-    main.content(role='main')
-      .container
-        | {{ .Render "post" }}
-    include ../partials/footer.pug
+| {{ define "main" }}
+| {{ .Render "post" }}
+| {{ end }}

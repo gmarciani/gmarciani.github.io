@@ -1,0 +1,8 @@
+{{ $file := .Get 0 }}
+{{ $resource := resources.GetRemote $file }}
+{{ if $resource }}
+  {{ $lang := path.Ext $file | strings.TrimPrefix "." }}
+  {{ highlight $resource.Content $lang }}
+{{ else }}
+  {{ errorf "Unable to get remote resource %q" $file }}
+{{ end }}

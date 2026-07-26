@@ -1,20 +1,66 @@
-title: gmarciani
+title: GM
 baseURL: https://gmarciani.github.io/
-languageCode: en-us
-paginate: 5
-ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
+locale: en-us
+# Exclude non-content Markdown from the build. content/CLAUDE.md is authoring
+# guidance for agents, not a page: without this Hugo executes its example
+# shortcodes (breaking `hugo --gc`) and would publish it at /claude/.
+ignoreFiles:
+  - content/CLAUDE\.md$
+pagination:
+  pagerSize: 20
+markup:
+  highlight:
+    style: manni # nord,manni
+    tabWidth: 4
+  tableOfContents:
+    startLevel: 2
+    ordered: true
+    endLevel: 3
+sitemap:
+  changeFreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+# robots.txt is shipped as a static file (src/meta/robots.txt) so Hugo must not
+# also generate one (that would create a conflicting public/robots.txt).
+enableRobotsTXT: false
+services:
+  rss:
+    limit: -1
+taxonomies:
+  category: categories
+# Custom plain-text output for AI agents / LLMs, served at /llms.txt
+outputFormats:
+  llms:
+    mediaType: text/plain
+    baseName: llms
+    isPlainText: true
+    rel: alternate
+outputs:
+  home:
+    - HTML
+    - RSS
+    - llms
 
 params:
   author: Giacomo Marciani
-  description: Software Engineer @ Amazon Web Services
-  descriptionShort: Software Engineer @ AWS
-  copyrightYear: 2021
+  description: Senior Software Engineer @ Amazon Web Services
+  descriptionShort: Sr Software Engineer @ AWS
+  ogLocale: en_US
+  copyrightYear: 2026
   keywords: [software, engineering, giacomo, marciani]
-  google_analytics: UA-59215360-6
+  google_analytics: G-FHL6LX6X9S
   social:
     facebook: giacomo.marciani
     twitter: giacomomarciani
     linkedin: giacomomarciani
-    youtube: UCOvMuigL8zTw2yMFoMUOfnQ
-    #instagram: gmarciani
+    # youtube: UCOvMuigL8zTw2yMFoMUOfnQ
+    instagram: gmarciani
     github: gmarciani
+  resume: https://drive.google.com/file/d/1OaY-SgRdnpoFySxSs_KIZ33kRZnSIfbR/view?usp=sharing
+  licenses:
+    siteDesign:
+      licenseName: MIT
+      licenseUrl: https://spdx.org/licenses/MIT.html
+    siteContent:
+      licenseName: CC-BY-NC-SA
+      licenseUrl: https://spdx.org/licenses/CC-BY-NC-SA-4.0.html
