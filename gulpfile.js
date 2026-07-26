@@ -89,10 +89,6 @@ const paths = {
         base    : 'src/images/brand',
         every   : 'src/images/brand/**/*.{svg,eps,png,jpg,jpeg,ico}',
         logo    : 'src/images/brand/logo.svg',
-        favicon : 'src/images/brand/favicon.svg',
-        icon    : 'src/images/brand/icon.svg',
-        startup : 'src/images/brand/startup.svg',
-        mask    : 'src/images/brand/mask.svg',
         failover: 'src/images/brand/failover.svg'
       },
       posts   : {
@@ -187,7 +183,6 @@ gulp.task('build', function(done) {
   gulp.series(
     'og-base',
     'views',
-    'fonts',
     'images',
     'scripts',
     'styles',
@@ -209,7 +204,6 @@ gulp.task('watch', function() {
   gulp.watch(paths.src.views.every, gulp.series('views'));
   gulp.watch(paths.src.styles.every, gulp.series('styles'));
   gulp.watch(paths.src.scripts.every, gulp.series('scripts'));
-  gulp.watch(paths.src.fonts.every, gulp.series('fonts'));
 });
 
 /*******************************************************************************
@@ -280,29 +274,23 @@ gulp.task('styles', function(done) {
 gulp.task('images', function(done) {
   gulp.series(
     'images-brand-logo',
-    'images-brand-favicons',
-    'images-brand-apple-icons',
-    'images-brand-google-icons',
-    'images-brand-microsoft-icons',
+    'images-brand-favicon-ico',
     'images-brand-failover',
     'images-posts')(done);
 });
 
 gulp.task('images-brand-logo', function(done) {
-  const logo = {name: 'logo', width: 500, height: 500};
-
   gulp.src(paths.src.images.brand.logo, {encoding: false})
   .pipe(gulp.dest(paths.site.images.brand));
   done();
 });
 
-gulp.task('images-brand-favicons', function(done) {
-  gulp.src(paths.src.images.brand.favicon, {encoding: false})
-  .pipe(plumber())
-  .pipe(gulp.dest(paths.site.images.brand));
-
+// Generates favicon.ico from the single logo source. All other icon
+// references (favicon.svg, apple-touch, mask, manifest, tiles) point
+// directly at the served logo.svg, so no per-variant copies are needed.
+gulp.task('images-brand-favicon-ico', function(done) {
   const icosizes = [16, 24, 32, 48, 64];
-  gulp.src(paths.src.images.brand.favicon)
+  gulp.src(paths.src.images.brand.logo)
   .pipe(plumber())
   .pipe(shell(
     // ImageMagick 7 ships `magick`, ImageMagick 6 (Ubuntu apt) only `convert`.
@@ -311,35 +299,6 @@ gulp.task('images-brand-favicons', function(done) {
     + icosizes.join(',') + ' '
     + paths.site.images.brand + '/favicon.ico'
   ));
-  done();
-});
-
-gulp.task('images-brand-apple-icons', function(done) {
-  gulp.src(paths.src.images.brand.icon, {encoding: false})
-  .pipe(plumber())
-  .pipe(gulp.dest(paths.site.images.brand));
-
-  gulp.src(paths.src.images.brand.startup, {encoding: false})
-  .pipe(plumber())
-  .pipe(gulp.dest(paths.site.images.brand));
-
-  gulp.src(paths.src.images.brand.mask)
-  .pipe(plumber())
-  .pipe(gulp.dest(paths.site.images.brand));
-  done();
-});
-
-gulp.task('images-brand-google-icons', function(done) {
-  gulp.src(paths.src.images.brand.icon, {encoding: false})
-  .pipe(plumber())
-  .pipe(gulp.dest(paths.site.images.brand));
-  done();
-});
-
-gulp.task('images-brand-microsoft-icons', function(done) {
-  gulp.src(paths.src.images.brand.icon, {encoding: false})
-  .pipe(plumber())
-  .pipe(gulp.dest(paths.site.images.brand));
   done();
 });
 
