@@ -39,6 +39,14 @@ draft: false
 — antirez, [Don't fall into the anti-AI hype](http://antirez.com/news/153)
 ```
 
+## Drafting workflow
+
+Model a post before writing prose, in three passes. This applies to new posts and to iterations on existing ones.
+
+1. **Thesis first.** Nail the single controlling idea — the strong opening statement that frames the whole post — before anything else.
+2. **Thematic sections next.** Lay out the narrative flow as an ordered list of thematic beats (a short label plus one line each), even if the post will not carry those beats as formal `##` headings. Present these beats to the user to preview the flow before expanding.
+3. **Expand every section.** Only once the thesis and the beats are agreed, write each beat into prose, following the writing style below.
+
 ## Writing style
 
 The target voice blends four influences:
