@@ -51,6 +51,8 @@ All page-level metadata is centralized in `src/views/partials/seo/meta.html` (in
 
 Detailed content-authoring guidance — post structure, quoting posts, and the blog's voice/tone — lives in `content/CLAUDE.md`, which auto-loads when working under `content/`. **Read it before creating or editing posts.** Key points:
 
+Every post that is a work in progress is developed on a dedicated branch named `wip/posts/${POST_TITLE}` (`POST_TITLE` is the post's file slug, e.g. `wip/posts/how-this-blog-is-built`) — never directly on `main`.
+
 - Posts live in `content/posts/{category}/`. Each category's `_index.md` sets the category taxonomy via Hugo `cascade`.
 - HPC series posts use a two-digit numeric prefix: `01-topic-slug.md`.
 - New posts default to `draft: true` (`archetypes/default.md`). **Drafts are excluded from `make prod`**, so a draft post also stays out of the sitemap and `llms.txt` until published.
