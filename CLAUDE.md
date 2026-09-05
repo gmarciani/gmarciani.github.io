@@ -51,7 +51,7 @@ All page-level metadata is centralized in `src/views/partials/seo/meta.html` (in
 
 Detailed content-authoring guidance — post structure, quoting posts, and the blog's voice/tone — lives in `content/CLAUDE.md`, which auto-loads when working under `content/`. **Read it before creating or editing posts.** Key points:
 
-Every post that is a work in progress is developed on a dedicated branch named `wip/posts/${POST_TITLE}` (`POST_TITLE` is the post's file slug, e.g. `wip/posts/how-this-blog-is-built`) — never directly on `main`.
+Every post that is a work in progress is developed on a dedicated branch named `wip/posts/${POST_TITLE}` (`POST_TITLE` is the post's file slug, e.g. `wip/posts/how-this-blog-is-built`) — never directly on `main`. Each such branch is checked out in its own git worktree under `.worktrees/${POST_TITLE}` (gitignored), never in the main checkout, so multiple posts can be worked on in parallel without switching branches underfoot.
 
 - Posts live in `content/posts/{category}/`. Each category's `_index.md` sets the category taxonomy via Hugo `cascade`.
 - HPC series posts use a two-digit numeric prefix: `01-topic-slug.md`.
