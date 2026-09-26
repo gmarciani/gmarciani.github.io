@@ -14,6 +14,32 @@ Personal technical blog for Giacomo Marciani. It covers HPC, distributed systems
 - Cross-references use the `{{< ref "posts/....md" >}}` shortcode.
 - Front matter fields: `title`, `description` (drives the meta description, Open Graph, Twitter card, JSON-LD, and llms.txt — keep under ~160 chars and make it compelling), `date` (`YYYY-MM-DD`), `draft` (boolean), and optionally `categories`, `tags`, `image` (custom 1200×630 social image; otherwise one is auto-generated).
 
+## Post assets (images, code, videos)
+
+A post that ships its own files is a Hugo **page bundle**: a folder named after the slug, with the post itself as `index.md` and the files beside it (by convention in `images/`, `code/`, `videos/` subfolders):
+
+```
+content/posts/hpc/00-foo/
+├── index.md
+├── images/chart.svg
+└── code/transform.c
+```
+
+The URL is the same as for a single `00-foo.md` file, and Hugo publishes the files under it, e.g. `/posts/hpc/00-foo/code/transform.c`, so they are directly downloadable. Posts without assets stay single files. Only files with a content extension (`.md`, `.html`, …) inside the bundle would become pages, so keep bundled code to source extensions (`.c`, `.sh`, `.py`, …).
+
+Embed images with plain Markdown and code with the `post-code` shortcode, both relative to the bundle:
+
+```markdown
+![What the chart shows](images/chart.svg)
+
+{{</* post-code src="code/transform.c" */>}}
+{{</* post-code src="code/run.sh" lang="bash" */>}}
+```
+
+`post-code` renders the file with syntax highlighting (language from the extension unless `lang` is given) and adds a download link to the same published file, so the text on the page and the download cannot drift apart. Never paste a source file inline in a post that also ships it as an asset.
+
+`src/images/posts/` (published to `/images/posts/` by Gulp) remains for images shared across posts.
+
 ## Post types
 
 **Standard posts** — long-form technical articles, the default for all categories.
