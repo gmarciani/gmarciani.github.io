@@ -1,3 +1,6 @@
+@use 'chroma-light';
+@use 'chroma-dark';
+
 :root {
   --bg: #fff;
   --text: #333;
@@ -495,6 +498,15 @@ blockquote > p {
   padding: 15px;
 }
 
+// Opening quotation of a post (`epigraph` shortcode).
+.epigraph {
+  margin: 1.5em auto 2.5em;
+  max-width: 85%;
+  text-align: center;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
 cite {
   font-style: normal;
 }
@@ -921,6 +933,38 @@ pre {
   }
 }
 
+// Chroma sets its own background on highlighted blocks; keep the site one so
+// language-tagged and plain code blocks look alike in both themes. The
+// selector must outrank the theme-scoped `[data-theme="dark"] .chroma` rule.
+.highlight pre.chroma {
+  background-color: var(--code-bg);
+}
+
+// A source file from the post's assets (`post-code` shortcode): a header
+// with the file name and a download link, joined to the code block below.
+.post-code {
+  margin: 2.5em 0;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 6px 10px;
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+    font-size: 75%;
+    color: var(--text-muted);
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-bottom: 0;
+    border-radius: 5px 5px 0 0;
+  }
+
+  pre {
+    margin: 0;
+    border-radius: 0 0 5px 5px;
+  }
+}
+
 .pre-scrollable {
   max-height: 350px;
   overflow-y: scroll;
@@ -1065,15 +1109,22 @@ article {
   }
 }
 
+// Dashed underline drawn with a gradient rather than `text-decoration: dashed`,
+// which offers no control over the gap between dashes: 4px dash, 4px gap.
 .post-content a, #site-footer a {
   color: var(--link);
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
+  padding-bottom: 1px;
+  background-image: linear-gradient(to right, currentColor 50%, transparent 50%);
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
 }
 
 .post-content a:hover, #site-footer a:hover {
   color: var(--link-hover);
-  border-bottom: 1px solid;
+  background-image: linear-gradient(to right, currentColor 100%, transparent 100%);
 }
 
 .m-logo {
