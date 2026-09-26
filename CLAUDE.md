@@ -37,6 +37,7 @@ This is **not** a stock Hugo theme. The build has two stages:
 - Files under `src/views/` with a `.html` or `.txt` extension are **passed through verbatim** (not compiled) — used for Hugo templates that are awkward to express in Pug. Two exist today: `src/views/partials/seo/meta.html` (all SEO/social/JSON-LD logic) and `src/views/index.llms.txt` (the `/llms.txt` output).
 - A Pug `include seo/meta.html` inlines that raw file **at compile time**, so its Hugo `{{ }}` code lands inside the compiled `head.html` and shares the surrounding template's variable scope. This is how `head.pug` pulls in the SEO partial.
 - `assets/` is **committed source** read by Hugo via `resources.Get` (fonts + OG base image) — distinct from the generated `static/`. Do not confuse the two.
+- A post with its own images or code is a Hugo **page bundle**: `content/posts/<section>/<slug>/index.md` plus `images/` and `code/` beside it. Hugo publishes those files under the post's URL; Gulp is not involved. The `post-code` shortcode (`src/views/shortcodes/post-code.html`) renders a bundled source file with highlighting and a download link. See `content/CLAUDE.md` for usage.
 
 ## SEO / social / AI-agent metadata
 
