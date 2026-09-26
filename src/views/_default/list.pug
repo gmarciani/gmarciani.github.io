@@ -3,6 +3,8 @@
 | {{ if (eq .Kind "term") }}
 h3 {{ .Title }}
 | {{ $posts = .Data.Pages }}
+| {{ else if (eq .Kind "section") }}
+| {{ $posts = .RegularPagesRecursive }}
 | {{ else }}
 | {{ $posts = .Site.RegularPages }}
 | {{ end }}

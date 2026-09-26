@@ -9,8 +9,16 @@ ignoreFiles:
 pagination:
   pagerSize: 20
 markup:
+  goldmark:
+    renderHooks:
+      # Resolve `![](images/x.svg)` in a page bundle to the resource's
+      # permalink instead of a relative path, so images also work in feeds.
+      image:
+        useEmbedded: fallback
   highlight:
-    style: manni # nord,manni
+    # Emit CSS classes instead of inline styles so highlighted code can follow
+    # the light/dark toggle; the themes live in src/styles/_chroma-*.scss.
+    noClasses: false
     tabWidth: 4
   tableOfContents:
     startLevel: 2
