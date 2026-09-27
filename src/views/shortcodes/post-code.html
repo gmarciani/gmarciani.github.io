@@ -3,15 +3,16 @@
   and offered for download from the same published file, so the text on the
   page and the download cannot drift apart.
 
-    {{< post-code src="code/transform.c" >}}
-    {{< post-code src="code/run.sh" lang="bash" >}}   language override
+    {{< post-code src="transform.c" >}}
+    {{< post-code src="run.sh" lang="bash" >}}   language override
 
-  Without `lang`, the language is the file extension.
+  `src` is looked up in the bundle's code/ folder first, then as given
+  relative to the bundle. Without `lang`, the language is the file extension.
 */ -}}
 {{- $src := .Get "src" -}}
-{{- $r := .Page.Resources.Get $src -}}
+{{- $r := .Page.Resources.Get (path.Join "code" $src) | default (.Page.Resources.Get $src) -}}
 {{- if not $r -}}
-  {{- errorf "post-code: %q not found in the page bundle of %s" $src .Page.File.Path -}}
+  {{- errorf "post-code: %q not found in code/ or in the page bundle of %s" $src .Page.File.Path -}}
 {{- end -}}
 {{- $lang := .Get "lang" | default (strings.TrimPrefix "." (path.Ext $src)) -}}
 <div class="post-code">
