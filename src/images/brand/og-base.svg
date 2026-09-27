@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Canvas for the social share images. Hugo overlays each page's title on it
+       at build time (see src/views/partials/seo/meta.html); Gulp rasterizes it to
+       assets/og/og-base.png. The palette mirrors the dark theme in main.scss.
+       Gradients and rectangles only, so every ImageMagick SVG renderer draws it
+       the same way. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#10171e"/>
+      <stop offset="1" stop-color="#161f29"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#03dac6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#03dac6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#03dac6"/>
+      <stop offset="1" stop-color="#4db146"/>
+    </linearGradient>
+  </defs>
+  <!-- background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- soft teal glow radiating from the bottom-right corner -->
+  <rect x="311.1" y="163.3" width="1777.8" height="933.4" fill="url(#glow)"/>
+  <!-- left accent bar, teal fading into green -->
+  <rect width="14" height="630" fill="url(#bar)"/>
+  <!-- thin rule where the byline sits -->
+  <rect x="80" y="520" width="1040" height="2" fill="#36404c"/>
+</svg>
