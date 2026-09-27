@@ -1,7 +1,7 @@
 // Chroma syntax-highlighting theme for the dark site theme, scoped to the
 // data-theme toggle. Regenerate with: hugo gen chromastyles --style=nord
 [data-theme="dark"] {
-  
+
   /* Background */ .bg { color:#d8dee9;background-color:#2e3440; }
   /* PreWrapper */ .chroma { color:#d8dee9;background-color:#2e3440;-webkit-text-size-adjust:none; }
   /* Error */ .chroma .err { color:#bf616a }
