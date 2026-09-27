@@ -27,13 +27,13 @@ content/posts/hpc/00-foo/
 
 The URL is the same as for a single `00-foo.md` file, and Hugo publishes the files under it, e.g. `/posts/hpc/00-foo/code/transform.c`, so they are directly downloadable. Posts without assets stay single files. Only files with a content extension (`.md`, `.html`, …) inside the bundle would become pages, so keep bundled code to source extensions (`.c`, `.sh`, `.py`, …).
 
-Embed images with plain Markdown and code with the `post-code` shortcode, both relative to the bundle:
+Embed images with plain Markdown, relative to the bundle, and code with the `post-code` shortcode, whose `src` is relative to the bundle's `code/` folder:
 
 ```markdown
 ![What the chart shows](images/chart.svg)
 
-{{</* post-code src="code/transform.c" */>}}
-{{</* post-code src="code/run.sh" lang="bash" */>}}
+{{</* post-code src="transform.c" */>}}
+{{</* post-code src="run.sh" lang="bash" */>}}
 ```
 
 `post-code` renders the file with syntax highlighting (language from the extension unless `lang` is given) and adds a download link to the same published file, so the text on the page and the download cannot drift apart. Never paste a source file inline in a post that also ships it as an asset.
