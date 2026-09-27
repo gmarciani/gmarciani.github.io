@@ -135,9 +135,14 @@ const paths = {
       posts   : 'static/images/posts'
     },
 
+    assets    : {
+      base    : 'assets',
+      every   : 'assets/**/*',
+    },
+
     fonts     : {
-      base    : 'static/fonts',
-      every   : 'static/fonts/**/*.{woff,otf,ttf,svg,eot}'
+      base    : 'assets/fonts',
+      every   : 'assets/fonts/**/*.{woff,otf,ttf,svg,eot}'
     },
 
     views     : {
@@ -168,6 +173,7 @@ const paths = {
 gulp.task('clean', function(done) {
   deleteAsync([
     paths.site.base,
+    paths.site.assets.base,
     paths.site.views.base,
     paths.site.resources.base,
     paths.site.public.base,
@@ -184,6 +190,7 @@ gulp.task('clean', function(done) {
 gulp.task('build', function(done) {
   gulp.parallel(
     'og-base',
+    'fonts',
     'views',
     'images',
     'scripts',
@@ -320,10 +327,10 @@ gulp.task('images-posts', function () {
 });
 
 /*******************************************************************************
-* FONTS
+* FONTS (read by Hugo's image pipeline for the social images, via resources.Get)
 *******************************************************************************/
 gulp.task('fonts', function() {
-  return gulp.src(paths.src.fonts.every)
+  return gulp.src(paths.src.fonts.every, {encoding: false})
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.fonts.base));
 });
