@@ -1,7 +1,8 @@
 {{ $file := .Get 0 }}
 {{ $resource := resources.GetRemote $file }}
 {{ if $resource }}
-  {{ $lang := path.Ext $file | strings.TrimPrefix "." }}
+  {{/* Highlight by extension; extension-less files (Makefile, Dockerfile) fall back to their name */}}
+  {{ $lang := path.Ext $file | strings.TrimPrefix "." | default (path.Base $file) | lower }}
   {{ highlight $resource.Content $lang }}
 {{ else }}
   {{ errorf "Unable to get remote resource %q" $file }}
