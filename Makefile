@@ -11,7 +11,7 @@ install:
 	brew install hugo imagemagick
 	. "$${HOME}/.nvm/nvm.sh" && nvm install && npm install
 
-## Clean generated directories (static, layouts, resources, public)
+## Delete generated directories and files
 clean:
 	$(NVM_USE) && npm run clean
 
