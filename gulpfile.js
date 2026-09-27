@@ -89,7 +89,8 @@ const paths = {
         base    : 'src/images/brand',
         every   : 'src/images/brand/**/*.{svg,eps,png,jpg,jpeg,ico}',
         logo    : 'src/images/brand/logo.svg',
-        failover: 'src/images/brand/failover.svg'
+        failover: 'src/images/brand/failover.svg',
+        og      : 'src/images/brand/og-base.svg'
       },
       posts   : {
         base    : 'src/images/posts',
@@ -202,9 +203,17 @@ gulp.task('build', function(done) {
 /*******************************************************************************
 * OG BASE IMAGE (branded 1200x630 canvas for social share images)
 *******************************************************************************/
-// Regenerates assets/og/og-base.png. Hugo overlays each page's title on top of
-// this canvas at build time via images.Text (see partials/seo/meta.html).
-gulp.task('og-base', shell.task('node scripts/gen-og-base.mjs'));
+// Rasterizes src/images/brand/og-base.svg to assets/og/og-base.png, Hugo's
+// asset directory. Hugo overlays each page's title on top of it at build time
+// via images.Text (see partials/seo/meta.html), which needs a raster source.
+gulp.task('og-base', function() {
+  return gulp.src(paths.src.images.brand.og)
+  .pipe(plumber())
+  .pipe(shell(
+    // ImageMagick 7 ships `magick`, ImageMagick 6 (Ubuntu apt) only `convert`.
+    'mkdir -p assets/og ; im="$(command -v magick || command -v convert)" ; "$im" -background none <%= file.path %> -resize 1200x630 PNG24:assets/og/og-base.png'
+  ));
+});
 
 /*******************************************************************************
 * WATCH
