@@ -179,8 +179,10 @@ gulp.task('clean', function(done) {
 /*******************************************************************************
 * BUILD
 *******************************************************************************/
+// The tasks read from disjoint sources and write to disjoint destinations, so
+// they run concurrently. Each returns its stream so Gulp waits for it to end.
 gulp.task('build', function(done) {
-  gulp.series(
+  gulp.parallel(
     'og-base',
     'views',
     'images',
@@ -209,29 +211,32 @@ gulp.task('watch', function() {
 /*******************************************************************************
 * VIEWS
 *******************************************************************************/
-gulp.task('views', function(done) {
-  // Pug templates → compiled HTML layouts.
-  gulp.src('src/views/**/*.pug')
+// Pug templates → compiled HTML layouts.
+gulp.task('views-pug', function() {
+  return gulp.src('src/views/**/*.pug')
   .pipe(plumber())
   .pipe(pug())
   .pipe(rename({
     extname: '.html'
   }))
   .pipe(gulp.dest(paths.site.views.base));
+});
 
-  // Raw Hugo templates passed through verbatim (.html partials, .txt/.xml outputs).
-  gulp.src('src/views/**/*.{html,txt,xml}')
+// Raw Hugo templates passed through verbatim (.html partials, .txt/.xml outputs).
+gulp.task('views-raw', function() {
+  return gulp.src('src/views/**/*.{html,txt,xml}')
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.views.base));
-  done();
 });
+
+gulp.task('views', gulp.parallel('views-pug', 'views-raw'));
 
 /*******************************************************************************
 * SCRIPTS
 *******************************************************************************/
-gulp.task('scripts', function(done) {
-  // Theme script is loaded separately in <head> to prevent flash
-  gulp.src(paths.src.scripts.every, { ignore: ['**/theme.js'] })
+// Theme script is loaded separately in <head> to prevent flash
+gulp.task('scripts-main', function() {
+  return gulp.src(paths.src.scripts.every, { ignore: ['**/theme.js'] })
   .pipe(plumber())
   .pipe(concat('main.js'))
   .pipe(gulp.dest(paths.site.scripts.base))
@@ -240,21 +245,23 @@ gulp.task('scripts', function(done) {
       suffix: '.min'
   }))
   .pipe(gulp.dest(paths.site.scripts.base));
+});
 
-  // Copy theme script separately
-  gulp.src('src/scripts/theme.js')
+// Copy theme script separately
+gulp.task('scripts-theme', function() {
+  return gulp.src('src/scripts/theme.js')
   .pipe(plumber())
   .pipe(uglify())
   .pipe(gulp.dest(paths.site.scripts.base));
-
-  done();
 });
+
+gulp.task('scripts', gulp.parallel('scripts-main', 'scripts-theme'));
 
 /*******************************************************************************
 * STYLES
 *******************************************************************************/
-gulp.task('styles', function(done) {
-  gulp.src(paths.src.styles.every)
+gulp.task('styles', function() {
+  return gulp.src(paths.src.styles.every)
   .pipe(plumber())
   .pipe(sass({
     silenceDeprecations: ['legacy-js-api']
@@ -265,32 +272,30 @@ gulp.task('styles', function(done) {
     suffix: '.min'
   }))
   .pipe(gulp.dest(paths.site.styles.base));
-  done();
 });
 
 /*******************************************************************************
 * IMAGES
 *******************************************************************************/
 gulp.task('images', function(done) {
-  gulp.series(
+  gulp.parallel(
     'images-brand-logo',
     'images-brand-favicon-ico',
     'images-brand-failover',
     'images-posts')(done);
 });
 
-gulp.task('images-brand-logo', function(done) {
-  gulp.src(paths.src.images.brand.logo, {encoding: false})
+gulp.task('images-brand-logo', function() {
+  return gulp.src(paths.src.images.brand.logo, {encoding: false})
   .pipe(gulp.dest(paths.site.images.brand));
-  done();
 });
 
 // Generates favicon.ico from the single logo source. All other icon
 // references (favicon.svg, apple-touch, mask, manifest, tiles) point
 // directly at the served logo.svg, so no per-variant copies are needed.
-gulp.task('images-brand-favicon-ico', function(done) {
+gulp.task('images-brand-favicon-ico', function() {
   const icosizes = [16, 24, 32, 48, 64];
-  gulp.src(paths.src.images.brand.logo)
+  return gulp.src(paths.src.images.brand.logo)
   .pipe(plumber())
   .pipe(shell(
     // ImageMagick 7 ships `magick`, ImageMagick 6 (Ubuntu apt) only `convert`.
@@ -299,43 +304,38 @@ gulp.task('images-brand-favicon-ico', function(done) {
     + icosizes.join(',') + ' '
     + paths.site.images.brand + '/favicon.ico'
   ));
-  done();
 });
 
-gulp.task('images-brand-failover', function (done) {
-  gulp.src(paths.src.images.brand.failover, {encoding: false})
+gulp.task('images-brand-failover', function () {
+  return gulp.src(paths.src.images.brand.failover, {encoding: false})
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.images.brand));
-  done();
 });
 
-gulp.task('images-posts', function (done) {
-  gulp.src(paths.src.images.posts.every, {encoding: false})
+gulp.task('images-posts', function () {
+  return gulp.src(paths.src.images.posts.every, {encoding: false})
   .pipe(plumber())
   .pipe(imagemin())
   .pipe(gulp.dest(paths.site.images.posts));
-  done();
 });
 
 /*******************************************************************************
 * FONTS
 *******************************************************************************/
-gulp.task('fonts', function(done) {
-  gulp.src(paths.src.fonts.every)
+gulp.task('fonts', function() {
+  return gulp.src(paths.src.fonts.every)
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.fonts.base));
-  done();
 });
 
 /*******************************************************************************
 * META
 *******************************************************************************/
-gulp.task('meta', function(done) {
+gulp.task('meta', function() {
   // dot: true so dotfiles (.manifest.json, .msconfig.xml) are also published.
-  gulp.src(paths.src.meta.every, { dot: true })
+  return gulp.src(paths.src.meta.every, { dot: true })
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.base));
-  done();
 });
 
 /*******************************************************************************
