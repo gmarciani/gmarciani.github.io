@@ -1,0 +1,11 @@
+{{- /*
+  A directory tree (or any preformatted text) in a code block where entries
+  wrapped in **double asterisks** render in bold, which fenced code blocks
+  cannot do. Everything else is escaped verbatim.
+
+    {{< filetree >}}
+    ├── **src/**      hand-written
+    └── public/       generated
+    {{< /filetree >}}
+*/ -}}
+<pre class="filetree"><code>{{ trim .Inner "\n" | htmlEscape | replaceRE `\*\*([^*]+)\*\*` "<strong>$1</strong>" | safeHTML }}</code></pre>
