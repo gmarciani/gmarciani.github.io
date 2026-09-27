@@ -1,11 +1,17 @@
 {{- /*
-  A directory tree (or any preformatted text) in a code block where entries
-  wrapped in **double asterisks** render in bold, which fenced code blocks
-  cannot do. Everything else is escaped verbatim.
+  A directory tree (or any preformatted text) in a code block, with two
+  kinds of inline markup that fenced code blocks cannot carry:
+
+    **entry**      bold
+    %N{entry}      colored with palette color N, N in 1..10 (see --hl-N in
+                   main.scss; each color has a light and a dark variant)
 
     {{< filetree >}}
-    ├── **src/**      hand-written
-    └── public/       generated
+    %1{content}  %2{theme}
+    ├── %1{content/}      posts
+    └── %2{**src/**}      theme source
     {{< /filetree >}}
+
+  Everything else is escaped verbatim.
 */ -}}
-<pre class="filetree"><code>{{ trim .Inner "\n" | htmlEscape | replaceRE `\*\*([^*]+)\*\*` "<strong>$1</strong>" | safeHTML }}</code></pre>
+<pre class="filetree"><code>{{ trim .Inner "\n" | htmlEscape | replaceRE `\*\*([^*]+)\*\*` "<strong>$1</strong>" | replaceRE `%(10|[1-9])\{([^}]*)\}` `<span class="filetree__hl filetree__hl--$1">$2</span>` | safeHTML }}</code></pre>

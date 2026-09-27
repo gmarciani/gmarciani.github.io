@@ -18,6 +18,17 @@
   --blockquote-border: #e6e6e6;
   --hr-border: #ccc;
   --input-focus: #4db146;
+  // Highlight palette (filetree shortcode: %N{...}), readable on the light background.
+  --hl-1: #1f6fb5;
+  --hl-2: #2a8f3c;
+  --hl-3: #c1121f;
+  --hl-4: #a8720a;
+  --hl-5: #7b2cbf;
+  --hl-6: #0e7c86;
+  --hl-7: #c9601b;
+  --hl-8: #c2185b;
+  --hl-9: #4b6a88;
+  --hl-10: #5f7a1f;
 }
 
 [data-theme="dark"] {
@@ -37,6 +48,17 @@
   --blockquote-border: #36404c;
   --hr-border: #36404c;
   --input-focus: #03dac6;
+  // Highlight palette, the same ten hues lifted for the dark background.
+  --hl-1: #6cb6ff;
+  --hl-2: #7ed491;
+  --hl-3: #ff7b72;
+  --hl-4: #e3b341;
+  --hl-5: #d2a8ff;
+  --hl-6: #56d4dd;
+  --hl-7: #ffa657;
+  --hl-8: #ff7eb6;
+  --hl-9: #a5b4c8;
+  --hl-10: #b5d16f;
 }
 
 body, a, .blog-description, .blog-menu, .post-content a, #site-footer a {
@@ -938,6 +960,11 @@ pre {
 // selector must outrank the theme-scoped `[data-theme="dark"] .chroma` rule.
 .highlight pre.chroma {
   background-color: var(--code-bg);
+}
+
+// Annotated directory trees (`filetree` shortcode): colored entries.
+@for $i from 1 through 10 {
+  .filetree__hl--#{$i} { color: var(--hl-#{$i}); }
 }
 
 // A source file from the post's assets (`post-code` shortcode): a header
