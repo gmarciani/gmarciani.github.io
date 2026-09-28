@@ -27,11 +27,13 @@ meta(name='msapplication-config' content!='{{ absURL ".msconfig.xml" }}')
 meta(name='msapplication-TileColor' content='#10171e')
 
 //- STYLES
-link(rel='preconnect' href='https://fonts.googleapis.com')
-link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+//- Heading font is self-hosted (see @font-face in main.scss); preload it so it
+//- is fetched in parallel with the stylesheet instead of after it. relURL, not
+//- absURL: fonts are CORS-restricted, so the request must stay same-origin
+//- even when the page is reached through a host other than the baseURL.
+link(rel='preload' href!='{{ relURL "fonts/montserrat-latin-700-normal.woff2" }}' as='font' type='font/woff2' crossorigin='')
 link(rel='preconnect' href='https://cdnjs.cloudflare.com')
 link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css' type='text/css')
-link(rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Montserrat:700&display=swap')
 link(rel='stylesheet' type='text/css' href!='{{ absURL "styles/main.min.css" }}')
 
 //- SCRIPTS

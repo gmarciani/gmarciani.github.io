@@ -26,6 +26,7 @@ This is **not** a stock Hugo theme. The build has two stages:
    - `src/views/**/*.pug` → `layouts/**/*.html` (Hugo templates)
    - `src/styles/main.scss` → `static/styles/main.min.css`
    - `src/scripts/`, `src/fonts/`, `src/images/`, `src/meta/` → `static/`
+   - web fonts from `node_modules/@fontsource/*` (only the subsets/weights `main.scss` references) → `static/fonts/` (served to browsers)
    - `src/fonts/` → `assets/fonts/`, `src/images/brand/og-base.svg` → `assets/og/og-base.png` (rasterized by ImageMagick) (Hugo's asset dir, read via `resources.Get`)
 2. **Hugo** builds `public/` from `content/` + the generated `layouts/` + `static/` + `assets/`.
 
