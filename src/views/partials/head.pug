@@ -35,7 +35,11 @@ link(rel='preload' href!='{{ relURL "fonts/montserrat-latin-700-normal.woff2" }}
 link(rel='stylesheet' type='text/css' href!='{{ absURL "styles/main.min.css" }}')
 
 //- SCRIPTS
-script(src!='{{ absURL "scripts/theme.js" }}')
+//- Theme bootstrap, inlined at Pug compile time from src/scripts/theme.js: it
+//- must run before first paint to apply the stored theme without a flash, and
+//- inlining costs no request. Hugo's --minify compresses it in production.
+script
+  include ../../scripts/theme.js
 
 //- GOOGLE ANALYTICS
 | {{ with .Site.Params.google_analytics }}
