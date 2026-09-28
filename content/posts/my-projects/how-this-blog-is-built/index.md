@@ -111,12 +111,6 @@ When I modify my shortcodes, I use this age to validate the outcome.
 
 Cross-references use Hugo's `ref` shortcode, validated at build time: [Hello World]({{< ref "posts/hello-world.md" >}}).
 
-### Formulas
-
-Formulas render in the browser with [MathJax](https://www.mathjax.org/):
-
-{{< math >}}\int_{a}^{b} x^2 dx{{< /math >}}
-
 ### Figures
 
 ![Sample Image](/images/posts/sample-image.svg)
@@ -144,6 +138,10 @@ public static void main(String[] args) {
     System.out.println("Hello world!");
 }
 ```
+
+### Shortcode: math
+
+{{< math >}}\int_{a}^{b} x^2 dx{{< /math >}}
 
 ### Shortcode: epigraph
 
