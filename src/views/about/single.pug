@@ -4,9 +4,9 @@ article.posts
         h3.p-post-title {{ .Title }}
     section.post-content
         .container
-            .row
-                .col-sm-4
-                    img.rounded(src='{{ .Params.Image }}')
-                .col-sm-8
+            .about-layout
+                .about-photo
+                    img.rounded(src='{{ .Params.Image }}' alt='{{ .Site.Params.Author }}')
+                .about-bio
                     | {{ .Content }}
 | {{ end }}
