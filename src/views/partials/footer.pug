@@ -38,3 +38,6 @@ footer#site-footer
       a(href='http://gohugo.io/') Hugo
 
 script(src!='{{ absURL "scripts/main.min.js" }}' defer='')
+//- MathJax, only on pages with math; must come after the main block so the
+//- render hook has already flagged the page while rendering .Content.
+| {{ partial "mathjax.html" . }}
