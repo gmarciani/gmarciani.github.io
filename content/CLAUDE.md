@@ -13,6 +13,7 @@ Personal technical blog for Giacomo Marciani. It covers HPC, distributed systems
 - New posts default to `draft: true` (`archetypes/default.md`). **Drafts are excluded from `make prod`**, so a draft also stays out of the sitemap and `/llms.txt` until published.
 - Cross-references use the `{{< ref "posts/....md" >}}` shortcode.
 - Front matter fields: `title`, `description` (drives the meta description, Open Graph, Twitter card, JSON-LD, and llms.txt — keep under ~160 chars and make it compelling), `date` (`YYYY-MM-DD`), `draft` (boolean), and optionally `categories`, `tags`, `image` (custom 1200×630 social image; otherwise one is auto-generated).
+- Formulas: wrap the TeX in the `math` shortcode, `{{< math >}}\int_{a}^{b} x^2 dx{{< /math >}}`. It emits the formula untouched between `$$` delimiters, and using it is what makes the page load MathJax; pages without it load none.
 
 ## Post assets (images, code, videos)
 

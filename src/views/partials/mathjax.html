@@ -1,0 +1,8 @@
+{{- /*
+  MathJax, only where needed: the `math` shortcode flags the page in its store
+  while .Content renders, hence this partial sits after the main block.
+*/ -}}
+{{- if .Store.Get "hasMath" -}}
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+{{- end -}}

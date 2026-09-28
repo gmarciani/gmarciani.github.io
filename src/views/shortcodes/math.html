@@ -1,0 +1,7 @@
+{{- /*
+  Display formula typeset by MathJax. Using this shortcode is what makes the
+  page load MathJax (see partials/mathjax.html); the TeX is emitted untouched.
+  Usage: {{< math >}}\int_{a}^{b} x^2 dx{{< /math >}}
+*/ -}}
+{{- .Page.Store.Set "hasMath" true -}}
+$${{ .Inner | strings.TrimSpace }}$$
