@@ -1,6 +1,17 @@
 @use 'chroma-light';
 @use 'chroma-dark';
 
+// Heading font, self-hosted (copied from @fontsource/montserrat by Gulp).
+// Latin subset only; the body text uses the system sans-serif stack.
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/montserrat-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --bg: #fff;
   --text: #333;
@@ -548,7 +559,7 @@ cite {
 html {
   margin: 0;
   padding: 0;
-  font-family: "Nunito Sans",Helvetica,Arial,sans-serif;
+  font-family: Helvetica,Arial,sans-serif;
   font-size: 100%;
   line-height: 1.8;
   font-weight: normal;

@@ -82,6 +82,14 @@ const paths = {
       every   : 'src/fonts/**/*.{woff,otf,ttf,svg,eot}'
     },
 
+    webfonts  : {
+      // Self-hosted web fonts come from npm (@fontsource/*): only the subsets
+      // and weights the stylesheet actually references, woff2 only.
+      every   : [
+        'node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff2'
+      ]
+    },
+
     images    : {
       base    : 'src/images',
       every   : 'src/images/**/*.{svg,eps,png,jpg,ico}',
@@ -146,6 +154,11 @@ const paths = {
       every   : 'assets/fonts/**/*.{woff,otf,ttf,svg,eot}'
     },
 
+    webfonts  : {
+      base    : 'static/fonts',
+      every   : 'static/fonts/**/*.woff2'
+    },
+
     views     : {
       base    : 'layouts',
       every   : 'layouts/**/*.html',
@@ -192,8 +205,10 @@ gulp.task('build', function(done) {
   gulp.parallel(
     'og-base',
     'fonts',
+    'webfonts',
     'views',
     'images',
+    'fonts',
     'scripts',
     'styles',
     'meta'
@@ -342,6 +357,15 @@ gulp.task('fonts', function() {
   return gulp.src(paths.src.fonts.every, {encoding: false})
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.fonts.base));
+});
+
+/*******************************************************************************
+* WEB FONTS (served to browsers; declared via @font-face in main.scss)
+*******************************************************************************/
+gulp.task('webfonts', function() {
+  return gulp.src(paths.src.webfonts.every, {encoding: false})
+  .pipe(plumber())
+  .pipe(gulp.dest(paths.site.webfonts.base));
 });
 
 /*******************************************************************************
