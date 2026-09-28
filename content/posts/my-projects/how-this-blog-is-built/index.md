@@ -19,9 +19,7 @@ A static site pays those costs once, at build time, and then serves files; so th
 Google's [Why speed matters](https://web.dev/learn/performance/why-speed-matters) is an interesting reading on this topic.
 
 Speed has to be measured, not assumed, and Yoast's [How to check site speed](https://yoast.com/how-to-check-site-speed/) explains the tools to do it. 
-One of those is [PageSpeed](https://pagespeed.web.dev/analysis), where the blog scores 89 on desktop and 67 on mobile. 
-The server answers in under 100 milliseconds; the render-blocking third-party icon kit, web font, and jQuery are the problem, and the next thing to fix.
-
+One of those is [PageSpeed](https://pagespeed.web.dev/analysis), where the blog scores 100% on desktop and 92% on mobile, with a total blocking time under 40ms.
 ## Project structure
 
 {{< filetree >}}
