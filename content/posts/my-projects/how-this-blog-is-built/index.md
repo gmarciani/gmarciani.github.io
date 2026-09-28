@@ -95,12 +95,14 @@ The posts need a different license because they are not code, but personal opini
 ## Custom shortcodes
 
 A [shortcode](https://gohugo.io/content-management/shortcodes/) is a template you call from Markdown, for anything Markdown cannot express on its own. 
-Hugo provides some built-in shortcodes for standard embeds, such as YouTube videos or Instagram posts. My theme adds five of its own:
+Hugo provides some built-in shortcodes for standard embeds, such as YouTube videos or Instagram posts. My theme adds six of its own:
+- [`math`](https://github.com/gmarciani/gmarciani.github.io/blob/main/src/views/shortcodes/math.html) typesets a formula with [MathJax](https://www.mathjax.org/). Using it is also what makes a page load MathJax: pages without formulas never fetch it.
 - [`epigraph`](https://github.com/gmarciani/gmarciani.github.io/blob/main/src/views/shortcodes/epigraph.html) sets an opening quotation: centered, italic, muted.
 - [`filetree`](https://github.com/gmarciani/gmarciani.github.io/blob/main/src/views/shortcodes/filetree.html) prints a directory tree as a code block with two things a fenced code block cannot carry: bold and colored entries.
 - [`post-code`](https://github.com/gmarciani/gmarciani.github.io/blob/main/src/views/shortcodes/post-code.html) renders a source file that ships with the post, from the `code/` folder of its page bundle, with highlighting and a download link.
 - [`ghcode`](https://github.com/gmarciani/gmarciani.github.io/blob/main/src/views/shortcodes/ghcode.html) fetches a source file from GitHub at build time and renders it with syntax highlighting. The embed is a snapshot taken at build time.
 - [`ghactivity`](https://github.com/gmarciani/gmarciani.github.io/blob/main/src/views/shortcodes/ghactivity.html) renders a GitHub contribution chart for a username. It is a link to the profile wrapping an image served by [ghchart](https://ghchart.rshah.org/).
+
 
 ## Appendix: What Hugo renders
 
@@ -115,7 +117,7 @@ Cross-references use Hugo's `ref` shortcode, validated at build time: [Hello Wor
 
 Formulas render in the browser with [MathJax](https://www.mathjax.org/):
 
-$$\int_{a}^{b} x^2 dx$$
+{{< math >}}\int_{a}^{b} x^2 dx{{< /math >}}
 
 ### Figures
 
