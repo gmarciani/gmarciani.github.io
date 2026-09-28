@@ -387,7 +387,7 @@ h6 {
 }
 
 p {
-  margin: auto auto 1.5em;
+  margin: auto auto 0.75em;
 }
 
 a {
@@ -1095,6 +1095,10 @@ article {
 
 .post-content {
   text-align: justify;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5em;
+  }
 
   h2 {
     font-size: 1.4rem;
