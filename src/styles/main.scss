@@ -1047,7 +1047,9 @@ hr {
 .blog-title {
   text-transform: uppercase;
   letter-spacing: 6px;
-  font-size: 75px;
+  // Scales with the viewport like the former fitText script did (font-size =
+  // title width / 10): the container is 90% wide, capped at 800px.
+  font-size: min(9vw, 80px);
 }
 
 .blog-description {
