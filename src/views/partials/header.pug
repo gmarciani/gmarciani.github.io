@@ -1,7 +1,7 @@
 header#site-header
   .container
     a(href='{{ .Site.BaseURL }}' alt='{{ .Site.Title }}')
-      h1.blog-title.heading {{ .Site.Title }}
+      h1.blog-title {{ .Site.Title }}
     p.blog-description.full-text {{ .Site.Params.description }}
     p.blog-description.short-text {{ .Site.Params.descriptionShort }}
     p.blog-menu
