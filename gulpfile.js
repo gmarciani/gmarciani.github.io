@@ -241,7 +241,8 @@ gulp.task('og-base', function() {
 * WATCH
 *******************************************************************************/
 gulp.task('watch', function() {
-  gulp.watch(paths.src.views.every, gulp.series('views'));
+  // theme.js is inlined into the compiled views, so it triggers `views` too.
+  gulp.watch([paths.src.views.every, 'src/scripts/theme.js'], gulp.series('views'));
   gulp.watch(paths.src.styles.every, gulp.series('styles'));
   gulp.watch(paths.src.scripts.every, gulp.series('scripts'));
 });
@@ -272,8 +273,9 @@ gulp.task('views', gulp.parallel('views-pug', 'views-raw'));
 /*******************************************************************************
 * SCRIPTS
 *******************************************************************************/
-// Theme script is loaded separately in <head> to prevent flash
-gulp.task('scripts-main', function() {
+// theme.js is excluded: it must run before first paint, so partials/head.pug
+// inlines it at Pug compile time (see the `views` task) instead.
+gulp.task('scripts', function() {
   return gulp.src(paths.src.scripts.every, { ignore: ['**/theme.js'] })
   .pipe(plumber())
   .pipe(concat('main.js'))
@@ -284,16 +286,6 @@ gulp.task('scripts-main', function() {
   }))
   .pipe(gulp.dest(paths.site.scripts.base));
 });
-
-// Copy theme script separately
-gulp.task('scripts-theme', function() {
-  return gulp.src('src/scripts/theme.js')
-  .pipe(plumber())
-  .pipe(uglify())
-  .pipe(gulp.dest(paths.site.scripts.base));
-});
-
-gulp.task('scripts', gulp.parallel('scripts-main', 'scripts-theme'));
 
 /*******************************************************************************
 * STYLES

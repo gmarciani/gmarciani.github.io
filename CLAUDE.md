@@ -25,7 +25,7 @@ This is **not** a stock Hugo theme. The build has two stages:
 1. **Gulp** (`gulpfile.js`) compiles source into the directories Hugo expects:
    - `src/views/**/*.pug` → `layouts/**/*.html` (Hugo templates)
    - `src/styles/main.scss` → `static/styles/main.min.css`
-   - `src/scripts/`, `src/fonts/`, `src/images/`, `src/meta/` → `static/`
+   - `src/scripts/`, `src/images/`, `src/meta/` → `static/` (except `src/scripts/theme.js`, which `partials/head.pug` inlines at Pug compile time so the stored theme applies before first paint)
    - web fonts from `node_modules/@fontsource/*` (only the subsets/weights `main.scss` references) → `static/fonts/` (served to browsers)
    - `src/fonts/` → `assets/fonts/`, `src/images/brand/og-base.svg` → `assets/og/og-base.png` (rasterized by ImageMagick) (Hugo's asset dir, read via `resources.Get`)
    - icons: `main.scss` lists the Font Awesome Free icons in use (`$icons`), and the `icon-url()`/`icon-width()` Sass functions defined in `gulpfile.js` read each SVG from `node_modules/@fortawesome/fontawesome-free` and embed it in the stylesheet as a CSS mask over `currentColor`. Markup is `i.icon.icon-<name>` in Pug; no icon font, script, or request is involved. To use a new icon, add its name to `$icons`.
