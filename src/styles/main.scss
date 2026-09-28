@@ -1320,6 +1320,33 @@ img.rounded {
   border-radius: 50%;
 }
 
+// About page: photo beside the bio from 48em up, stacked below. Same
+// geometry as the flexboxgrid row/col-sm-4/col-sm-8 it replaces.
+.about-layout {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.5rem;
+
+  > * {
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 48em) {
+    .about-photo {
+      flex-basis: 33.3333%;
+      max-width: 33.3333%;
+    }
+
+    .about-bio {
+      flex-basis: 66.6667%;
+      max-width: 66.6667%;
+    }
+  }
+}
+
 // Theme toggle
 .theme-toggle {
   background: none;
