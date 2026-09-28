@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@fontsource/montserrat": "5.x",
+    "@fortawesome/fontawesome-free": "7.x",
     "ansi-colors": "4.x",
     "del": "8.x",
     "fancy-log": "2.x",

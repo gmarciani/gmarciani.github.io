@@ -3,22 +3,22 @@ footer#site-footer
     section#socials
       a(href='https://www.github.com/{{ .Site.Params.Social.Github }}' title='GitHub' target='_blank')
         span.tooltip
-          i.fab.fa-github
+          i.icon.icon-github
       a(href='https://www.twitter.com/{{ .Site.Params.Social.Twitter }}' title='Twitter' target='_blank')
         span.tooltip
-          i.fab.fa-twitter
+          i.icon.icon-twitter
       a(href='https://www.linkedin.com/in/{{ .Site.Params.Social.Linkedin }}' title='LinkedIn' target='_blank')
         span.tooltip
-          i.fab.fa-linkedin-in
+          i.icon.icon-linkedin-in
       a(href='https://www.instagram.com/{{ .Site.Params.Social.Instagram }}/' title='Instagram' target='_blank')
         span.tooltip
-          i.fab.fa-instagram
+          i.icon.icon-instagram
       //- a(href='https://www.youtube.com/channel/{{ .Site.Params.Social.Youtube }}' title='YouTube' target='_blank')
       //-   span.tooltip
-      //-     i.fab.fa-youtube
+      //-     i.icon.icon-youtube  (add youtube to $icons in main.scss)
       a(href='{{ .Site.BaseURL }}index.xml' title='Get the RSS feed')
         span.tooltip
-          i.fas.fa-rss
+          i.icon.icon-rss
     section#copyright
       | ©
       a(href!='{{ absURL "about"}}') {{ .Site.Params.Author }}
@@ -30,10 +30,10 @@ footer#site-footer
     section#made-with
       | Made with
       span.tooltip
-        i.fas.fa-heart
+        i.icon.icon-heart
       | +
       span.tooltip
-        i.fas.fa-mug-hot
+        i.icon.icon-mug-hot
       | +
       a(href='http://gohugo.io/') Hugo
 

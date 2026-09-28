@@ -37,6 +37,7 @@ import pug         from 'gulp-pug';
 import sitemap     from 'gulp-sitemap';
 
 // Other
+import fs          from 'node:fs';
 import shell       from 'gulp-shell';
 import isWindows   from 'is-windows';
 import isOSX       from 'is-osx';
@@ -88,6 +89,12 @@ const paths = {
       every   : [
         'node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff2'
       ]
+    },
+
+    icons     : {
+      // Font Awesome Free SVGs, read by the icon-url()/icon-width() Sass
+      // functions below for the names listed in main.scss ($icons).
+      dirs    : ['brands', 'solid'].map(d => 'node_modules/@fortawesome/fontawesome-free/svgs/' + d)
     },
 
     images    : {
@@ -295,7 +302,8 @@ gulp.task('styles', function() {
   return gulp.src(paths.src.styles.every)
   .pipe(plumber())
   .pipe(sass({
-    silenceDeprecations: ['legacy-js-api']
+    silenceDeprecations: ['legacy-js-api'],
+    functions: iconFunctions
   }).on('error', sass.logError))
   .pipe(gulp.dest(paths.site.styles.base))
   .pipe(cleanCss())
@@ -367,6 +375,32 @@ gulp.task('webfonts', function() {
   .pipe(plumber())
   .pipe(gulp.dest(paths.site.webfonts.base));
 });
+
+/*******************************************************************************
+* ICONS (Sass functions used by main.scss: icon-url($name), icon-width($name))
+*******************************************************************************/
+// Turns Font Awesome's SVG files into CSS mask images, so the icon set lives in
+// the stylesheet with no request and the HTML only carries `icon icon-<name>`.
+function iconSvg(name) {
+  for (const dir of paths.src.icons.dirs) {
+    const file = dir + '/' + name + '.svg';
+    if (fs.existsSync(file)) return fs.readFileSync(file, 'utf8');
+  }
+  throw new Error('icon "' + name + '": no ' + name + '.svg under ' + paths.src.icons.dirs.join(' or '));
+}
+
+const iconFunctions = {
+  'icon-url($name)': function([name]) {
+    // The attribution comment is dropped from each URI; main.scss keeps one
+    // preserved (/*!) license comment for the whole set instead.
+    const svg = iconSvg(name.assertString('name').text).replace(/<!--[\s\S]*?-->/, '');
+    return new dartSass.SassString('url("data:image/svg+xml,' + encodeURIComponent(svg) + '")', { quotes: false });
+  },
+  'icon-width($name)': function([name]) {
+    const [, width, height] = iconSvg(name.assertString('name').text).match(/viewBox="0 0 (\d+) (\d+)"/);
+    return new dartSass.SassNumber(width / height, 'em');
+  }
+};
 
 /*******************************************************************************
 * META

@@ -1240,6 +1240,11 @@ article {
 
 .share {
   float: left;
+
+  // Icon glyphs carry no side bearings, so space consecutive share links.
+  a + a {
+    margin-left: 0.35em;
+  }
 }
 
 @media (max-width: 550px) {
@@ -1327,21 +1332,47 @@ img.rounded {
     color: var(--text);
   }
 
-  .fa-sun {
+  .icon-sun {
     display: none;
   }
 
-  .fa-moon {
-    display: inline;
+  .icon-moon {
+    display: inline-block;
   }
 }
 
 [data-theme="dark"] .theme-toggle {
-  .fa-sun {
-    display: inline;
+  .icon-sun {
+    display: inline-block;
   }
 
-  .fa-moon {
+  .icon-moon {
     display: none;
+  }
+}
+
+/*! Icons: Font Awesome Free, CC BY 4.0, https://fontawesome.com/license/free */
+// Icons are CSS masks over currentColor, built from Font Awesome's SVG files by
+// the icon-url() and icon-width() Sass functions that gulpfile.js provides.
+// Markup is `<i class="icon icon-<name>">`; to add an icon, add its name here.
+// Sized like an icon font glyph: 1em tall, width from the SVG's aspect ratio.
+$icons: angles-left, angles-right, facebook-f, github, heart, instagram, linkedin-in, moon, mug-hot, rss, sun, tag, twitter;
+
+.icon {
+  display: inline-block;
+  height: 1em;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  -webkit-mask: no-repeat center / contain;
+  mask: no-repeat center / contain;
+}
+
+@each $name in $icons {
+  // `.icon.` keeps this off unrelated elements such as the share links,
+  // whose own classes are also named icon-*.
+  .icon.icon-#{$name} {
+    width: icon-width($name);
+    -webkit-mask-image: icon-url($name);
+    mask-image: icon-url($name);
   }
 }

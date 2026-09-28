@@ -28,6 +28,7 @@ This is **not** a stock Hugo theme. The build has two stages:
    - `src/scripts/`, `src/fonts/`, `src/images/`, `src/meta/` → `static/`
    - web fonts from `node_modules/@fontsource/*` (only the subsets/weights `main.scss` references) → `static/fonts/` (served to browsers)
    - `src/fonts/` → `assets/fonts/`, `src/images/brand/og-base.svg` → `assets/og/og-base.png` (rasterized by ImageMagick) (Hugo's asset dir, read via `resources.Get`)
+   - icons: `main.scss` lists the Font Awesome Free icons in use (`$icons`), and the `icon-url()`/`icon-width()` Sass functions defined in `gulpfile.js` read each SVG from `node_modules/@fortawesome/fontawesome-free` and embed it in the stylesheet as a CSS mask over `currentColor`. Markup is `i.icon.icon-<name>` in Pug; no icon font, script, or request is involved. To use a new icon, add its name to `$icons`.
 2. **Hugo** builds `public/` from `content/` + the generated `layouts/` + `static/` + `assets/`.
 
 **`layouts/`, `static/`, `assets/`, `public/`, `resources/` are all generated — never edit them.** They are gitignored. Edit `src/` and `content/`, then `make build`. Editing a compiled file in `layouts/` will be silently overwritten on the next build.
