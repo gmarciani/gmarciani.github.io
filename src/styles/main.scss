@@ -1414,18 +1414,36 @@ img.rounded {
   }
 }
 
-// Theme toggle
+// Theme toggle: a menu item that happens to be a button. The global button
+// rules paint hovered and focused buttons green and give them a 1px border,
+// which shifted the links beside it; keep the border width fixed and
+// highlight it like the links around it.
 .theme-toggle {
   background: none;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
-  color: var(--text-muted);
+  color: var(--link);
   font-size: 1rem;
   padding: 0.25em 0.5em;
-  transition: color 0.2s ease;
+  transition: color 0.1s ease-out;
 
-  &:hover {
-    color: var(--text);
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    color: var(--link);
+    background: none;
+    border: 1px solid transparent;
+  }
+
+  // Not on plain :focus, or the button keeps the hover color after the click
+  // that switched the theme and hovering it again shows no change.
+  &:hover,
+  &:focus-visible {
+    color: var(--link-hover);
+  }
+
+  &:active {
+    box-shadow: none;
   }
 
   .icon-sun {
