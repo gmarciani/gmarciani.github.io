@@ -1,0 +1,13 @@
+openapi: 3.0.0
+info: { title: Users API, version: 1.0.0 }
+paths:
+  /users:
+    get:
+      operationId: describeUsers
+      summary: Describe the users matching a search criteria
+      tags: [Users]
+      parameters:
+        - name: search
+          in: query
+          description: Name or email of the users to describe
+          schema: { type: string }

@@ -1,0 +1,25 @@
+$ my-cli --version
+my-cli, version 1.0.0
+
+$ my-cli --help
+Usage: my-cli [OPTIONS] [COMMAND] [ARGS]...
+
+  Operations CLI for My API
+
+Options:
+  --version                       Show the version and exit.
+  -p, --profile TEXT              Profile name to use.
+  -d, --debug                     Enable debug output.
+  -u, --base-url TEXT             API base URL.
+  --no-verify-ssl                 Disable SSL certificate verification.
+  --ca-file FILE                  CA certificate file for SSL verification.
+  --timeout INTEGER               Seconds to wait for a response, overriding
+                                  the timeout setting.
+  -H, --header HEADER             Extra request header as 'Name: value'.
+                                  Repeatable.
+  -o, --output [json|table|yaml]  Output format, overriding the outputFormat
+                                  setting.
+  --help                          Show this message and exit.
+
+Commands:
+  config  Configure the CLI.

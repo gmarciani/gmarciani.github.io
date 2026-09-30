@@ -1,0 +1,63 @@
+# Project
+ProjectName: "My CLI"
+CommandName: "my-cli"
+PackageName: "my_cli"
+Description: "Operations CLI for My API"
+Version: "1.0.0"
+AuthorName: "Ada Lovelace"
+AuthorEmail: "ada@example.com"
+GithubUser: "ada"
+PythonVersion: "3.12"
+CopyrightYear: 2026
+RepositoryUrl: "https://github.com/ada/my-cli"
+HomePageUrl: "https://ada.github.io/my-cli"
+
+# API and requests
+Api: "openapi.yaml"
+DefaultBaseUrl: "https://api.example.com"
+Timeout: 10
+RetryMaxAttempts: 5
+RetryBackoffFactor: 0.5
+CaFile: "resources/ca-chain.pem"
+
+# Which operations become commands
+IncludeTags: ["Users"]
+ExcludeTags: []
+IncludeOperations: []
+ExcludeOperations: []
+
+# What they are called
+TagMapping:
+  Users: "user"
+
+# How responses print
+OutputFormat: "table"
+OutputColors: true
+JsonIndent: 4
+TableStyle: "rounded"
+SplashFile: "resources/splash.txt"
+SplashColor: "#00FFFF"
+
+# Where the CLI keeps its state, with references between parameters
+MainDir: "${HOME}/.#[CommandName]"
+ProfileFile: "#[MainDir]/profiles.yaml"
+
+# Logging
+LogLevel: "WARNING"
+LogFormat: "%(asctime)s %(levelname)s %(name)s: %(message)s"
+LogTimestampFormat: "%Y-%m-%d %H:%M:%S"
+LogTimezone: "Local"
+LogColorStyle: "full"
+LogColorDebug: "#808080"
+LogColorInfo: "#00FF00"
+LogColorWarning: "#FFA500"
+LogColorError: "#FF0000"
+LogFile: "#[MainDir]/logs/my-cli.log"
+LogRotationType: "days"
+LogRotationDays: 7
+LogRotationSize: 10                  # applies when LogRotationType is "size"
+LogRotationBackupCount: 4
+
+# Tests and packaging
+CoverageThreshold: 90
+IncludeGithubWorkflows: true
