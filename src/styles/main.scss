@@ -1442,7 +1442,7 @@ img.rounded {
 // the icon-url() and icon-width() Sass functions that gulpfile.js provides.
 // Markup is `<i class="icon icon-<name>">`; to add an icon, add its name here.
 // Sized like an icon font glyph: 1em tall, width from the SVG's aspect ratio.
-$icons: angles-left, angles-right, check, copy, facebook-f, github, heart, instagram, linkedin-in, moon, mug-hot, rss, sun, tag, twitter;
+$icons: angles-left, angles-right, check, copy, facebook-f, github, heart, instagram, linkedin-in, moon, mug-hot, rss, sun, tag, x-twitter;
 
 .icon {
   display: inline-block;

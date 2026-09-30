@@ -12,8 +12,8 @@ article.posts
                     | Share:
                     a.icon-facebook(href='https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}' title='Share on Facebook' onclick='window.open(this.href, "facebook-share","width=580,height=296");return false;')
                         i.icon.icon-facebook-f
-                    a.icon-twitter(href='https://twitter.com/share?text={{ .Title }}&url={{ .Permalink }}' title='Share on Twitter' onclick='window.open(this.href, "twitter-share", "width=550,height=235");return false;')
-                        i.icon.icon-twitter
+                    a.icon-x-twitter(href='https://x.com/intent/post?text={{ .Title }}&url={{ .Permalink }}' title='Share on X' onclick='window.open(this.href, "x-share", "width=550,height=235");return false;')
+                        i.icon.icon-x-twitter
                     a.icon-linkedin(href='https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}&title={{ .Title | htmlEscape }}&summary={{ .Summary | htmlEscape }}&source=LinkedIn' title='Share on LinkedIn' onclick='window.open(this.href, "linkedin-share", "width=490,height=530");return false;')
                         i.icon.icon-linkedin-in
             p.f-post-time

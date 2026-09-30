@@ -17,4 +17,4 @@ I write mainly for myself, to fornalize my knowledge, to put black on white what
 
 I'll write about high-performance computing, software design, the daily challenges I face as tech leader, and my personal projects, typically hosted on [my GitHub](https://github.com/gmarciani).
 
-Follow me on [Twitter](https://www.twitter.com/giacomomarciani), where I announce every new post.
+Follow me on [X](https://x.com/giacomomarciani), where I announce every new post.
