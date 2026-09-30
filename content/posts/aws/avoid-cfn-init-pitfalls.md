@@ -1,7 +1,7 @@
 ---
 title: "Avoid cfn-init pitfalls"
 description: "Common cfn-init pitfalls and how to avoid them."
-date: 2027-03-21
+date: 2027-10-12
 draft: true
 ---
 

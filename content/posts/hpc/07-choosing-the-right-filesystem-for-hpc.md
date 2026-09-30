@@ -1,7 +1,7 @@
 ---
 title: "Choosing the right filesystem for HPC: a workload-driven comparison"
 description: "A practical comparison of HPC filesystem options — parallel filesystems, shared network filesystems, object storage tiers, and local NVMe — evaluated across throughput, metadata performance, latency, cost, and operational complexity, with a decision framework by workload type."
-date: 2027-02-07
+date: 2027-02-02
 draft: true
 ---
 

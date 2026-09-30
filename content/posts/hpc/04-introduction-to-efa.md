@@ -1,7 +1,7 @@
 ---
 title: "Introduction to EFA"
 description: "A top-down deep dive into Elastic Fabric Adapter, from why low-latency fabric matters through the RDMA programming model, libfabric, OS-bypass architecture, and the MPI and NCCL layers on top, closing with production tuning and OSU benchmark validation."
-date: 2026-11-29
+date: 2026-12-22
 draft: true
 ---
 

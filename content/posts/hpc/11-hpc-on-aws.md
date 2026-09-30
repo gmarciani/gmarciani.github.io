@@ -1,7 +1,7 @@
 ---
 title: "Running HPC workloads on AWS"
 description: "A side-by-side comparison of provisioning complexity, scheduling model, autoscaling, networking integration, and operational overhead, with a concrete recommendation matrix for choosing the right service."
-date: 2027-05-02
+date: 2027-04-13
 draft: true
 ---
 

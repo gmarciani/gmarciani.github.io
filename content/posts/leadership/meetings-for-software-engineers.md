@@ -1,7 +1,7 @@
 ---
 title: "Meetings for software engineer"
 description: "How to make meetings work for software engineers — not against them."
-date: 2027-05-16
+date: 2027-11-09
 draft: true
 ---
 

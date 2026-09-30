@@ -1,7 +1,7 @@
 ---
 title: "MySQL Metrics on Grafana"
 description: "Setting up MySQL metrics on Grafana for web application observability."
-date: 2027-11-28
+date: 2028-03-14
 draft: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Profiling multi-node training jobs with NVIDIA Nsight"
 description: "A step-by-step guide to profiling distributed training jobs using NVIDIA Nsight Systems and Nsight Compute: timeline analysis, kernel occupancy, communication-computation overlap, identifying stragglers across nodes, and translating profiling output into concrete optimization actions."
-date: 2027-03-07
+date: 2027-03-16
 draft: true
 ---
 

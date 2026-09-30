@@ -1,7 +1,7 @@
 ---
 title: "Introduction to NCCL"
 description: "How NCCL implements collective operations across GPU clusters. Covers ring and tree algorithms, NVLink vs. PCIe topologies, PyTorch and MPI integration, and a practical benchmark to validate a fresh installation."
-date: 2027-01-10
+date: 2027-01-19
 draft: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "What is HPC?"
 description: "A practical introduction to high-performance computing: what makes a system high-performance, how the HPC stack is organized from hardware to application, and the wide landscape of use cases from climate modeling to LLM training."
-date: 2026-10-04
+date: 2026-11-10
 draft: true
 ---
 

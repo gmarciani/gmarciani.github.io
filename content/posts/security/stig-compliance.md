@@ -1,7 +1,7 @@
 ---
 title: "STIG compliance"
 description: "Achieving and maintaining STIG compliance."
-date: 2027-06-13
+date: 2027-12-21
 draft: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Authorization in Spring"
 description: "Authorization patterns in Spring Boot."
-date: 2027-08-08
+date: 2028-01-18
 draft: true
 ---
 
