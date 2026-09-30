@@ -1,7 +1,7 @@
 ---
 title: "How this blog is built"
 description: "The stack behind this blog and the process I use to build and ship it."
-date: 2026-09-14
+date: 2026-09-15
 draft: false
 ---
 

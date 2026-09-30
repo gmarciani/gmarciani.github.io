@@ -1,120 +1,123 @@
 # Roadmap
 
-## Editorial Plan (August to December 2026)
+## Editorial Plan (September 2026 onward)
 
-Cadence: one post every two weeks, published on Sundays.
-Scope: all current drafts are part of the plan. The period from 2026-08-02
-until 2026-12-31 holds 12 slots; the remaining drafts are queued in the
-backlog below and continue at the same cadence into 2028.
+Cadence: one post every two weeks, published on Tuesdays at 8 am ET. The publishing time
+is tracked here only; the post front matter carries the date alone. The first post is
+dated 2026-09-01.
+Scope: all current drafts are part of the plan. The period until 2026-12-31 holds
+9 slots; the remaining drafts are queued in the backlog below and continue at the
+same cadence into 2028. Entries marked *(draft not written)* have a scope note at the end.
 
 ### Schedule (until 2026-12-31)
 
 #### 1. Hello, World
 
-- **Date**: 2026-08-02 (Sunday)
+- **Date**: 2026-09-01
 - **Draft**: `content/posts/hello-world.md`
-- **Summary**: Welcome post introducing the author and the blog: HPC architecture, distributed systems, GPU clusters, cloud infrastructure, security, and the human side of engineering. Front matter date already set; flip `draft: false` on publish day.
+- **Summary**: Welcome post introducing the author and the blog: HPC architecture, distributed systems, GPU clusters, cloud infrastructure, security, and the human side of engineering.
 
 #### 2. How this blog is built
 
-- **Date**: 2026-08-09 (Sunday)
-- **Draft**: `content/posts/how-this-blog-is-built.md`
-- **Summary**: The software stack behind the blog (Hugo, Pug, SCSS, Gulp, GitHub Actions, GitHub Pages), the two-stage build pipeline, the maintenance process, and a closing live showcase of everything Hugo renders (formulas, embeds, code, custom shortcodes including ghactivity). Front matter date already set; flip `draft: false` on publish day.
+- **Date**: 2026-09-15
+- **Draft**: `content/posts/my-projects/how-this-blog-is-built/index.md`
+- **Summary**: The software stack behind the blog (Hugo, Pug, SCSS, Gulp, GitHub Actions, GitHub Pages), the two-stage build pipeline, the maintenance process, and a closing live showcase of everything Hugo renders (formulas, embeds, code, custom shortcodes including ghactivity).
 
-#### 3. Personal Project: Markov Solver
+#### 3. Generating CLI with CLI Wizard
 
-- **Date**: 2026-08-23 (Sunday)
-- **Draft**: `content/posts/my-projects/markov-solver.md`
-- **Summary**: Solving discrete-time Markov chains with symbolic transition rates, graph visualization, and multiple input formats; why I built Markov Solver and how to use it. Opens a short run of personal-project posts before the HPC series.
-
-#### 4. Personal Project: CLI Wizard
-
-- **Date**: 2026-09-06 (Sunday)
+- **Date**: 2026-09-29
 - **Draft**: `content/posts/my-projects/cli-wizard.md`
-- **Summary**: Generating modern Python CLIs from OpenAPI specifications; why I built CLI Wizard, how it works, and how to use it.
+- **Summary**: What CLI Wizard does, with a dummy end-to-end example; why it exists and what it adds over a standard command generator; and an advanced example of shaping the CLI through the configuration.
 
-#### 5. Personal Project: ParallelCluster Configurations
+#### 4. Solving Markov chains with markov-solver
 
-- **Date**: 2026-09-20 (Sunday)
-- **Draft**: `content/posts/my-projects/parallelcluster-configurations.md`
-- **Summary**: A collection of representative AWS ParallelCluster configurations for real HPC clusters; a bridge from the personal projects into the HPC series.
+- **Date**: 2026-10-13
+- **Draft**: `content/posts/my-projects/markov-solver.md`
+- **Summary**: Solving discrete-time Markov chains with symbolic transition rates, graph visualization, and multiple input formats; why I built Markov Solver and how to use it.
+
+#### 5. Setting up a private Certificate Authority *(draft not written)*
+
+- **Date**: 2026-10-27
+- **Draft**: `content/posts/security/setting-up-a-private-certificate-authority.md`
+- **Summary**: Setting up a two-tier certificate authority with OpenSSL, following the approach of [gmarciani-ca](https://github.com/gmarciani/gmarciani-ca): an offline root CA, an intermediate CA that signs the server certificates, and trusted TLS certificates for local development without browser warnings.
+- **Category**: `categories: ["Security"]` set explicitly in the front matter; the `security/` section cascades "Software Design".
 
 #### 6. What is HPC?
 
-- **Date**: 2026-10-04 (Sunday)
+- **Date**: 2026-11-10
 - **Draft**: `content/posts/hpc/01-what-is-hpc.md`
 - **Summary**: A practical introduction to high-performance computing: what makes a system high-performance, how the HPC stack is organized from hardware to application, and the landscape of use cases from climate modeling to LLM training. Opens the HPC series.
 
 #### 7. Why HPC matters: a hands-on proof
 
-- **Date**: 2026-10-18 (Sunday)
+- **Date**: 2026-11-24
 - **Draft**: `content/posts/hpc/02-why-hpc-matters-a-hands-on-proof.md`
 - **Summary**: Parallelism is not an optimization; it is what makes entire categories of problems solvable. A real program taken through 10 incremental steps, from serial baseline to multi-node GPU cluster, with measured performance at every stage.
 
-#### 8. Papers that transformed the computer science
+#### 8. Why HPC is the foundation of modern AI
 
-- **Date**: 2026-11-01 (Sunday)
-- **Draft**: `content/posts/academic/papers-that-transformed-computer-science.md`
-- **Summary**: A curated tour of the seminal papers that shaped the computing landscape, and why each one still matters to practitioners today. Broad-appeal interlude between HPC installments.
-
-#### 9. Why HPC is the foundation of modern AI
-
-- **Date**: 2026-11-15 (Sunday)
+- **Date**: 2026-12-08
 - **Draft**: `content/posts/hpc/03-why-hpc-is-the-foundation-of-modern-ai.md`
 - **Summary**: Why you cannot train a large model on a regular cloud instance. The answer built across three layers (compute density, memory bandwidth, interconnect latency), mapping each constraint to its HPC solution.
 
-#### 10. Introduction to EFA
+#### 9. Introduction to EFA
 
-- **Date**: 2026-11-29 (Sunday)
+- **Date**: 2026-12-22
 - **Draft**: `content/posts/hpc/04-introduction-to-efa.md`
 - **Summary**: A top-down deep dive into Elastic Fabric Adapter: why low-latency fabric matters, the RDMA programming model, libfabric, OS-bypass architecture, and the MPI/NCCL layers on top; closes with production tuning and OSU benchmark validation.
 
-#### 11. How to manage your time
+### Backlog (continues biweekly into 2028)
 
-- **Date**: 2026-12-13 (Sunday)
-- **Draft**: `content/posts/leadership/how-to-manage-your-time.md`
-- **Summary**: Practical strategies for managing your time as an engineer and leader. Leadership interlude to vary the front page mid-series.
+1. 2027-01-05: `hpc/05-introduction-to-mpi.md` — Introduction to MPI
+2. 2027-01-19: `hpc/06-introduction-to-nccl.md` — Introduction to NCCL
+3. 2027-02-02: `hpc/07-choosing-the-right-filesystem-for-hpc.md` — Choosing the right filesystem for HPC
+4. 2027-02-16: `hpc/20-introduction-to-spack.md` — Introduction to Spack *(draft not written)*
+5. 2027-03-02: `hpc/08-hpc-benchmarking-compute-network-storage.md` — HPC benchmarking: compute, network, and storage
+6. 2027-03-16: `hpc/09-profiling-multi-node-training-nvidia-nsight.md` — Profiling multi-node training jobs with NVIDIA Nsight
+7. 2027-03-30: `hpc/10-hpc-in-the-cloud-state-of-the-art.md` — HPC in the Cloud: state of the art
+8. 2027-04-13: `hpc/11-hpc-on-aws.md` — Running HPC workloads on AWS
+9. 2027-04-27: `hpc/12-cost-anatomy-1000-gpu-training-run-aws.md` — Cost anatomy of a 1,000-GPU training run on AWS
+10. 2027-05-11: `hpc/13-introduction-to-slurm.md` — Introduction to SLURM
+11. 2027-05-25: `hpc/14-fine-tuning-slurm-for-maximum-performance.md` — Fine-tuning SLURM for maximum performance
+12. 2027-06-08: `hpc/21-slurm-vs-kubernetes-for-hpc-workloads.md` — SLURM vs Kubernetes for HPC workloads *(draft not written)*
+13. 2027-06-22: `hpc/15-checkpointing-strategies-distributed-training.md` — Checkpointing strategies for distributed training
+14. 2027-07-06: `hpc/16-gpu-memory-hierarchy-hbm-l2-sram.md` — GPU memory hierarchy: HBM, L2, and SRAM
+15. 2027-07-20: `hpc/17-llm-serving-infrastructure-training-to-inference.md` — LLM serving infrastructure
+16. 2027-08-03: `hpc/18-fine-tuning-llms-on-a-budget-lora-fsx.md` — Fine-tuning LLMs on a budget: LoRA + FSx
+17. 2027-08-17: `hpc/19-ten-architectural-mistakes-ai-clusters.md` — 10 architectural mistakes in AI clusters
+18. 2027-08-31: `academic/papers-that-transformed-computer-science.md` — Papers that transformed the computer science
+19. 2027-09-14: `leadership/how-to-manage-your-time.md` — How to manage your time
+20. 2027-09-28: `security/securing-terraform-state.md` — Securing Terraform state
+21. 2027-10-12: `aws/avoid-cfn-init-pitfalls.md` — Avoid cfn-init pitfalls
+22. 2027-10-26: `aws/exposing-outputs-in-ssm-automations.md` — Exposing Outputs in SSM Automations
+23. 2027-11-09: `leadership/meetings-for-software-engineers.md` — Meetings for software engineers
+24. 2027-11-23: `product/product-management-101.md` — Product Management 101
+25. 2027-12-07: `leadership/how-to-have-great-one-on-one-meetings.md` — How to have great 1:1 meetings *(draft not written)*
+26. 2027-12-21: `security/stig-compliance.md` — STIG compliance
+27. 2028-01-04: `web-applications/authentication-in-spring.md` — JWT Authentication in Spring
+28. 2028-01-18: `web-applications/authorization-in-spring.md` — Authorization in Spring
+29. 2028-02-01: `web-applications/securing-secrets-in-spring.md` — Securing Secrets in Spring
+30. 2028-02-15: `web-applications/throttling-in-spring.md` — Throttling in Spring
+31. 2028-02-29: `web-applications/storing-uuid-in-spring.md` — Storing UUID in Spring
+32. 2028-03-14: `web-applications/observability-stack-for-web-applications.md` — MySQL Metrics on Grafana
+33. 2028-03-28: `ai/quoting-antirez-on-ai.md` — Quoting antirez on AI
 
-#### 12. Introduction to MPI
+### Scope notes for the entries without a draft
 
-- **Date**: 2026-12-27 (Sunday)
-- **Draft**: `content/posts/hpc/05-introduction-to-mpi.md`
-- **Summary**: A ground-up introduction to the Message Passing Interface: the programming model, point-to-point and collective operations, communicators, and process topologies, with working code examples and a guide to running your first MPI jobs on AWS.
+#### Setting up a private Certificate Authority (schedule #5)
 
-### Backlog (continues biweekly on Sundays into 2028)
+How to run your own two-tier certificate authority with OpenSSL, following
+the approach of [gmarciani-ca](https://github.com/gmarciani/gmarciani-ca):
+why the root CA stays offline and only signs the intermediate, why the
+intermediate signs the server certificates, and what each `openssl.cfg`
+controls (extensions, key usage, subject alternative names). Then the
+practical side: issuing a certificate for a local service, bundling the
+chain, and trusting the root on the machine so local HTTPS works without
+browser warnings. Should cover what a private CA is good for (development,
+internal services) and what it is not (anything public).
 
-1. 2027-01-10: `hpc/06-introduction-to-nccl.md` — Introduction to NCCL
-2. 2027-01-24: `security/securing-terraform-state.md` — Securing Terraform state
-3. 2027-02-07: `hpc/07-choosing-the-right-filesystem-for-hpc.md` — Choosing the right filesystem for HPC
-4. 2027-02-21: `hpc/20-introduction-to-spack.md` — Introduction to Spack *(draft not written)*
-5. 2027-03-07: `hpc/08-hpc-benchmarking-compute-network-storage.md` — HPC benchmarking: compute, network, and storage
-6. 2027-03-21: `hpc/09-profiling-multi-node-training-nvidia-nsight.md` — Profiling multi-node training jobs with NVIDIA Nsight
-7. 2027-04-04: `aws/avoid-cfn-init-pitfalls.md` — Avoid cfn-init pitfalls
-8. 2027-04-18: `hpc/10-hpc-in-the-cloud-state-of-the-art.md` — HPC in the Cloud: state of the art
-9. 2027-05-02: `aws/exposing-outputs-in-ssm-automations.md` — Exposing Outputs in SSM Automations
-10. 2027-05-16: `hpc/11-hpc-on-aws.md` — Running HPC workloads on AWS
-11. 2027-05-30: `leadership/meetings-for-software-engineers.md` — Meetings for software engineers
-12. 2027-06-13: `product/product-management-101.md` — Product Management 101
-13. 2027-06-27: `leadership/how-to-have-great-one-on-one-meetings.md` — How to have great 1:1 meetings *(draft not written)*
-14. 2027-07-11: `hpc/12-cost-anatomy-1000-gpu-training-run-aws.md` — Cost anatomy of a 1,000-GPU training run on AWS
-15. 2027-07-25: `security/stig-compliance.md` — STIG compliance
-16. 2027-08-08: `hpc/13-introduction-to-slurm.md` — Introduction to SLURM
-17. 2027-08-22: `web-applications/authentication-in-spring.md` — JWT Authentication in Spring
-18. 2027-09-05: `hpc/14-fine-tuning-slurm-for-maximum-performance.md` — Fine-tuning SLURM for maximum performance
-19. 2027-09-19: `hpc/21-slurm-vs-kubernetes-for-hpc-workloads.md` — SLURM vs Kubernetes for HPC workloads *(draft not written)*
-20. 2027-10-03: `web-applications/authorization-in-spring.md` — Authorization in Spring
-21. 2027-10-17: `hpc/15-checkpointing-strategies-distributed-training.md` — Checkpointing strategies for distributed training
-22. 2027-10-31: `web-applications/securing-secrets-in-spring.md` — Securing Secrets in Spring
-23. 2027-11-14: `hpc/16-gpu-memory-hierarchy-hbm-l2-sram.md` — GPU memory hierarchy: HBM, L2, and SRAM
-24. 2027-11-28: `web-applications/throttling-in-spring.md` — Throttling in Spring
-25. 2027-12-12: `hpc/17-llm-serving-infrastructure-training-to-inference.md` — LLM serving infrastructure
-26. 2027-12-26: `web-applications/storing-uuid-in-spring.md` — Storing UUID in Spring
-27. 2028-01-09: `hpc/18-fine-tuning-llms-on-a-budget-lora-fsx.md` — Fine-tuning LLMs on a budget: LoRA + FSx
-28. 2028-01-23: `web-applications/observability-stack-for-web-applications.md` — MySQL Metrics on Grafana
-29. 2028-02-06: `hpc/19-ten-architectural-mistakes-ai-clusters.md` — 10 architectural mistakes in AI clusters
-30. 2028-02-20: `ai/quoting-antirez-on-ai.md` — Quoting antirez on AI
-
-### Scope notes for the new entries
+Placed right after the personal-project posts: the CA is what the
+generated CLIs and the local services in those projects talk through.
 
 #### Introduction to Spack (backlog #4)
 
@@ -132,7 +135,7 @@ build caches, and environments, since those are what distinguish it from
 Placed before the benchmarking post: you need a software stack before you can
 measure one.
 
-#### Product Management 101 (backlog #12)
+#### Product Management 101 (backlog #24)
 
 Draft started as a running numbered list of concepts, to be extended over
 time rather than expanded into prose. Opens the new `product/` category,
@@ -145,7 +148,7 @@ delivered with enthusiasm). Content is drawn largely from *The Product Book*
 by Josh Anon and Carlos González de Villaumbrosia, credited in a closing
 section.
 
-#### How to have great 1:1 meetings (backlog #13)
+#### How to have great 1:1 meetings (backlog #25)
 
 Placed directly after `meetings-for-software-engineers.md`, which covers
 meetings in general — this one narrows to the recurring manager/report 1:1,
@@ -156,7 +159,7 @@ nothing urgent, and how to use it for feedback, career growth, and surfacing
 problems early. Should cover both sides of the table — how to run one as a
 manager and how to get value from one as a report.
 
-#### SLURM vs Kubernetes for HPC workloads (backlog #19)
+#### SLURM vs Kubernetes for HPC workloads (backlog #12)
 
 A comparison of the two control planes for submitting HPC work, placed right
 after the two SLURM posts so the reader already has the scheduler vocabulary.

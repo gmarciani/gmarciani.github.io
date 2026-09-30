@@ -1,7 +1,7 @@
 ---
 title: "Fine-tuning SLURM for maximum performance and efficiency"
 description: "Beyond SLURM defaults: partition and QOS design, priority and fairshare configuration, topology-aware scheduling, backfill behavior, cgroup enforcement for GPU and memory isolation, prolog and epilog scripts, and profiling the scheduler under high job submission rates."
-date: 2027-07-25
+date: 2027-05-25
 draft: true
 ---
 

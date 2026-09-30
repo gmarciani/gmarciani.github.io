@@ -1,7 +1,7 @@
 ---
 title: "Introduction to SLURM"
 description: "A ground-up introduction to SLURM: the workload manager architecture, core concepts of jobs, partitions, nodes, and QOS, essential commands for users and administrators, and a practical guide to submitting and monitoring your first jobs on an AWS-hosted cluster."
-date: 2027-06-27
+date: 2027-05-11
 draft: true
 ---
 

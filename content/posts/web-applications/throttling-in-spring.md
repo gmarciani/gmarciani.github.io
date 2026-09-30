@@ -1,7 +1,7 @@
 ---
 title: "Throttling in Spring"
 description: "Rate limiting and throttling patterns in Spring Boot."
-date: 2027-10-03
+date: 2028-02-15
 draft: true
 ---
 

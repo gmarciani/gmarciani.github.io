@@ -1,7 +1,7 @@
 ---
 title: "Introduction to MPI"
 description: "A ground-up introduction to the Message Passing Interface: the programming model, point-to-point and collective operations, communicators, and process topologies — with working code examples and a guide to running your first MPI jobs on AWS."
-date: 2026-12-27
+date: 2027-01-05
 draft: true
 ---
 
