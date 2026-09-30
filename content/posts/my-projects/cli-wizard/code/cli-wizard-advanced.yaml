@@ -1,0 +1,26 @@
+ProjectName: "My CLI"
+CommandName: "my-cli"
+Description: "Operations CLI for My API"
+DefaultBaseUrl: "https://api.example.com"
+OpenapiSpec: "openapi.yaml"
+
+# Which operations become commands
+ExcludeOperations: ["createUser"]
+
+# What they are called
+TagMapping:
+  Users: "user"
+CommandMapping:
+  listUsers: "ls"
+  getUser: "get"
+
+# Where the CLI keeps its state, with references between parameters
+MainDir: "${HOME}/.#[CommandName]"
+LogFile: "#[MainDir]/my-cli.log"
+LogRotationType: "days"
+LogRotationDays: 30
+
+# TLS and packaging
+CaFile: "resources/ca-chain.pem"
+SplashFile: "resources/splash.txt"
+IncludeGithubWorkflows: true
