@@ -1404,6 +1404,16 @@ img.rounded {
   }
 }
 
+// GitHub contribution chart (`ghactivity` shortcode). The chart is an image
+// link with no margin of its own, so the links below it sat too close.
+.github-activity {
+  margin-bottom: 2em;
+
+  img {
+    display: block;
+  }
+}
+
 // Theme toggle
 .theme-toggle {
   background: none;
