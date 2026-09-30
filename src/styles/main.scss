@@ -148,10 +148,6 @@ code, kbd, pre, samp {
   font-size: 1em;
 }
 
-pre {
-  white-space: pre-wrap;
-}
-
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
@@ -940,15 +936,17 @@ code {
   border-radius: 5px;
 }
 
+// Code blocks scroll sideways instead of wrapping, so commands, aligned output
+// and the filetree diagrams stay intact on narrow screens.
 pre {
   display: block;
   padding: 10px;
   margin: 2.5em 0;
   max-width: 100%;
+  overflow-x: auto;
   font-size: 75%;
   line-height: 1.8;
-  word-break: break-all;
-  word-wrap: break-word;
+  white-space: pre;
   color: var(--text);
   background-color: var(--code-bg);
   border: 1px solid var(--code-border);
@@ -958,9 +956,7 @@ pre {
     padding: 0;
     font-size: inherit;
     color: inherit;
-    word-wrap: normal;
-    white-space: -moz-pre-wrap;
-    white-space: pre-wrap;
+    white-space: pre;
     background-color: transparent;
     border-radius: 0;
   }
@@ -1008,12 +1004,18 @@ pre {
   overflow-y: scroll;
 }
 
-// Code blocks with a "Copy" button in the top-right corner. The `copyable`
-// block is added by src/scripts/copy.js to every `pre > code` except the
-// filetree diagrams; after a click the button reads "Copied" for half a second.
+// Code blocks with a "Copy" button in the top-right corner. src/scripts/copy.js
+// wraps every `pre > code` except the filetree diagrams in a `copyable` div and
+// puts the button there, outside the scrolling `pre`, so it stays put when the
+// code scrolls sideways; after a click the button reads "Copied" for half a
+// second. The pre's own margins collapse through the wrapper, so the wrapper
+// fits the block exactly and the button offsets are from the block's corner.
 .copyable {
   position: relative;
-  padding-right: 5.5em;
+
+  pre {
+    padding-right: 5.5em;
+  }
 
   &__button {
     position: absolute;
@@ -1193,8 +1195,11 @@ article {
 .post-content {
   text-align: justify;
 
+  // Justification is for paragraphs only: a wrapped heading with stretched
+  // word gaps is unreadable.
   h1, h2, h3, h4, h5, h6 {
     margin-top: 1.5em;
+    text-align: left;
   }
 
   h2 {
@@ -1207,6 +1212,28 @@ article {
 
   h4 {
     font-size: 1.05rem;
+  }
+
+  // Markdown tables: padded cells, a stronger rule under the header, and
+  // sideways scrolling when a table is wider than the column.
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 2.5em 0;
+    font-size: 90%;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  th, td {
+    padding: 0.4em 0.8em;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  th {
+    border-bottom-color: var(--border-strong);
   }
 }
 
