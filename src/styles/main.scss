@@ -1008,6 +1008,63 @@ pre {
   overflow-y: scroll;
 }
 
+// Code blocks with a "Copy" button in the top-right corner. The `copyable`
+// block is added by src/scripts/copy.js to every `pre > code` except the
+// filetree diagrams; after a click the button reads "Copied" for half a second.
+.copyable {
+  position: relative;
+  padding-right: 5.5em;
+
+  &__button {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.25em 0.6em;
+    font-family: inherit;
+    font-size: 0.85em;
+    line-height: 1.4;
+    color: var(--text-muted);
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    // The global button rules paint hovered and focused buttons green; keep
+    // this one on the code block's own colors, and only brighten it.
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      color: var(--text);
+      background-color: var(--code-bg);
+      border: 1px solid var(--text-muted);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+
+    .icon-check {
+      display: none;
+    }
+
+    &--done {
+      color: var(--text);
+
+      .icon-copy {
+        display: none;
+      }
+
+      .icon-check {
+        display: inline-block;
+      }
+    }
+  }
+}
+
 hr {
   display: block;
   height: 1px;
@@ -1385,7 +1442,7 @@ img.rounded {
 // the icon-url() and icon-width() Sass functions that gulpfile.js provides.
 // Markup is `<i class="icon icon-<name>">`; to add an icon, add its name here.
 // Sized like an icon font glyph: 1em tall, width from the SVG's aspect ratio.
-$icons: angles-left, angles-right, facebook-f, github, heart, instagram, linkedin-in, moon, mug-hot, rss, sun, tag, twitter;
+$icons: angles-left, angles-right, check, copy, facebook-f, github, heart, instagram, linkedin-in, moon, mug-hot, rss, sun, tag, twitter;
 
 .icon {
   display: inline-block;
