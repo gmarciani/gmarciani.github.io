@@ -1,0 +1,13 @@
+$ cd my-cli
+$ pip install -e . --group dev
+$ make build
+python -m build
+* Creating isolated environment: venv+pip...
+...
+Successfully built my_cli-1.0.0.tar.gz and my_cli-1.0.0-py3-none-any.whl
+
+$ twine check dist/*
+Checking dist/my_cli-1.0.0-py3-none-any.whl: PASSED
+Checking dist/my_cli-1.0.0.tar.gz: PASSED
+
+$ twine upload dist/*

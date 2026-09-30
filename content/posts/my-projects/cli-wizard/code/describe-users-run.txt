@@ -1,0 +1,25 @@
+$ my-cli config set --profile my-profile --param accessToken --value my-token
+2026-10-13T02:52:11 [INFO] Set 'accessToken' = '***' in profile 'my-profile'
+{
+  "key": "accessToken",
+  "value": "my-token",
+  "oldValue": null
+}
+
+$ my-cli users describe-users --search ada --profile my-profile --debug
+2026-10-13T02:52:12 [DEBUG] Loaded profile 'my-profile'
+2026-10-13T02:52:12 [DEBUG] Executing command 'users describe-users' with params: {'search': 'ada'}
+2026-10-13T02:52:12 [DEBUG] Request: GET http://localhost:3000/users
+2026-10-13T02:52:12 [DEBUG] Params: {'search': 'ada'}
+2026-10-13T02:52:12 [DEBUG] Headers: {'User-Agent': 'my-cli/1.0.0 (cli-wizard)', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Authorization': '***'}
+2026-10-13T02:52:12 [DEBUG] Response: 200 OK
+2026-10-13T02:52:12 [DEBUG] Response Headers: {'Server': 'BaseHTTP/0.6 Python/3.14.2', 'Date': 'Tue, 13 Oct 2026 02:52:12 GMT', 'Content-Type': 'application/json', 'Content-Length': '64'}
+2026-10-13T02:52:12 [DEBUG] Response Body: [{"id": 42, "name": "Ada Lovelace", "email": "ada@example.com"}]
+2026-10-13T02:52:12 [DEBUG] Command 'users describe-users' completed with output: [{"id": 42, "name": "Ada Lovelace", "email": "ada@example.com"}]
+[
+  {
+    "id": 42,
+    "name": "Ada Lovelace",
+    "email": "ada@example.com"
+  }
+]
