@@ -1,0 +1,3 @@
+ProjectName: "My CLI"
+DefaultBaseUrl: "https://api.example.com"
+OpenapiSpec: "openapi.yaml"
