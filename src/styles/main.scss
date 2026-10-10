@@ -1497,7 +1497,7 @@ img.rounded {
 // the icon-url() and icon-width() Sass functions that gulpfile.js provides.
 // Markup is `<i class="icon icon-<name>">`; to add an icon, add its name here.
 // Sized like an icon font glyph: 1em tall, width from the SVG's aspect ratio.
-$icons: angles-left, angles-right, check, copy, facebook-f, github, heart, instagram, linkedin-in, moon, mug-hot, rss, sun, tag, x-twitter;
+$icons: angles-left, angles-right, check, copy, facebook-f, github, heart, instagram, linkedin-in, moon, mug-hot, rss, sun, tag, x-twitter, xmark;
 
 .icon {
   display: inline-block;
@@ -1515,5 +1515,70 @@ $icons: angles-left, angles-right, check, copy, facebook-f, github, heart, insta
     width: icon-width($name);
     -webkit-mask-image: icon-url($name);
     mask-image: icon-url($name);
+  }
+}
+
+// Full-screen image viewer (src/scripts/lightbox.js). Post images show a
+// magnifying-glass cursor; the viewer shows the image as large as the window
+// allows, and a click anywhere, the close button, or Esc closes it.
+.post-content img.zoomable {
+  cursor: zoom-in;
+}
+
+.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-out;
+
+  &[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  &__image {
+    max-width: 95vw;
+    max-height: 95vh;
+    object-fit: contain;
+  }
+
+  &__close {
+    position: fixed;
+    top: 0.75em;
+    right: 0.75em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4em;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+
+    // Override the global green button hover/focus.
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid transparent;
+    }
   }
 }
