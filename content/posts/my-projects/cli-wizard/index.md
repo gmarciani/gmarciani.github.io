@@ -2,7 +2,7 @@
 title: "Generating CLI with cli-wizard"
 description: "Use cli-wizard to generate a Python CLI for your API that is fully customizable, documented and ready to be released."
 date: 2026-10-12
-draft: true
+draft: false
 ---
 
 {{< epigraph >}}
