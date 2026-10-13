@@ -14,6 +14,7 @@ Personal technical blog for Giacomo Marciani. It covers HPC, distributed systems
 - Cross-references use the `{{< ref "posts/....md" >}}` shortcode.
 - Front matter fields: `title`, `description` (drives the meta description, Open Graph, Twitter card, JSON-LD, and llms.txt — keep under ~160 chars and make it compelling), `date` (`YYYY-MM-DD`), `draft` (boolean), and optionally `categories`, `tags`, `image` (custom 1200×630 social image; otherwise one is auto-generated).
 - Formulas: wrap the TeX in the `math` shortcode, `{{< math >}}\int_{a}^{b} x^2 dx{{< /math >}}`. It emits the formula untouched between `$$` delimiters, and using it is what makes the page load MathJax; pages without it load none.
+- Outline: `{{< outline >}}` lists the post's sections as numbered links to their `##` headings, generated from the headings themselves, so it never needs editing when they change. `title="..."` overrides the "In this post" label.
 
 ## Post assets (images, code, videos)
 
