@@ -1,0 +1,32 @@
+{{- /*
+  The outline of a post: its sections as a numbered list of links, generated
+  from the page's level-2 headings, so it follows them when they change.
+
+    {{< outline >}}
+    {{< outline title="What's inside" >}}   heading override
+
+  The page must have at least one level-2 heading.
+*/ -}}
+{{- $title := .Get "title" | default "In this post" -}}
+{{- $sections := slice -}}
+{{- range .Page.Fragments.Headings -}}
+  {{- if eq .Level 2 -}}
+    {{- $sections = $sections | append . -}}
+  {{- end -}}
+  {{- range .Headings -}}
+    {{- if eq .Level 2 -}}
+      {{- $sections = $sections | append . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $sections -}}
+  {{- errorf "outline: %s has no level-2 headings to outline" .Page.File.Path -}}
+{{- end -}}
+<nav class="outline" aria-label="{{ $title }}">
+  <p class="outline__title">{{ $title }}</p>
+  <ol class="outline__list">
+    {{- range $sections }}
+    <li class="outline__item"><a class="outline__link" href="#{{ .ID }}">{{ .Title }}</a></li>
+    {{- end }}
+  </ol>
+</nav>
