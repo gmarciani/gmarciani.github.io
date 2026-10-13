@@ -540,6 +540,50 @@ cite {
   font-style: normal;
 }
 
+// Outline of a post (`outline` shortcode): its sections as a numbered list
+// of links, set apart from the body text by an accent rule and a tinted
+// background.
+.outline {
+  margin: 2em 0 2.5em;
+  padding: 1em 1.5em 1.1em;
+  border-left: 3px solid var(--hl-1);
+  border-radius: 0 5px 5px 0;
+  background-color: var(--code-bg);
+  font-family: "Montserrat";
+
+  &__title {
+    margin: 0 0 0.6em;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 1.4em;
+  }
+
+  &__item {
+    margin: 0.25em 0;
+    color: var(--hl-1);
+  }
+
+  .outline__link {
+    color: var(--text);
+    font-weight: 600;
+    background-image: none;
+    padding-bottom: 0;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--hl-1);
+      background-image: none;
+    }
+  }
+}
+
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
