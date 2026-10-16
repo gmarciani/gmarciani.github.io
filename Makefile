@@ -3,30 +3,27 @@
 # and Node is already on PATH.
 NVM_USE = if [ -f "$${HOME}/.nvm/nvm.sh" ]; then . "$${HOME}/.nvm/nvm.sh" && nvm install; fi
 
-.PHONY: clean build serve watch prod install
+.PHONY: help clean build serve watch prod install
 
-## Install requirements: Homebrew packages, Node from .nvmrc, npm dependencies
-## (Dart Sass comes from the npm `sass` dependency, so it needs no brew formula)
-install:
+help: ## show this help message
+	@echo "Available targets:"
+	@grep -E '^[a-zA-Z_-]+:.*##' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*## "}; {printf "  %-10s %s\n", $$1, $$2}'
+
+install: ## install Homebrew packages, Node from .nvmrc, npm dependencies
 	brew install hugo imagemagick
 	. "$${HOME}/.nvm/nvm.sh" && nvm install && npm install
 
-## Delete generated directories and files
-clean:
+clean: ## delete generated directories and files
 	$(NVM_USE) && npm run clean
 
-## Build assets (Gulp: views, fonts, images, scripts, styles, meta)
-build:
+build: ## build assets (Gulp: views, fonts, images, scripts, styles, meta)
 	$(NVM_USE) && npm install && npm run build
 
-## Start Hugo dev server with drafts
-serve: build
+serve: build ## start Hugo dev server with drafts
 	$(NVM_USE) && npm run serve
 
-## Gulp watch for live asset rebuilds
-watch: build
+watch: build ## Gulp watch for live asset rebuilds
 	$(NVM_USE) && npm run watch
 
-## Production Hugo build with minification
-prod:
+prod: ## production Hugo build with minification
 	$(NVM_USE) && npm install && npm run prod
