@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="530" viewBox="0 0 960 530" font-family="Menlo, Consolas, monospace" font-size="13">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b6572"/></marker></defs>
+<rect x="0.5" y="0.5" width="959" height="529" rx="10" fill="#f7f9fb" stroke="#c7d0d9"/>
+<text x="24" y="30" font-size="15" font-weight="bold" fill="#1f2937">git push → resume online</text>
+<text x="24" y="50" fill="#5b6572">one manual step on the laptop; GitHub Actions does the rest</text>
+<text x="24" y="86" fill="#5b6572" font-size="11">ON MY LAPTOP</text>
+<rect x="24" y="96" width="204" height="56" rx="6" fill="#ffffff" stroke="#c7d0d9"/>
+<text x="36" y="120" fill="#1f2937">src/content.tex</text>
+<text x="36" y="139" fill="#1f2937">src/layout.tex</text>
+<rect x="258" y="96" width="204" height="56" rx="6" fill="#ffffff" stroke="#c7d0d9"/>
+<text x="270" y="120" fill="#1f2937">make build</text>
+<text x="270" y="139" fill="#5b6572" font-size="12">xelatex, two passes</text>
+<rect x="492" y="96" width="204" height="56" rx="6" fill="#ffffff" stroke="#c7d0d9"/>
+<text x="504" y="120" fill="#1f2937">public/resume.pdf</text>
+<text x="504" y="139" fill="#5b6572" font-size="12">committed with sources</text>
+<rect x="726" y="96" width="204" height="56" rx="6" fill="#2c556b"/>
+<text x="738" y="120" fill="#ffffff" font-weight="bold">git push</text>
+<text x="738" y="139" fill="#ffffff" font-size="12">PR, then merge to main</text>
+<line x1="230" y1="124" x2="254" y2="124" stroke="#5b6572" stroke-width="1.2" marker-end="url(#a)"/>
+<line x1="464" y1="124" x2="488" y2="124" stroke="#5b6572" stroke-width="1.2" marker-end="url(#a)"/>
+<line x1="698" y1="124" x2="722" y2="124" stroke="#5b6572" stroke-width="1.2" marker-end="url(#a)"/>
+<path d="M828 152V176H140V356H254" fill="none" stroke="#5b6572" stroke-width="1.2" marker-end="url(#a)"/>
+<line x1="140" y1="240" x2="254" y2="240" stroke="#5b6572" stroke-width="1.2" marker-end="url(#a)"/>
+<text x="258" y="202" fill="#5b6572" font-size="11">GITHUB ACTIONS · test.yaml · every PR and push to main</text>
+<rect x="258" y="212" width="204" height="56" rx="6" fill="#e8f0f5" stroke="#2c556b"/>
+<text x="270" y="236" fill="#1f2937">clean Ubuntu runner</text>
+<text x="270" y="255" fill="#5b6572" font-size="12">make build from source</text>
+<rect x="492" y="212" width="204" height="56" rx="6" fill="#e8f0f5" stroke="#2c556b"/>
+<text x="504" y="236" fill="#1f2937">make test</text>
+<text x="504" y="255" fill="#5b6572" font-size="12">pytest + pdfminer.six</text>
+<rect x="726" y="212" width="204" height="56" rx="6" fill="#e8f0f5" stroke="#2c556b"/>
+<text x="738" y="236" fill="#1f2937">green check</text>
+<text x="738" y="255" fill="#5b6572" font-size="12">+ PDF link on the PR</text>
+<line x1="464" y1="240" x2="488" y2="240" stroke="#5b6572" stroke-width="1.2" marker-end="url(#a)"/>
+<line x1="698" y1="240" x2="722" y2="240" stroke="#5b6572" stroke-width="1.2" marker-end="url(#a)"/>
+<text x="258" y="318" fill="#5b6572" font-size="11">GITHUB ACTIONS · deploy.yaml · push to main that changes public/</text>
+<rect x="258" y="328" width="204" height="56" rx="6" fill="#e8f0f5" stroke="#2c556b"/>
+<text x="270" y="352" fill="#1f2937">upload public/</text>
+<text x="270" y="371" fill="#5b6572" font-size="12">Pages artifact</text>
+<rect x="492" y="328" width="204" height="56" rx="6" fill="#e8f0f5" stroke="#2c556b"/>
+<text x="504" y="352" fill="#1f2937">deploy-pages</text>
+<text x="504" y="371" fill="#5b6572" font-size="12">GitHub Pages</text>
+<rect x="726" y="328" width="204" height="56" rx="6" fill="#2c556b"/>
+<text x="738" y="352" fill="#ffffff" font-weight="bold">/resume/resume.pdf</text>
+<text x="738" y="371" fill="#ffffff" font-size="12">gmarciani.github.io</text>
+<line x1="464" y1="356" x2="488" y2="356" stroke="#5b6572" stroke-width="1.2" marker-end="url(#a)"/>
+<line x1="698" y1="356" x2="722" y2="356" stroke="#5b6572" stroke-width="1.2" marker-end="url(#a)"/>
+<text x="726" y="434" fill="#5b6572" font-size="11">THE BLOG</text>
+<rect x="726" y="444" width="204" height="56" rx="6" fill="#ffffff" stroke="#c7d0d9"/>
+<text x="738" y="468" fill="#1f2937">About page</text>
+<text x="738" y="487" fill="#5b6572" font-size="12">links the live PDF</text>
+<line x1="828" y1="444" x2="828" y2="388" stroke="#5b6572" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#a)"/>
+<text x="836" y="420" fill="#5b6572" font-style="italic" font-size="12">links</text>
+</svg>
