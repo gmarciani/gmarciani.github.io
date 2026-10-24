@@ -1,0 +1,12 @@
+from markov_solver.parser.markov_chain_parser import create_chain_from_file
+from markov_solver.results.report import SimpleReport as Report
+
+definition = "weather.yaml"
+markov_chain = create_chain_from_file(definition)
+states_probabilities = markov_chain.solve()
+
+report = Report("MARKOV CHAIN SOLUTION")
+for state in sorted(states_probabilities):
+    report.add("states probability", state, states_probabilities[state])
+
+print(report)
