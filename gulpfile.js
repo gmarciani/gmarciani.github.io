@@ -30,7 +30,8 @@ import uglify      from 'gulp-uglify';
 
 // Images
 import imageResize from 'gulp-image-resize';
-import imagemin from 'gulp-imagemin';
+import imagemin, {gifsicle, svgo} from 'gulp-imagemin';
+import sharp       from 'sharp';
 
 // Views
 import pug         from 'gulp-pug';
@@ -343,10 +344,24 @@ gulp.task('images-brand-failover', function () {
   .pipe(gulp.dest(paths.site.images.brand));
 });
 
+// PNG and JPEG go through sharp rather than gulp-imagemin's optipng and
+// mozjpeg, whose vendored macOS binaries are x86_64-only and fail to spawn
+// on Apple Silicon without Rosetta. Keeps the original when it is smaller.
+const sharpRaster = async buffer => {
+  const {format} = await sharp(buffer).metadata();
+  const encode = {
+    png : image => image.png({compressionLevel: 9, adaptiveFiltering: true}),
+    jpeg: image => image.jpeg({mozjpeg: true, quality: 85})
+  }[format];
+  if (!encode) return buffer;
+  const optimized = await encode(sharp(buffer)).toBuffer();
+  return optimized.length < buffer.length ? optimized : buffer;
+};
+
 gulp.task('images-posts', function () {
   return gulp.src(paths.src.images.posts.every, {encoding: false})
   .pipe(plumber())
-  .pipe(imagemin())
+  .pipe(imagemin([gifsicle(), sharpRaster, svgo()]))
   .pipe(gulp.dest(paths.site.images.posts));
 });
 
