@@ -54,7 +54,8 @@
     "gulp-uglify": "3.x",
     "is-osx": "1.x",
     "is-windows": "1.x",
-    "sass": "1.x"
+    "sass": "1.x",
+    "sharp": "0.x"
   },
   "dependencies": {
     "gulp-cli": "3.x",
