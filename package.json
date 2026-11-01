@@ -32,7 +32,7 @@
     "@fontsource/montserrat": "5.x",
     "@fortawesome/fontawesome-free": "7.x",
     "ansi-colors": "4.x",
-    "del": "8.x",
+    "del": "9.x",
     "fancy-log": "2.x",
     "gulp": "5.x",
     "gulp-batch": "1.x",
